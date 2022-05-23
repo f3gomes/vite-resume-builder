@@ -1,0 +1,65 @@
+{
+  "name": "Felipe Gomes",
+  "title": "Desenvolvedor Front-End",
+  "address": "Av. Presidente Castelo Branco, 2169",
+  "email": "fgomesdeluna@gmail.com",
+  "phone": "(85) 99792-8144",
+  "linkedin": "https://www.linkedin.com/in/felipe-gomes-2b22597a/",
+  "github": "https://www.github.com/fomes",
+  "instagram": "https://www.instagram.com/fgomesdeluna/",
+  "facebook": "",
+  "descrtiption": "Desenvolvedor Front-End em constante aprendizado. Eu gosto de resolver problemas e ajudar a melhorar a vida das pessoas de alguma forma! Atualmente meu maior passatempo é codar e aprender novas tecnologias de desenvolvimento. 😎",
+
+  "educationTitle1": "Análise e Desenvolvimento de Sistemas",
+  "educationStudies1": "UniFametro",
+  "educationYear1": "2022 - 2024",
+
+  "educationTitle2": "Desenvolvimento Full Stack",
+  "educationStudies2": "Trybe",
+  "educationYear2": "2021 - 2022",
+
+  "educationTitle3": "",
+  "educationStudies3": "",
+  "educationYear3": "",
+
+  "skills1": "HTML",
+  "skills2": "CSS",
+  "skills3": "Javascript",
+  "skills4": "React",
+  "skills5": "React Native",
+  "skills6": "Node",
+
+  "jobTitle1": "Desenvolvedor Front-End JR",
+  "jobYearCompany1": "2022 - 2022 | Cerus Bank",
+  "jobDesc1": "Desenvolver aplicação Front-End.",
+
+  "jobTitle2": "Desenvolvedor Front-End JR",
+  "jobYearCompany2": "2021 - 2022 | Dell LEAD",
+  "jobDesc2": "Desenvolvimento de sistema web com React e Ant Design.",
+
+  "jobTitle3": "Trainee Back-End",
+  "jobYearCompany3": "2021 - 2021 | FitBank",
+  "jobDesc3": "Estagiário de desenvolvimento back-end.",
+
+  "jobTitle4": "",
+  "jobYearCompany4": "",
+  "jobDesc4": "",
+
+  "refTitle1": "Dev. Full Stack PL",
+  "refName1": "Matheus Lima",
+  "refPhone1": "(92) 99528-1727",
+  "refEmail1": "mldn.fis@uea.edu.br",
+
+  "refTitle2": "QA Analist PL",
+  "refName2": "Felipe Nunes",
+  "refPhone2": "(85) 99678-2029",
+  "refEmail2": "felipe.f9@live.com",
+
+  "lang1": "Português(Nativo)",
+  "lang2": "Inglês(Avançado)",
+
+  "hob1": "Música",
+  "hob2": "Leitura",
+  "hob3": "Programação",
+  "hob4": "Academia"
+}
