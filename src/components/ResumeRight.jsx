@@ -1,7 +1,9 @@
-import React from "react";
-import data from "../data/ResumeData.json";
+import React, { useContext } from "react";
+import { MyContext } from "../context/Provider";
 
 export default function ResumeRight() {
+  const { resumeState, setResumeState } = useContext(MyContext);
+
   return (
     <div className="resume__right">
       <section className="experience section" id="experience">
@@ -15,12 +17,12 @@ export default function ResumeRight() {
             </div>
 
             <div className="experience__data bd-grid">
-              <h3 className="experience__title">{data.jobTitle1}</h3>
+              <h3 className="experience__title">{resumeState.jobTitle1}</h3>
               <span className="experience__company">
-                {data.jobYearCompany1}
+                {resumeState.jobYearCompany1}
               </span>
               <p className="experience__description">
-                {data.jobDesc1}
+                {resumeState.jobDesc1}
               </p>
             </div>
           </div>
@@ -32,12 +34,12 @@ export default function ResumeRight() {
             </div>
 
             <div className="experience__data bd-grid">
-              <h3 className="experience__title">{data.jobTitle2}</h3>
+              <h3 className="experience__title">{resumeState.jobTitle2}</h3>
               <span className="experience__company">
-                {data.jobYearCompany2}
+                {resumeState.jobYearCompany2}
               </span>
               <p className="experience__description">
-                {data.jobDesc2}
+                {resumeState.jobDesc2}
               </p>
             </div>
           </div>
@@ -49,10 +51,10 @@ export default function ResumeRight() {
             </div>
 
             <div className="experience__data bd-grid">
-              <h3 className="experience__title">{data.jobTitle3}</h3>
-              <span className="experience__company">{data.jobYearCompany3}</span>
+              <h3 className="experience__title">{resumeState.jobTitle3}</h3>
+              <span className="experience__company">{resumeState.jobYearCompany3}</span>
               <p className="experience__description">
-                {data.jobDesc3}
+                {resumeState.jobDesc3}
               </p>
             </div>
           </div>
@@ -97,20 +99,20 @@ export default function ResumeRight() {
 
         <div className="reference__container bd-grid">
           <div className="references__content bd-grid">
-            <span className="references__subtitle">{data.refTitle1}</span>
-            <h3 className="references__title">{data.refName1}</h3>
+            <span className="references__subtitle">{resumeState.refTitle1}</span>
+            <h3 className="references__title">{resumeState.refName1}</h3>
             <ul className="references__contact">
-              <li>Phone: {data.refPhone1}</li>
-              <li>Email: {data.refEmail1}</li>
+              <li>Phone: {resumeState.refPhone1}</li>
+              <li>Email: {resumeState.refEmail1}</li>
             </ul>
           </div>
 
           <div className="references__content bd-grid">
-            <span className="references__subtitle">{data.refTitle2}</span>
-            <h3 className="references__title">{data.refName2}</h3>
+            <span className="references__subtitle">{resumeState.refTitle2}</span>
+            <h3 className="references__title">{resumeState.refName2}</h3>
             <ul className="references__contact">
-              <li>Phone: {data.refPhone2}</li>
-              <li>Email: {data.refEmail2}</li>
+              <li>Phone: {resumeState.refPhone2}</li>
+              <li>Email: {resumeState.refEmail2}</li>
             </ul>
           </div>
         </div>
@@ -122,11 +124,11 @@ export default function ResumeRight() {
         <div className="languages__container">
           <ul className="languages__content bd-grid">
             <li className="languages__name">
-              <span className="languages__circle"></span> {data.lang1}
+              <span className="languages__circle"></span> {resumeState.lang1}
             </li>
 
             <li className="languages__name">
-              <span className="languages__circle"></span> {data.lang2}
+              <span className="languages__circle"></span> {resumeState.lang2}
             </li>
           </ul>
         </div>
@@ -138,22 +140,22 @@ export default function ResumeRight() {
         <div className="interests__container bd-grid">
           <div className="interests__content">
             <i className="bx bx-headphone interests__icon"></i>
-            <span className="interests__name">{data.hob1}</span>
+            <span className="interests__name">{resumeState.hob1}</span>
           </div>
 
           <div className="interests__content">
             <i className="bx bx-book interests__icon"></i>
-            <span className="interests__name">{data.hob2}</span>
+            <span className="interests__name">{resumeState.hob2}</span>
           </div>
 
           <div className="interests__content">
             <i className="bx bx-desktop interests__icon"></i>
-            <span className="interests__name">{data.hob3}</span>
+            <span className="interests__name">{resumeState.hob3}</span>
           </div>
 
           <div className="interests__content">
             <i className="bx bx-dumbbell interests__icon"></i>
-            <span className="interests__name">{data.hob4}</span>
+            <span className="interests__name">{resumeState.hob4}</span>
           </div>
         </div>
       </section>

@@ -11,22 +11,10 @@ export default function ResumeLeft(props) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem("resumeStorage"))) {
-      setResumeState(JSON.parse(localStorage.getItem("resumeStorage")));
-    } else {
-      localStorage.setItem("resumeStorage", JSON.stringify(data));
+    if (!JSON.parse(localStorage.getItem("resumeStorage"))) {
       setResumeState(data);
     }
   }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (resumeState && JSON.parse(localStorage.getItem("resumeStorage"))) {
-        localStorage.removeItem("resumeStorage");
-        localStorage.setItem("resumeStorage", JSON.stringify(resumeState));
-      }
-    }, 2000);
-  }, [resumeState]);
 
   return (
     <div className="resume__left">
@@ -43,9 +31,13 @@ export default function ResumeLeft(props) {
               </a>
             </div>
 
-            {/* <button type="button" onClick={() => navigate("/builder")}>
-              EDIT CV
-            </button> */}
+            <button
+              type="button"
+              onClick={() => navigate("/builder")}
+              className="edit-cv"
+            >
+              EDIT
+            </button>
           </div>
 
           <div className="home__address bd-grid">
@@ -118,7 +110,7 @@ export default function ResumeLeft(props) {
       <section className="profile section" id="profile">
         <h2 className="section-title">About</h2>
 
-        <p className="profile__description">{resumeState.descrtiption}</p>
+        <p className="profile__description">{resumeState.description}</p>
       </section>
 
       <section className="education section" id="education">
