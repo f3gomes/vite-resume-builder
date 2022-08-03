@@ -25,25 +25,33 @@
   "skills1": "HTML",
   "skills2": "CSS",
   "skills3": "Javascript",
-  "skills4": "React",
-  "skills5": "React Native",
+  "skills4": "Git",
+  "skills5": "React",
   "skills6": "Node",
 
-  "jobTitle1": "Desenvolvedor Front-End JR",
+  "jobTitle1": "Desenvolvedor Front-End",
   "jobYearCompany1": "2022 - 2022 | Cerus Bank",
-  "jobDesc1": "Desenvolver aplicação Front-End.",
+  "jobDesc1": "Desenvolver e melhorar sistema interno da empresa em React",
 
-  "jobTitle2": "Desenvolvedor Front-End JR",
+  "jobTitle2": "Desenvolvedor Front-End",
   "jobYearCompany2": "2021 - 2022 | Dell LEAD",
   "jobDesc2": "Desenvolvimento de sistema web com React e Ant Design.",
 
   "jobTitle3": "Trainee Back-End",
   "jobYearCompany3": "2021 - 2021 | FitBank",
-  "jobDesc3": "Estagiário de desenvolvimento back-end.",
+  "jobDesc3": "Estagiário de desenvolvimento back-end de sistema em C sharp",
 
-  "jobTitle4": "",
-  "jobYearCompany4": "",
-  "jobDesc4": "",
+  "jobTitle4": "Analista de Teste de Software",
+  "jobYearCompany4": "2018-2019 | Grupo Jetro",
+  "jobDesc4": "Analista de qualidade de software, executando testes funcionais e testes automatizados. Documentação de casos de testes, elaboração de requisitos e treinamento e capacitação de colaboradores",
+
+  "jobTitle5": "Analista de Suporte Técnico 2",
+  "jobYearCompany5": "2015-2018 | Grupo Jetro",
+  "jobDesc5": "Prestar suporte na instalação, manutenção e atualização do software assim como sanar dúvidas em operações, procedimentos, processos, relatórios, consultas SQL e abertura de chamados.",
+
+  "jobTitle6": "Analista de Suporte Técnico",
+  "jobYearCompany6": "2013-2014 | Grupo Jetro",
+  "jobDesc6": "Call center receptivo prestando suporte a sistema PDV para os clientes.",
 
   "refTitle1": "Dev. Full Stack PL",
   "refName1": "Matheus Lima",
@@ -59,7 +67,7 @@
   "lang2": "Inglês(Avançado)",
 
   "hob1": "Música",
-  "hob2": "Leitura",
+  "hob2": "Games",
   "hob3": "Programação",
   "hob4": "Academia",
 

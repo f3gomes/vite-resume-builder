@@ -58,6 +58,51 @@ export default function ResumeRight() {
               </p>
             </div>
           </div>
+
+          <div className="experience__content">
+            <div className="experience__time">
+              <span className="experience__rounder"></span>
+              <span className="experience__line"></span>
+            </div>
+
+            <div className="experience__data bd-grid">
+              <h3 className="experience__title">{resumeState.jobTitle4}</h3>
+              <span className="experience__company">
+                {resumeState.jobYearCompany4}
+              </span>
+              <p className="experience__description">{resumeState.jobDesc4}</p>
+            </div>
+          </div>
+
+          <div className="experience__content">
+            <div className="experience__time">
+              <span className="experience__rounder"></span>
+              <span className="experience__line"></span>
+            </div>
+
+            <div className="experience__data bd-grid">
+              <h3 className="experience__title">{resumeState.jobTitle5}</h3>
+              <span className="experience__company">
+                {resumeState.jobYearCompany5}
+              </span>
+              <p className="experience__description">{resumeState.jobDesc5}</p>
+            </div>
+          </div>
+
+          <div className="experience__content">
+            <div className="experience__time">
+              <span className="experience__rounder"></span>
+              <span className="experience__line"></span>
+            </div>
+
+            <div className="experience__data bd-grid">
+              <h3 className="experience__title">{resumeState.jobTitle6}</h3>
+              <span className="experience__company">
+                {resumeState.jobYearCompany6}
+              </span>
+              <p className="experience__description">{resumeState.jobDesc6}</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -144,7 +189,7 @@ export default function ResumeRight() {
           </div>
 
           <div className="interests__content">
-            <i className="bx bx-book interests__icon"></i>
+            <i className="bx bx-game interests__icon"></i>
             <span className="interests__name">{resumeState.hob2}</span>
           </div>
 
