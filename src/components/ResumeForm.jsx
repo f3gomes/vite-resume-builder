@@ -82,8 +82,11 @@ export default function ResumeForm() {
 
   const handleResetData = () => {
     if (confirm("Tem certeza?")) {
-      localStorage.removeItem("resumeStorage");
-      navigate("/");
+      setIsLoading(true);
+      setTimeout(() => {
+        localStorage.removeItem("resumeStorage");
+        navigate("/");
+      }, 1000);
     }
   };
 
@@ -170,44 +173,50 @@ export default function ResumeForm() {
 
   return (
     <>
-      <div className="form-container">
-        {Object.keys(inputState).map((key, index) => {
-          return (
-            <InputData
-              key={index}
-              placeholder={key}
-              onChange={(event) =>
-                setInputState((state) => ({
-                  ...state,
-                  [key]: event.target.value,
-                }))
-              }
-            />
-          );
-        })}
-      </div>
+      {isLoading ? (
+        <div className="loader" />
+      ) : (
+        <div>
+          <div className="form-container">
+            {Object.keys(inputState).map((key, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={key}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
 
-      <div className="btn-container">
-        <button type="button" className="input-form" onClick={updateCV}>
-          Update CV
-        </button>
+          <div className={"btn-container"}>
+            <button type="button" className="input-form" onClick={updateCV}>
+              Update CV
+            </button>
 
-        <button
-          type="button"
-          className="input-form"
-          onClick={() => navigate("/")}
-        >
-          CANCEL
-        </button>
+            <button
+              type="button"
+              className="input-form"
+              onClick={handleResetData}
+            >
+              RESET DATA
+            </button>
 
-        <button type="button" className="input-form" onClick={handleResetData}>
-          RESET DATA
-        </button>
-      </div>
-
-      <div className="loader-container">
-        {isLoading ? <div className="loader" /> : null}
-      </div>
+            <button
+              type="button"
+              className="input-form"
+              onClick={() => navigate("/")}
+            >
+              CANCEL
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }

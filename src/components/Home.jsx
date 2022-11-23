@@ -8,10 +8,11 @@ export default function Home() {
   const [showMenu, setShowMenu] = useState(false);
   const [darkTheme, setDarkTheme] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-
-  const areaCv = document.getElementById("area-cv");
+  const [areaCv, setAreaCv] = useState(document.getElementById("area-cv"));
 
   useEffect(() => {
+    setAreaCv(document.getElementById("area-cv"));
+
     window.addEventListener("scroll", () => {
       if (window.scrollY > 400) {
         setShowScrollTop(true);
@@ -54,9 +55,13 @@ export default function Home() {
     document.body.classList.remove("scale-cv");
   };
 
-  const generateResume = () => {
+  const generateResume = async () => {
     scaleCv();
-    html2pdf(areaCv, opt);
+    try {
+      await html2pdf(areaCv, opt);
+    } catch (err) {
+      console.log(err);
+    }
     setTimeout(removeScale, 5000);
   };
 
