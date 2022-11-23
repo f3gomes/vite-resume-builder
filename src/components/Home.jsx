@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import ResumeLeft from "./ResumeLeft";
 import ResumeRight from "./ResumeRight";
+import { handleGenerateResume } from "../utils/generateResume";
 
 export default function Home() {
   const [showMenu, setShowMenu] = useState(false);
@@ -39,32 +40,6 @@ export default function Home() {
     }
   };
 
-  const opt = {
-    margin: 0,
-    filename: "myResume.pdf",
-    image: { type: "jpeg", quality: 0.98 },
-    html2canvas: { scale: 4 },
-    jsPDF: { format: "a4", orientation: "portrait" },
-  };
-
-  const scaleCv = () => {
-    document.body.classList.add("scale-cv");
-  };
-
-  const removeScale = () => {
-    document.body.classList.remove("scale-cv");
-  };
-
-  const generateResume = async () => {
-    scaleCv();
-    try {
-      await html2pdf(areaCv, opt);
-    } catch (err) {
-      console.log(err);
-    }
-    setTimeout(removeScale, 5000);
-  };
-
   return (
     <>
       <Header showMenu={showMenu} onClick={() => setShowMenu(!showMenu)} />
@@ -74,7 +49,7 @@ export default function Home() {
           <ResumeLeft
             darkTheme={darkTheme}
             handleDarkTheme={handleDarkTheme}
-            generateResume={generateResume}
+            generateResume={() => handleGenerateResume(areaCv)}
           />
 
           <ResumeRight />

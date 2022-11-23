@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import profile from "/assets/perfil.jpeg";
-import cv from "/assets/cv2022.pdf";
 import data from "../data/ResumeData.json";
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../context/Provider";
@@ -9,6 +8,8 @@ export default function ResumeLeft(props) {
   const { resumeState, setResumeState } = useContext(MyContext);
 
   const navigate = useNavigate();
+
+  const handleSendData = () => {};
 
   useEffect(() => {
     if (!JSON.parse(localStorage.getItem("resumeStorage"))) {
@@ -26,9 +27,9 @@ export default function ResumeLeft(props) {
             <h3 className="home__profession">{resumeState.title}</h3>
 
             <div>
-              <a download="" href={cv} className="home__button-movil">
+              <button className="home__button-movil" onClick={handleSendData}>
                 Download
-              </a>
+              </button>
             </div>
 
             <div>
