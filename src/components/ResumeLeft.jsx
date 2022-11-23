@@ -1,15 +1,15 @@
 import React, { useContext, useEffect } from "react";
-import profile from "/assets/perfil.jpeg";
+import profile from "/assets/profile.jpeg";
 import data from "../data/ResumeData.json";
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../context/Provider";
+import { useState } from "react";
 
 export default function ResumeLeft(props) {
   const { resumeState, setResumeState } = useContext(MyContext);
+  const [image, setImage] = useState(profile);
 
   const navigate = useNavigate();
-
-  const handleSendData = () => {};
 
   useEffect(() => {
     if (!JSON.parse(localStorage.getItem("resumeStorage"))) {
@@ -22,14 +22,22 @@ export default function ResumeLeft(props) {
       <section className="home" id="home">
         <div className="home__container section bd-grid">
           <div className="home__data bd-grid">
-            <img src={profile} alt="profile image" className="home__img" />
+            <input
+              className="input-file"
+              type={"file"}
+              onChange={(event) => {
+                setImage(URL.createObjectURL(event.target.files[0]));
+                setImageClass("img-container");
+              }}
+            />
+            <img src={image} alt="profile image" className="home__img" />
             <h1 className="home__title">{resumeState.name}</h1>
             <h3 className="home__profession">{resumeState.title}</h3>
 
             <div>
-              <button className="home__button-movil" onClick={handleSendData}>
+              {/* <a download="" href={cv} className="home__button-movil">
                 Download
-              </button>
+              </a> */}
             </div>
 
             <div>
