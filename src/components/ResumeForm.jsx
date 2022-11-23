@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { MyContext } from "../context/Provider";
 import InputData from "../components/InputData";
 import "../styles/resumeForm.css";
+import { useEffect } from "react";
 
 export default function ResumeForm() {
   const { resumeState, setResumeState } = useContext(MyContext);
@@ -83,8 +84,9 @@ export default function ResumeForm() {
   const handleResetData = () => {
     if (confirm("Tem certeza?")) {
       setIsLoading(true);
+      localStorage.removeItem("resumeStorage");
+
       setTimeout(() => {
-        localStorage.removeItem("resumeStorage");
         navigate("/");
       }, 1000);
     }
@@ -162,14 +164,13 @@ export default function ResumeForm() {
     );
 
     setTimeout(() => {
-      localStorage.removeItem("resumeStorage");
-      localStorage.setItem("resumeStorage", JSON.stringify(resumeState));
-    }, 1000);
-
-    setTimeout(() => {
       navigate("/");
     }, 1500);
   };
+
+  useEffect(() => {
+    localStorage.setItem("resumeStorage", JSON.stringify(resumeState));
+  }, [resumeState]);
 
   return (
     <>

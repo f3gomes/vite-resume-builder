@@ -12,8 +12,15 @@ export default function ResumeLeft(props) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!JSON.parse(localStorage.getItem("resumeStorage"))) {
+    if (!localStorage.getItem("resumeStorage")) {
       setResumeState(data);
+
+      setTimeout(() => {
+        localStorage.setItem("resumeStorage", JSON.stringify(data));
+      }, 500);
+    } else {
+      const dataStorage = JSON.parse(localStorage.getItem("resumeStorage"));
+      setResumeState(dataStorage);
     }
   }, []);
 
@@ -25,6 +32,7 @@ export default function ResumeLeft(props) {
             <input
               className="input-file"
               type={"file"}
+              s
               onChange={(event) => {
                 setImage(URL.createObjectURL(event.target.files[0]));
                 setImageClass("img-container");
