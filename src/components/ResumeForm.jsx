@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../context/Provider";
 import InputData from "../components/InputData";
-import "./ResumeForm.css";
+import "../styles/resumeForm.css";
 
 export default function ResumeForm() {
   const { resumeState, setResumeState } = useContext(MyContext);
@@ -185,7 +185,9 @@ export default function ResumeForm() {
             />
           );
         })}
+      </div>
 
+      <div className="btn-container">
         <button type="button" className="input-form" onClick={updateCV}>
           Update CV
         </button>
@@ -201,10 +203,10 @@ export default function ResumeForm() {
         <button type="button" className="input-form" onClick={handleResetData}>
           RESET DATA
         </button>
+      </div>
 
-        <div className="loader-container">
-          {isLoading ? <div className="loader" /> : null}
-        </div>
+      <div className="loader-container">
+        {isLoading ? <div className="loader" /> : null}
       </div>
     </>
   );

@@ -31,13 +31,15 @@ export default function ResumeLeft(props) {
               </a>
             </div>
 
-            <button
-              type="button"
-              onClick={() => navigate("/builder")}
-              className="edit-cv"
-            >
-              EDIT
-            </button>
+            <div>
+              <button
+                type="button"
+                onClick={() => navigate("/builder")}
+                className="edit-cv"
+              >
+                EDIT
+              </button>
+            </div>
           </div>
 
           <div className="home__address bd-grid">

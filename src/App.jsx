@@ -9,7 +9,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/builder" element={< ResumeForm/>} />
+          <Route path="/builder" element={<ResumeForm />} />
         </Routes>
       </BrowserRouter>
     </>

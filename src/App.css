@@ -490,13 +490,15 @@ body.scale-cv {
   /* grid-template-columns: repeat(3, 1rf); */
   /* margin-top: var(--mb-2); */
   display: flex;
-  gap: 3.4rem;
+  gap: 3rem;
 }
 
 .interests__content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 30px;
+  margin-right: -10px;
 }
 
 .interests__icon {
