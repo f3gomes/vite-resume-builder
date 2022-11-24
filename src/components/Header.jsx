@@ -5,7 +5,7 @@ export default function Header(props) {
     <header className="l-header" id="header">
       <nav className="nav bd-container">
         <a href="#" className="nav__logo">
-          Felipe
+          Admin
         </a>
 
         <div

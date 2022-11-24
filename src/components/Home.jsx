@@ -1,9 +1,8 @@
-import "../App.css";
 import { useEffect, useState } from "react";
 import Header from "./Header";
-import ResumeLeft from "./ResumeLeft";
-import ResumeRight from "./ResumeRight";
+import ResumeFull from "./ResumeFull";
 import { handleGenerateResume } from "../utils/generateResume";
+import "../App.css";
 
 export default function Home() {
   const [showMenu, setShowMenu] = useState(false);
@@ -46,13 +45,11 @@ export default function Home() {
 
       <main className="l-main bd-container">
         <div className="resume" id="area-cv">
-          <ResumeLeft
+          <ResumeFull
             darkTheme={darkTheme}
             handleDarkTheme={handleDarkTheme}
             generateResume={() => handleGenerateResume(areaCv)}
           />
-
-          <ResumeRight />
         </div>
       </main>
 
