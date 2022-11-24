@@ -39,7 +39,6 @@ export default function ResumeLeft(props) {
                 type={"file"}
                 onChange={(event) => {
                   setImage(URL.createObjectURL(event.target.files[0]));
-                  setImageClass("img-container");
                 }}
               />
               <img src={image} alt="profile" className="home__img" />
