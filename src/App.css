@@ -446,6 +446,15 @@ body.scale-cv {
 
 /*========== SKILLS AND LANGUAGES ==========*/
 
+.certificate {
+  margin-bottom: -10px;
+}
+
+.languages__container {
+  margin-bottom: -40px;
+  margin-top: -10px;
+}
+
 .languages__content,
 .skills__content {
   grid-template-columns: repeat(2, 1fr);
