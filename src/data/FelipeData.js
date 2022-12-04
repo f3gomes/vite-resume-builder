@@ -10,7 +10,7 @@ export const data = [
   {
     id: 1,
     key: "title",
-    value: "Desenvolvedor Front-End",
+    value: "Desenvolvedor Full Stack",
   },
 
   {
@@ -60,7 +60,8 @@ export const data = [
   {
     id: 9,
     key: "description",
-    value: "Desenvolvedor Full Stack em constante aprendizado. Eu gosto de resolver problemas e ajudar a melhorar a vida das pessoas de alguma forma! Atualmente meu maior passatempo é codar e aprender novas tecnologias de desenvolvimento. 😎",
+    value:
+      "Desenvolvedor Full Stack em constante aprendizado. Eu gosto de resolver problemas e ajudar a melhorar a vida das pessoas de alguma forma! Atualmente meu maior passatempo é codar e aprender novas tecnologias de desenvolvimento com destaque em NodeJs. 😎",
   },
 
   // EDUCATION
@@ -160,7 +161,7 @@ export const data = [
   {
     id: 25,
     key: "skills4",
-    value: "Git",
+    value: "Typescript",
   },
 
   {
@@ -192,7 +193,8 @@ export const data = [
   {
     id: 30,
     key: "jobDesc1",
-    value: "Desenvolver e melhorar sistema interno da empresa em React",
+    value:
+      "Garantir funcionamento do sistema interno da empresa feito em React com Javascript. Desenvolver novas features de acordo com as demandas e fazer integrações com APIs REST.",
   },
 
   {
@@ -210,7 +212,8 @@ export const data = [
   {
     id: 33,
     key: "jobDesc2",
-    value: "Desenvolvimento de sistema web com React e Ant Design",
+    value:
+      "Desenvolvimento de sistema web com React, Typescript, Styled Components e Ant Design. Integração com API própria feita com Java e Spring Framework.",
   },
 
   {
@@ -229,13 +232,13 @@ export const data = [
     id: 36,
     key: "jobDesc3",
     value:
-      "Analista de qualidade de software, executando testes funcionais e testes automatizados. Documentação de casos de testes, elaboração de requisitos e treinamento e capacitação de colaboradores",
+      "Analista de qualidade de software, executando testes funcionais e testes automatizados. Documentação de casos de testes, elaboração de requisitos e treinamento e capacitação de colaboradores.",
   },
 
   {
     id: 37,
     key: "jobTitle4",
-    value: "Analista de Suporte Técnico nv.2",
+    value: "Analista de Suporte Técnico",
   },
 
   {
@@ -254,19 +257,19 @@ export const data = [
   {
     id: 40,
     key: "jobTitle5",
-    value: "Analista de Suporte Técnico",
+    value: null,
   },
 
   {
     id: 41,
     key: "jobYearCompany5",
-    value: "2013-2014 | Grupo Jetro",
+    value: null,
   },
 
   {
     id: 42,
     key: "jobDesc5",
-    value: "Call center receptivo prestando suporte a sistema PDV para os clientes",
+    value: null,
   },
 
   // REFERENCES
