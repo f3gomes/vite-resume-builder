@@ -202,30 +202,16 @@ export default function ResumeLeft(props) {
         </section>
 
         {/* <section className="certificate section" id="certificates">
-          <h2 className="section-title">Certificates</h2>
+          <h2 className="section-title">Certificados</h2>
 
           <div className="certificate__container bd-grid">
-            <div className="certificate__content">
-              <h3 className="certificate__title">
-                Certified for compliance (2020)
-              </h3>
-              <p className="certificate__description">My first certificate.</p>
-            </div>
-
-            <div className="certificate__content">
-              <h3 className="certificate__title">
-                Certified for compliance (2020)
-              </h3>
-              <p className="certificate__description">My first certificate.</p>
-            </div>
-
-            <div className="certificate__content">
-              <h3 className="certificate__title">
-                Certified for compliance (2020)
-              </h3>
-              <p className="certificate__description">My first certificate.</p>
-            </div>
-          </div>
+            {resumeState[13].map((item) => (
+              <div className="certificate__content" key={item.id}>
+                <h3 className="certificate__title">{item.title}</h3>
+                <p className="certificate__description">{item.description}</p>
+              </div>
+            ))}
+          </div>n
         </section> */}
 
         <section className="references section" id="references">

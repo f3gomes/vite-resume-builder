@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import InputData from "../components/InputData";
 import "../styles/form.css";
@@ -46,6 +47,10 @@ export default function ResumeForm() {
       navigate("/");
     }, 1000);
   };
+
+  useEffect(() => {
+    console.log(resumeState);
+  }, []);
 
   return (
     <>

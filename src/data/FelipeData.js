@@ -76,7 +76,7 @@ export const data = [
     },
 
     {
-      id: 3,
+      id: 1,
       key: "Curso/Formação 2",
       title: "Análise e Desenvolvimento de Sistemas",
       studies: "UniFametro",
@@ -137,7 +137,7 @@ export const data = [
     },
 
     {
-      id: 0,
+      id: 1,
       key: "Experiência 2",
       title: "Desenvolvedor Front-End",
       yearCompany: "2021 - 2022 | Dell LEAD",
@@ -146,7 +146,7 @@ export const data = [
     },
 
     {
-      id: 0,
+      id: 2,
       key: "Experiência 3",
       title: "Analista de Teste de Software",
       yearCompany: "2018-2019 | Grupo Jetro",
@@ -155,7 +155,7 @@ export const data = [
     },
 
     {
-      id: 0,
+      id: 3,
       key: "Experiência 4",
       title: "Analista de Suporte Técnico",
       yearCompany: "2015-2018 | Grupo Jetro",
@@ -232,5 +232,23 @@ export const data = [
       value: "Academia",
       icon: "bx bx-dumbbell interests__icon",
     },
+  ],
+
+  // CERTIFICATES - [13]
+
+  [
+    // {
+    //   id: 0,
+    //   key: "Certificado 1",
+    //   title: "Certified for compliance (2020)",
+    //   description: "My first certificate.",
+    // },
+
+    // {
+    //   id: 1,
+    //   key: "Certificado 2",
+    //   title: "Certified for compliance (2020)",
+    //   description: "My first certificate.",
+    // },
   ],
 ];
