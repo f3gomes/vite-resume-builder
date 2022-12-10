@@ -177,113 +177,31 @@ export default function ResumeLeft(props) {
         </section>
       </div>
 
-      {/* <div className="resume__right">
+      <div className="resume__right">
         <section className="experience section" id="experience">
           <h2 className="section-title">Experiência</h2>
 
           <div className="experience__container bd-grid">
-            <div className="experience__content">
-              <div className="experience__time">
-                <span className="experience__rounder"></span>
-                <span className="experience__line"></span>
+            {resumeState[9].map((item) => (
+              <div className="experience__content" key={item.id}>
+                <div className="experience__time">
+                  <span className="experience__rounder"></span>
+                  <span className="experience__line"></span>
+                </div>
+
+                <div className="experience__data bd-grid">
+                  <h3 className="experience__title">{item.title}</h3>
+                  <span className="experience__company">
+                    {item.yearCompany}
+                  </span>
+                  <p className="experience__description">{item.description}</p>
+                </div>
               </div>
-
-              <div className="experience__data bd-grid">
-                <h3 className="experience__title">{resumeState[28].value}</h3>
-                <span className="experience__company">
-                  {resumeState[29].value}
-                </span>
-                <p className="experience__description">
-                  {resumeState[30].value}
-                </p>
-              </div>
-            </div>
-
-            <div className="experience__content">
-              <div className="experience__time">
-                <span className="experience__rounder"></span>
-                <span className="experience__line"></span>
-              </div>
-
-              <div className="experience__data bd-grid">
-                <h3 className="experience__title">{resumeState[31].value}</h3>
-                <span className="experience__company">
-                  {resumeState[32].value}
-                </span>
-                <p className="experience__description">
-                  {resumeState[33].value}
-                </p>
-              </div>
-            </div>
-
-            <div className="experience__content">
-              <div className="experience__time">
-                <span className="experience__rounder"></span>
-                <span className="experience__line"></span>
-              </div>
-
-              <div className="experience__data bd-grid">
-                <h3 className="experience__title">{resumeState[34].value}</h3>
-                <span className="experience__company">
-                  {resumeState[35].value}
-                </span>
-                <p className="experience__description">
-                  {resumeState[36].value}
-                </p>
-              </div>
-            </div>
-
-            <div className="experience__content">
-              <div className="experience__time">
-                <span className="experience__rounder"></span>
-                <span className="experience__line"></span>
-              </div>
-
-              <div className="experience__data bd-grid">
-                <h3 className="experience__title">{resumeState[37].value}</h3>
-                <span className="experience__company">
-                  {resumeState[38].value}
-                </span>
-                <p className="experience__description">
-                  {resumeState[39].value}
-                </p>
-              </div>
-            </div>
-
-            <div className="experience__content">
-              <div className="experience__time">
-                <span className="experience__rounder"></span>
-                <span className="experience__line"></span>
-              </div>
-
-              <div className="experience__data bd-grid">
-                <h3 className="experience__title">{resumeState[40].value}</h3>
-                <span className="experience__company">
-                  {resumeState[41].value}
-                </span>
-                <p className="experience__description">
-                  {resumeState[42].value}
-                </p>
-              </div>
-            </div>
-
-            <div className="experience__content">
-            <div className="experience__time">
-              <span className="experience__rounder"></span>
-              <span className="experience__line"></span>
-            </div>
-
-            <div className="experience__data bd-grid">
-              <h3 className="experience__title"></h3>
-              <span className="experience__company">
-              </span>
-              <p className="experience__description"></p>
-            </div>
-          </div>
+            ))}
           </div>
         </section>
 
-        <section className="certificate section" id="certificates">
+        {/* <section className="certificate section" id="certificates">
           <h2 className="section-title">Certificates</h2>
 
           <div className="certificate__container bd-grid">
@@ -380,8 +298,8 @@ export default function ResumeLeft(props) {
               <span className="interests__name">{resumeState[56].value}</span>
             </div>
           </div>
-        </section>
-      </div> */}
+        </section> */}
+      </div>
     </>
   );
 }

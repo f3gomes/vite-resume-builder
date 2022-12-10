@@ -129,96 +129,38 @@ export const data = [
   [
     {
       id: 0,
-      key: "jobTitle1",
-      value: "Desenvolvedor Front-End",
-    },
-
-    {
-      id: 1,
-      key: "jobYearCompany1",
-      value: "2022 - 2022 | Cerus Bank",
-    },
-
-    {
-      id: 2,
-      key: "jobDesc1",
-      value:
+      key: "Experiência 1",
+      title: "Desenvolvedor Front-End",
+      yearCompany: "2022 - 2022 | Cerus Bank",
+      description:
         "Garantir funcionamento do sistema interno da empresa feito em React com Javascript. Desenvolver novas features de acordo com as demandas e fazer integrações com APIs REST.",
     },
 
     {
-      id: 3,
-      key: "jobTitle2",
-      value: "Desenvolvedor Front-End",
-    },
-
-    {
-      id: 4,
-      key: "jobYearCompany2",
-      value: "2021 - 2022 | Dell LEAD",
-    },
-
-    {
-      id: 5,
-      key: "jobDesc2",
-      value:
+      id: 0,
+      key: "Experiência 2",
+      title: "Desenvolvedor Front-End",
+      yearCompany: "2021 - 2022 | Dell LEAD",
+      description:
         "Desenvolvimento de sistema web com React, Typescript, Styled Components e Ant Design. Integração com API própria feita com Java e Spring Framework.",
     },
 
     {
-      id: 6,
-      key: "jobTitle3",
-      value: "Analista de Teste de Software",
-    },
-
-    {
-      id: 7,
-      key: "jobYearCompany3",
-      value: "2018-2019 | Grupo Jetro",
-    },
-
-    {
-      id: 8,
-      key: "jobDesc3",
-      value:
+      id: 0,
+      key: "Experiência 3",
+      title: "Analista de Teste de Software",
+      yearCompany: "2018-2019 | Grupo Jetro",
+      description:
         "Analista de qualidade de software, executando testes funcionais e testes automatizados. Documentação de casos de testes, elaboração de requisitos e treinamento e capacitação de colaboradores.",
     },
 
     {
-      id: 9,
-      key: "jobTitle4",
-      value: "Analista de Suporte Técnico",
-    },
-
-    {
-      id: 10,
-      key: "jobYearCompany4",
-      value: "2015-2018 | Grupo Jetro",
-    },
-
-    {
-      id: 11,
-      key: "jobDesc4",
-      value:
+      id: 0,
+      key: "Experiência 4",
+      title: "Analista de Suporte Técnico",
+      yearCompany: "2015-2018 | Grupo Jetro",
+      description:
         "Prestar suporte na instalação, manutenção e atualização do software assim como sanar dúvidas em operações, procedimentos, processos, relatórios, consultas SQL e abertura de chamados.",
-    },
-
-    {
-      id: 12,
-      key: "jobTitle5",
-      value: null,
-    },
-
-    {
-      id: 13,
-      key: "jobYearCompany5",
-      value: null,
-    },
-
-    {
-      id: 14,
-      key: "jobDesc5",
-      value: null,
     },
   ],
 
