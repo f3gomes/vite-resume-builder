@@ -104,29 +104,16 @@ export default function ResumeLeft(props) {
           <h2 className="section-title">CONTATO</h2>
 
           <div className="social__container bd-grid">
-            <a
-              href={resumeState[5].value}
-              target="_blank"
-              className="social__link social__icon"
-            >
-              <i className="bx bxl-linkedin-square"></i>Linkedin
-            </a>
-
-            <a
-              href={resumeState[6].value}
-              target="_blank"
-              className="social__link social__icon"
-            >
-              <i className="bx bxl-github"></i>Github
-            </a>
-
-            <a
-              href={resumeState[7].value}
-              target="_blank"
-              className="social__link social__icon"
-            >
-              <i className="bx bxl-instagram"></i>Instagram
-            </a>
+            {resumeState[6].map((item) => (
+              <a
+                href={item.value}
+                target="_blank"
+                className="social__link social__icon"
+              >
+                <i className={item.icon}></i>
+                {item.key}
+              </a>
+            ))}
           </div>
         </section>
 

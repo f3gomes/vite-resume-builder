@@ -46,24 +46,21 @@ export const data = [
       id: 0,
       key: "linkedin",
       value: "https://www.linkedin.com/in/felipe-gomes-2b22597a/",
+      icon: "bx bxl-linkedin-square",
     },
 
     {
       id: 1,
       key: "github",
       value: "https://www.github.com/fomes",
+      icon: "bx bxl-github",
     },
 
     {
       id: 2,
       key: "instagram",
       value: "https://www.instagram.com/fgomesdeluna/",
-    },
-
-    {
-      id: 3,
-      key: "facebook",
-      value: null,
+      icon: "bx bxl-instagram",
     },
   ],
 
