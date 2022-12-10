@@ -3,38 +3,38 @@ export const data = [
 
   {
     id: 0,
-    key: "name",
+    key: "Nome",
     value: "Felipe Gomes",
   },
 
   {
     id: 1,
-    key: "title",
+    key: "Título",
     value: "Desenvolvedor Full Stack",
   },
 
   {
     id: 2,
-    key: "address",
+    key: "Endereço",
     value1: "Av. Presidente Castelo Branco, 2169 - Carlito Pamplona",
     value2: "Fortaleza, CE",
   },
 
   {
     id: 3,
-    key: "email",
+    key: "E-mail",
     value: "fgomesdeluna@gmail.com",
   },
 
   {
     id: 4,
-    key: "phone",
+    key: "Telefone",
     value: "(85) 99792-8144",
   },
 
   {
     id: 5,
-    key: "description",
+    key: "Sobre",
     value:
       "Desenvolvedor Full Stack em constante aprendizado. Eu gosto de resolver problemas e ajudar a melhorar a vida das pessoas de alguma forma! Atualmente meu maior passatempo é codar e aprender novas tecnologias de desenvolvimento com destaque em NodeJs. 😎",
   },
@@ -44,21 +44,21 @@ export const data = [
   [
     {
       id: 0,
-      key: "linkedin",
+      key: "Linkedin",
       value: "https://www.linkedin.com/in/felipe-gomes-2b22597a/",
       icon: "bx bxl-linkedin-square",
     },
 
     {
       id: 1,
-      key: "github",
+      key: "Github",
       value: "https://www.github.com/fomes",
       icon: "bx bxl-github",
     },
 
     {
       id: 2,
-      key: "instagram",
+      key: "Instagram",
       value: "https://www.instagram.com/fgomesdeluna/",
       icon: "bx bxl-instagram",
     },
@@ -69,6 +69,7 @@ export const data = [
   [
     {
       id: 0,
+      key: "Curso/Formação 1",
       title: "Desenvolvimento Full Stack",
       studies: "Trybe",
       year: "2021 - 2022",
@@ -76,6 +77,7 @@ export const data = [
 
     {
       id: 3,
+      key: "Curso/Formação 2",
       title: "Análise e Desenvolvimento de Sistemas",
       studies: "UniFametro",
       year: "2013 - 2014",
@@ -87,37 +89,37 @@ export const data = [
   [
     {
       id: 0,
-      key: "skills1",
+      key: "Habilidade 1",
       value: "HTML",
     },
 
     {
       id: 1,
-      key: "skills2",
+      key: "Habilidade 2",
       value: "CSS",
     },
 
     {
       id: 2,
-      key: "skills3",
+      key: "Habilidade 3",
       value: "JavaScript",
     },
 
     {
       id: 3,
-      key: "skills4",
+      key: "Habilidade 4",
       value: "Typescript",
     },
 
     {
       id: 4,
-      key: "skills5",
+      key: "Habilidade 5",
       value: "ReactJs",
     },
 
     {
       id: 5,
-      key: "skills6",
+      key: "Habilidade 6",
       value: "NodeJs",
     },
   ],

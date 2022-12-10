@@ -106,6 +106,7 @@ export default function ResumeLeft(props) {
           <div className="social__container bd-grid">
             {resumeState[6].map((item) => (
               <a
+                key={item.id}
                 href={item.value}
                 target="_blank"
                 className="social__link social__icon"
@@ -128,7 +129,7 @@ export default function ResumeLeft(props) {
 
           <div className="education__container bd-grid">
             {resumeState[7].map((item) => (
-              <div className="education__content">
+              <div className="education__content" key={item.id}>
                 <div className="education__time">
                   <span className="education__rounder"></span>
                   <span className="education__line"></span>
@@ -145,40 +146,37 @@ export default function ResumeLeft(props) {
           </div>
         </section>
 
-        {/* <section className="skills section" id="skills">
+        <section className="skills section" id="skills">
           <h2 className="section-title">HABILIDADES</h2>
 
           <div className="skills__content bd-grid">
             <ul className="skills__data">
-              <li className="skills__name">
-                <span className="skills_circle">{resumeState[22].value}</span>
-              </li>
-
-              <li className="skills__name">
-                <span className="skills_circle">{resumeState[23].value}</span>
-              </li>
-
-              <li className="skills__name">
-                <span className="skills_circle">{resumeState[24].value}</span>
-              </li>
+              {resumeState[8].map((item, index) => (
+                <span key={item.id}>
+                  {index < 3 && (
+                    <li className="skills__name">
+                      <span className="skills_circle">{item.value}</span>
+                    </li>
+                  )}
+                </span>
+              ))}
             </ul>
 
             <ul className="skills__data">
-              <li className="skills__name">
-                <span className="skills_circle">{resumeState[25].value}</span>
-              </li>
-
-              <li className="skills__name">
-                <span className="skills_circle">{resumeState[26].value}</span>
-              </li>
-
-              <li className="skills__name">
-                <span className="skills_circle">{resumeState[27].value}</span>
-              </li>
+              {resumeState[8].map((item, index) => (
+                <span key={item.id}>
+                  {index > 2 && (
+                    <li className="skills__name">
+                      <span className="skills_circle">{item.value}</span>
+                    </li>
+                  )}
+                </span>
+              ))}
             </ul>
           </div>
-        </section> */}
+        </section>
       </div>
+
       {/* <div className="resume__right">
         <section className="experience section" id="experience">
           <h2 className="section-title">Experiência</h2>
