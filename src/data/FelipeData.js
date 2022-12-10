@@ -1,5 +1,5 @@
 export const data = [
-  // MAIN
+  // MAIN - [0]
 
   {
     id: 0,
@@ -16,7 +16,8 @@ export const data = [
   {
     id: 2,
     key: "address",
-    value: "Av. Presidente Castelo Branco, 2169",
+    value1: "Av. Presidente Castelo Branco, 2169 - Carlito Pamplona",
+    value2: "Fortaleza, CE",
   },
 
   {
@@ -31,340 +32,354 @@ export const data = [
     value: "(85) 99792-8144",
   },
 
-  // SOCIALS & DESC
-
   {
     id: 5,
-    key: "linkedin",
-    value: "https://www.linkedin.com/in/felipe-gomes-2b22597a/",
-  },
-
-  {
-    id: 6,
-    key: "github",
-    value: "https://www.github.com/fomes",
-  },
-
-  {
-    id: 7,
-    key: "instagram",
-    value: "https://www.instagram.com/fgomesdeluna/",
-  },
-
-  {
-    id: 8,
-    key: "facebook",
-    value: null,
-  },
-
-  {
-    id: 9,
     key: "description",
     value:
       "Desenvolvedor Full Stack em constante aprendizado. Eu gosto de resolver problemas e ajudar a melhorar a vida das pessoas de alguma forma! Atualmente meu maior passatempo é codar e aprender novas tecnologias de desenvolvimento com destaque em NodeJs. 😎",
   },
 
-  // EDUCATION
+  // SOCIALS & DESC - [6]
 
-  {
-    id: 10,
-    key: "educationTitle1",
-    value: "Desenvolvimento Full Stack",
-  },
+  [
+    {
+      id: 0,
+      key: "linkedin",
+      value: "https://www.linkedin.com/in/felipe-gomes-2b22597a/",
+    },
 
-  {
-    id: 11,
-    key: "educationStudies1",
-    value: "Trybe",
-  },
+    {
+      id: 1,
+      key: "github",
+      value: "https://www.github.com/fomes",
+    },
 
-  {
-    id: 12,
-    key: "educationYear1",
-    value: "2021 - 2022",
-  },
+    {
+      id: 2,
+      key: "instagram",
+      value: "https://www.instagram.com/fgomesdeluna/",
+    },
 
-  {
-    id: 13,
-    key: "educationTitle2",
-    value: "Análise e Desenvolvimento de Sistemas",
-  },
+    {
+      id: 3,
+      key: "facebook",
+      value: null,
+    },
+  ],
 
-  {
-    id: 14,
-    key: "educationStudies2",
-    value: "UniFametro",
-  },
+  // EDUCATION - [7]
 
-  {
-    id: 15,
-    key: "educationYear2",
-    value: "2013 - 2014",
-  },
+  [
+    {
+      id: 0,
+      key: "educationTitle1",
+      value: "Desenvolvimento Full Stack",
+    },
 
-  {
-    id: 16,
-    key: "educationTitle3",
-    value: "Auxiliar contábil",
-  },
+    {
+      id: 1,
+      key: "educationStudies1",
+      value: "Trybe",
+    },
 
-  {
-    id: 17,
-    key: "educationStudies3",
-    value: null,
-  },
+    {
+      id: 2,
+      key: "educationYear1",
+      value: "2021 - 2022",
+    },
 
-  {
-    id: 18,
-    key: "educationYear3",
-    value: null,
-  },
+    {
+      id: 3,
+      key: "educationTitle2",
+      value: "Análise e Desenvolvimento de Sistemas",
+    },
 
-  {
-    id: 19,
-    key: "educationTitle4",
-    value: null,
-  },
+    {
+      id: 4,
+      key: "educationStudies2",
+      value: "UniFametro",
+    },
 
-  {
-    id: 20,
-    key: "educationStudies4",
-    value: null,
-  },
+    {
+      id: 5,
+      key: "educationYear2",
+      value: "2013 - 2014",
+    },
 
-  {
-    id: 21,
-    key: "educationYear4",
-    value: null,
-  },
+    {
+      id: 6,
+      key: "educationTitle3",
+      value: null,
+    },
 
-  // SKILLS
+    {
+      id: 7,
+      key: "educationStudies3",
+      value: null,
+    },
 
-  {
-    id: 22,
-    key: "skills1",
-    value: "HTML",
-  },
+    {
+      id: 8,
+      key: "educationYear3",
+      value: null,
+    },
 
-  {
-    id: 23,
-    key: "skills2",
-    value: "CSS",
-  },
+    {
+      id: 9,
+      key: "educationTitle4",
+      value: null,
+    },
 
-  {
-    id: 24,
-    key: "skills3",
-    value: "JavaScript",
-  },
+    {
+      id: 10,
+      key: "educationStudies4",
+      value: null,
+    },
 
-  {
-    id: 25,
-    key: "skills4",
-    value: "Typescript",
-  },
+    {
+      id: 11,
+      key: "educationYear4",
+      value: null,
+    },
+  ],
 
-  {
-    id: 26,
-    key: "skills5",
-    value: "ReactJs",
-  },
+  // SKILLS - [8]
 
-  {
-    id: 27,
-    key: "skills6",
-    value: "NodeJs",
-  },
+  [
+    {
+      id: 0,
+      key: "skills1",
+      value: "HTML",
+    },
 
-  // EXPERIENCE
+    {
+      id: 1,
+      key: "skills2",
+      value: "CSS",
+    },
 
-  {
-    id: 28,
-    key: "jobTitle1",
-    value: "Desenvolvedor Front-End",
-  },
+    {
+      id: 2,
+      key: "skills3",
+      value: "JavaScript",
+    },
 
-  {
-    id: 29,
-    key: "jobYearCompany1",
-    value: "2022 - 2022 | Cerus Bank",
-  },
+    {
+      id: 3,
+      key: "skills4",
+      value: "Typescript",
+    },
 
-  {
-    id: 30,
-    key: "jobDesc1",
-    value:
-      "Garantir funcionamento do sistema interno da empresa feito em React com Javascript. Desenvolver novas features de acordo com as demandas e fazer integrações com APIs REST.",
-  },
+    {
+      id: 4,
+      key: "skills5",
+      value: "ReactJs",
+    },
 
-  {
-    id: 31,
-    key: "jobTitle2",
-    value: "Desenvolvedor Front-End",
-  },
+    {
+      id: 5,
+      key: "skills6",
+      value: "NodeJs",
+    },
+  ],
 
-  {
-    id: 32,
-    key: "jobYearCompany2",
-    value: "2021 - 2022 | Dell LEAD",
-  },
+  // EXPERIENCE - [9]
 
-  {
-    id: 33,
-    key: "jobDesc2",
-    value:
-      "Desenvolvimento de sistema web com React, Typescript, Styled Components e Ant Design. Integração com API própria feita com Java e Spring Framework.",
-  },
+  [
+    {
+      id: 0,
+      key: "jobTitle1",
+      value: "Desenvolvedor Front-End",
+    },
 
-  {
-    id: 34,
-    key: "jobTitle3",
-    value: "Analista de Teste de Software",
-  },
+    {
+      id: 1,
+      key: "jobYearCompany1",
+      value: "2022 - 2022 | Cerus Bank",
+    },
 
-  {
-    id: 35,
-    key: "jobYearCompany3",
-    value: "2018-2019 | Grupo Jetro",
-  },
+    {
+      id: 2,
+      key: "jobDesc1",
+      value:
+        "Garantir funcionamento do sistema interno da empresa feito em React com Javascript. Desenvolver novas features de acordo com as demandas e fazer integrações com APIs REST.",
+    },
 
-  {
-    id: 36,
-    key: "jobDesc3",
-    value:
-      "Analista de qualidade de software, executando testes funcionais e testes automatizados. Documentação de casos de testes, elaboração de requisitos e treinamento e capacitação de colaboradores.",
-  },
+    {
+      id: 3,
+      key: "jobTitle2",
+      value: "Desenvolvedor Front-End",
+    },
 
-  {
-    id: 37,
-    key: "jobTitle4",
-    value: "Analista de Suporte Técnico",
-  },
+    {
+      id: 4,
+      key: "jobYearCompany2",
+      value: "2021 - 2022 | Dell LEAD",
+    },
 
-  {
-    id: 38,
-    key: "jobYearCompany4",
-    value: "2015-2018 | Grupo Jetro",
-  },
+    {
+      id: 5,
+      key: "jobDesc2",
+      value:
+        "Desenvolvimento de sistema web com React, Typescript, Styled Components e Ant Design. Integração com API própria feita com Java e Spring Framework.",
+    },
 
-  {
-    id: 39,
-    key: "jobDesc4",
-    value:
-      "Prestar suporte na instalação, manutenção e atualização do software assim como sanar dúvidas em operações, procedimentos, processos, relatórios, consultas SQL e abertura de chamados.",
-  },
+    {
+      id: 6,
+      key: "jobTitle3",
+      value: "Analista de Teste de Software",
+    },
 
-  {
-    id: 40,
-    key: "jobTitle5",
-    value: null,
-  },
+    {
+      id: 7,
+      key: "jobYearCompany3",
+      value: "2018-2019 | Grupo Jetro",
+    },
 
-  {
-    id: 41,
-    key: "jobYearCompany5",
-    value: null,
-  },
+    {
+      id: 8,
+      key: "jobDesc3",
+      value:
+        "Analista de qualidade de software, executando testes funcionais e testes automatizados. Documentação de casos de testes, elaboração de requisitos e treinamento e capacitação de colaboradores.",
+    },
 
-  {
-    id: 42,
-    key: "jobDesc5",
-    value: null,
-  },
+    {
+      id: 9,
+      key: "jobTitle4",
+      value: "Analista de Suporte Técnico",
+    },
 
-  // REFERENCES
+    {
+      id: 10,
+      key: "jobYearCompany4",
+      value: "2015-2018 | Grupo Jetro",
+    },
 
-  {
-    id: 43,
-    key: "refTitle1",
-    value: "Dev. Full Stack PL",
-  },
+    {
+      id: 11,
+      key: "jobDesc4",
+      value:
+        "Prestar suporte na instalação, manutenção e atualização do software assim como sanar dúvidas em operações, procedimentos, processos, relatórios, consultas SQL e abertura de chamados.",
+    },
 
-  {
-    id: 44,
-    key: "refName1",
-    value: "Matheus Lima",
-  },
+    {
+      id: 12,
+      key: "jobTitle5",
+      value: null,
+    },
 
-  {
-    id: 45,
-    key: "refPhone1",
-    value: "(92) 99528-1727",
-  },
+    {
+      id: 13,
+      key: "jobYearCompany5",
+      value: null,
+    },
 
-  {
-    id: 46,
-    key: "refEmail1",
-    value: "mldn.fis@uea.edu.br",
-  },
+    {
+      id: 14,
+      key: "jobDesc5",
+      value: null,
+    },
+  ],
 
-  {
-    id: 47,
-    key: "refTitle2",
-    value: "Dev. Full Stack PL",
-  },
+  // REFERENCES - [10]
 
-  {
-    id: 48,
-    key: "refName2",
-    value: "Felipe Nunes",
-  },
+  [
+    {
+      id: 0,
+      key: "refTitle1",
+      value: "Dev. Full Stack PL",
+    },
 
-  {
-    id: 49,
-    key: "refPhone2",
-    value: "(85) 99678-2029",
-  },
+    {
+      id: 1,
+      key: "refName1",
+      value: "Matheus Lima",
+    },
 
-  {
-    id: 50,
-    key: "refEmail2",
-    value: "felipe.f9@live.com",
-  },
+    {
+      id: 2,
+      key: "refPhone1",
+      value: "(92) 99528-1727",
+    },
 
-  // LANGUAGES
+    {
+      id: 3,
+      key: "refEmail1",
+      value: "mldn.fis@uea.edu.br",
+    },
 
-  {
-    id: 51,
-    key: "lang1",
-    value: "Português(Nativo)",
-  },
+    {
+      id: 4,
+      key: "refTitle2",
+      value: "Quality Analyst PL",
+    },
 
-  {
-    id: 52,
-    key: "lang2",
-    value: "Inglês(B2)",
-  },
+    {
+      id: 5,
+      key: "refName2",
+      value: "Felipe Nunes",
+    },
 
-  // HOBBYS
+    {
+      id: 6,
+      key: "refPhone2",
+      value: "(85) 99678-2029",
+    },
 
-  {
-    id: 53,
-    key: "hob1",
-    value: "Música",
-  },
+    {
+      id: 7,
+      key: "refEmail2",
+      value: "felipe.f9@live.com",
+    },
+  ],
 
-  {
-    id: 54,
-    key: "hob2",
-    value: "Games",
-  },
+  // LANGUAGES - [11]
 
-  {
-    id: 55,
-    key: "hob3",
-    value: "Programação",
-  },
+  [
+    {
+      id: 0,
+      key: "lang1",
+      value: "Português(Nativo)",
+    },
 
-  {
-    id: 56,
-    key: "hob4",
-    value: "Academia",
-  },
+    {
+      id: 1,
+      key: "lang2",
+      value: "Inglês(B2)",
+    },
+  ],
 
-  {
-    id: 57,
-    key: "hob5",
-    value: null,
-  },
+  // HOBBYS - [12]
+
+  [
+    {
+      id: 53,
+      key: "hob1",
+      value: "Música",
+    },
+
+    {
+      id: 54,
+      key: "hob2",
+      value: "Games",
+    },
+
+    {
+      id: 55,
+      key: "hob3",
+      value: "Programação",
+    },
+
+    {
+      id: 56,
+      key: "hob4",
+      value: "Academia",
+    },
+
+    {
+      id: 57,
+      key: "hob5",
+      value: null,
+    },
+  ],
 ];

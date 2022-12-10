@@ -65,7 +65,8 @@ export default function ResumeLeft(props) {
             <div className="home__address bd-grid">
               <span className="home__information">
                 <i className="bx bx-map home__icon"></i>
-                {resumeState[2].value}
+                {resumeState[2].value1} <br />
+                {resumeState[2].value2}
               </span>
 
               <span className="home__information">
@@ -132,10 +133,10 @@ export default function ResumeLeft(props) {
         <section className="profile section" id="profile">
           <h2 className="section-title">Sobre</h2>
 
-          <p className="profile__description">{resumeState[9].value}</p>
+          <p className="profile__description">{resumeState[5].value}</p>
         </section>
 
-        <section className="education section" id="education">
+        {/* <section className="education section" id="education">
           <h2 className="section-title">Educação</h2>
 
           <div className="education__container bd-grid">
@@ -170,10 +171,26 @@ export default function ResumeLeft(props) {
                 <span className="education__year">{resumeState[15].value}</span>
               </div>
             </div>
-          </div>
-        </section>
 
-        <section className="skills section" id="skills">
+            <div className="education__content">
+              <div className="education__time">
+                <span className="education__rounder"></span>
+                <span className="education__line"></span>
+              </div>
+
+              <div className="education__data bd-grid">
+                <h3 className="education__title">{resumeState[16].value}</h3>
+
+                <span className="education__studies">
+                  {resumeState[17].value}
+                </span>
+                <span className="education__year">{resumeState[18].value}</span>
+              </div>
+            </div>
+          </div>
+        </section> */}
+
+        {/* <section className="skills section" id="skills">
           <h2 className="section-title">HABILIDADES</h2>
 
           <div className="skills__content bd-grid">
@@ -205,9 +222,9 @@ export default function ResumeLeft(props) {
               </li>
             </ul>
           </div>
-        </section>
+        </section> */}
       </div>
-      <div className="resume__right">
+      {/* <div className="resume__right">
         <section className="experience section" id="experience">
           <h2 className="section-title">Experiência</h2>
 
@@ -297,7 +314,7 @@ export default function ResumeLeft(props) {
               </div>
             </div>
 
-            {/* <div className="experience__content">
+            <div className="experience__content">
             <div className="experience__time">
               <span className="experience__rounder"></span>
               <span className="experience__line"></span>
@@ -309,11 +326,11 @@ export default function ResumeLeft(props) {
               </span>
               <p className="experience__description"></p>
             </div>
-          </div> */}
+          </div>
           </div>
         </section>
 
-        {/* <section className="certificate section" id="certificates">
+        <section className="certificate section" id="certificates">
           <h2 className="section-title">Certificates</h2>
 
           <div className="certificate__container bd-grid">
@@ -338,7 +355,7 @@ export default function ResumeLeft(props) {
               <p className="certificate__description">My first certificate.</p>
             </div>
           </div>
-        </section> */}
+        </section>
 
         <section className="references section" id="references">
           <h2 className="section-title">Referências</h2>
@@ -346,23 +363,23 @@ export default function ResumeLeft(props) {
           <div className="reference__container bd-grid">
             <div className="references__content bd-grid">
               <span className="references__subtitle">
-                {resumeState[44].value}
+                {resumeState[43].value}
               </span>
-              <h3 className="references__title">{resumeState[45].value}</h3>
+              <h3 className="references__title">{resumeState[44].value}</h3>
               <ul className="references__contact">
-                <li>Phone: {resumeState[46].value}</li>
-                <li>Email: {resumeState[47].value}</li>
+                <li>Phone: {resumeState[45].value}</li>
+                <li>Email: {resumeState[46].value}</li>
               </ul>
             </div>
 
             <div className="references__content bd-grid">
               <span className="references__subtitle">
-                {resumeState[48].value}
+                {resumeState[47].value}
               </span>
-              <h3 className="references__title">{resumeState[49].value}</h3>
+              <h3 className="references__title">{resumeState[48].value}</h3>
               <ul className="references__contact">
-                <li>Phone: {resumeState[50].value}</li>
-                <li>Email: {resumeState[51].value}</li>
+                <li>Phone: {resumeState[49].value}</li>
+                <li>Email: {resumeState[50].value}</li>
               </ul>
             </div>
           </div>
@@ -411,7 +428,7 @@ export default function ResumeLeft(props) {
             </div>
           </div>
         </section>
-      </div>
+      </div> */}
     </>
   );
 }
