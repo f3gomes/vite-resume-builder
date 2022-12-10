@@ -59,7 +59,7 @@ export default function ResumeForm() {
               className="input-form"
               onClick={() => updateCV(inputState)}
             >
-              Update CV
+              SAVE
             </button>
 
             <button
@@ -67,7 +67,7 @@ export default function ResumeForm() {
               className="input-form"
               onClick={handleResetData}
             >
-              RESET DATA
+              RESET
             </button>
 
             <button

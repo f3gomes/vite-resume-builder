@@ -169,50 +169,20 @@ export const data = [
   [
     {
       id: 0,
-      key: "refTitle1",
-      value: "Dev. Full Stack PL",
+      key: "Referência 1",
+      title: "Dev. Full Stack PL",
+      name: "Matheus Lima",
+      phone: "(92) 99528-1727",
+      mail: "mldn.fis@uea.edu.br",
     },
 
     {
       id: 1,
-      key: "refName1",
-      value: "Matheus Lima",
-    },
-
-    {
-      id: 2,
-      key: "refPhone1",
-      value: "(92) 99528-1727",
-    },
-
-    {
-      id: 3,
-      key: "refEmail1",
-      value: "mldn.fis@uea.edu.br",
-    },
-
-    {
-      id: 4,
-      key: "refTitle2",
-      value: "Quality Analyst PL",
-    },
-
-    {
-      id: 5,
-      key: "refName2",
-      value: "Felipe Nunes",
-    },
-
-    {
-      id: 6,
-      key: "refPhone2",
-      value: "(85) 99678-2029",
-    },
-
-    {
-      id: 7,
-      key: "refEmail2",
-      value: "felipe.f9@live.com",
+      key: "Referência 2",
+      title: "Quality Analyst PL",
+      name: "Felipe Nunes",
+      phone: "(85) 99678-2029",
+      mail: "felipe.f9@live.com",
     },
   ],
 
@@ -221,13 +191,13 @@ export const data = [
   [
     {
       id: 0,
-      key: "lang1",
+      key: "Idioma 1",
       value: "Português(Nativo)",
     },
 
     {
       id: 1,
-      key: "lang2",
+      key: "Idioma 2",
       value: "Inglês(B2)",
     },
   ],
@@ -236,33 +206,31 @@ export const data = [
 
   [
     {
-      id: 53,
-      key: "hob1",
+      id: 0,
+      key: "Hobby 1",
       value: "Música",
+      icon: "bx bx-headphone interests__icon",
     },
 
     {
-      id: 54,
-      key: "hob2",
+      id: 1,
+      key: "Hobby 2",
       value: "Games",
+      icon: "bx bx-game interests__icon",
     },
 
     {
-      id: 55,
-      key: "hob3",
+      id: 2,
+      key: "Hobby 3",
       value: "Programação",
+      icon: "bx bx-desktop interests__icon",
     },
 
     {
-      id: 56,
-      key: "hob4",
+      id: 3,
+      key: "Hobby 4",
       value: "Academia",
-    },
-
-    {
-      id: 57,
-      key: "hob5",
-      value: null,
+      icon: "bx bx-dumbbell interests__icon",
     },
   ],
 ];

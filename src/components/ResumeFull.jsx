@@ -226,33 +226,22 @@ export default function ResumeLeft(props) {
               <p className="certificate__description">My first certificate.</p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="references section" id="references">
           <h2 className="section-title">Referências</h2>
 
           <div className="reference__container bd-grid">
-            <div className="references__content bd-grid">
-              <span className="references__subtitle">
-                {resumeState[43].value}
-              </span>
-              <h3 className="references__title">{resumeState[44].value}</h3>
-              <ul className="references__contact">
-                <li>Phone: {resumeState[45].value}</li>
-                <li>Email: {resumeState[46].value}</li>
-              </ul>
-            </div>
-
-            <div className="references__content bd-grid">
-              <span className="references__subtitle">
-                {resumeState[47].value}
-              </span>
-              <h3 className="references__title">{resumeState[48].value}</h3>
-              <ul className="references__contact">
-                <li>Phone: {resumeState[49].value}</li>
-                <li>Email: {resumeState[50].value}</li>
-              </ul>
-            </div>
+            {resumeState[10].map((item) => (
+              <div className="references__content bd-grid" key={item.id}>
+                <span className="references__subtitle">{item.title}</span>
+                <h3 className="references__title">{item.name}</h3>
+                <ul className="references__contact">
+                  <li>Phone: {item.phone}</li>
+                  <li>Email: {item.email}</li>
+                </ul>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -261,15 +250,11 @@ export default function ResumeLeft(props) {
 
           <div className="languages__container">
             <ul className="languages__content bd-grid">
-              <li className="languages__name">
-                <span className="languages__circle"></span>{" "}
-                {resumeState[51].value}
-              </li>
-
-              <li className="languages__name">
-                <span className="languages__circle"></span>{" "}
-                {resumeState[52].value}
-              </li>
+              {resumeState[11].map((item) => (
+                <li className="languages__name" key={item.id}>
+                  <span className="languages__circle"></span> {item.value}
+                </li>
+              ))}
             </ul>
           </div>
         </section>
@@ -278,27 +263,14 @@ export default function ResumeLeft(props) {
           <h2 className="section-title">Passatempos</h2>
 
           <div className="interests__container bd-grid">
-            <div className="interests__content">
-              <i className="bx bx-headphone interests__icon"></i>
-              <span className="interests__name">{resumeState[53].value}</span>
-            </div>
-
-            <div className="interests__content">
-              <i className="bx bx-game interests__icon"></i>
-              <span className="interests__name">{resumeState[54].value}</span>
-            </div>
-
-            <div className="interests__content">
-              <i className="bx bx-desktop interests__icon"></i>
-              <span className="interests__name">{resumeState[55].value}</span>
-            </div>
-
-            <div className="interests__content">
-              <i className="bx bx-dumbbell interests__icon"></i>
-              <span className="interests__name">{resumeState[56].value}</span>
-            </div>
+            {resumeState[12].map((item) => (
+              <div className="interests__content" key={item.id}>
+                <i className={item.icon}></i>
+                <span className="interests__name">{item.value}</span>
+              </div>
+            ))}
           </div>
-        </section> */}
+        </section>
       </div>
     </>
   );
