@@ -123,59 +123,27 @@ export default function ResumeLeft(props) {
           <p className="profile__description">{resumeState[5].value}</p>
         </section>
 
-        {/* <section className="education section" id="education">
+        <section className="education section" id="education">
           <h2 className="section-title">Educação</h2>
 
           <div className="education__container bd-grid">
-            <div className="education__content">
-              <div className="education__time">
-                <span className="education__rounder"></span>
-                <span className="education__line"></span>
+            {resumeState[7].map((item) => (
+              <div className="education__content">
+                <div className="education__time">
+                  <span className="education__rounder"></span>
+                  <span className="education__line"></span>
+                </div>
+
+                <div className="education__data bd-grid">
+                  <h3 className="education__title">{item.title}</h3>
+
+                  <span className="education__studies">{item.studies}</span>
+                  <span className="education__year">{item.year}</span>
+                </div>
               </div>
-
-              <div className="education__data bd-grid">
-                <h3 className="education__title">{resumeState[10].value}</h3>
-
-                <span className="education__studies">
-                  {resumeState[11].value}
-                </span>
-                <span className="education__year">{resumeState[12].value}</span>
-              </div>
-            </div>
-
-            <div className="education__content">
-              <div className="education__time">
-                <span className="education__rounder"></span>
-                <span className="education__line"></span>
-              </div>
-
-              <div className="education__data bd-grid">
-                <h3 className="education__title">{resumeState[13].value}</h3>
-
-                <span className="education__studies">
-                  {resumeState[14].value}
-                </span>
-                <span className="education__year">{resumeState[15].value}</span>
-              </div>
-            </div>
-
-            <div className="education__content">
-              <div className="education__time">
-                <span className="education__rounder"></span>
-                <span className="education__line"></span>
-              </div>
-
-              <div className="education__data bd-grid">
-                <h3 className="education__title">{resumeState[16].value}</h3>
-
-                <span className="education__studies">
-                  {resumeState[17].value}
-                </span>
-                <span className="education__year">{resumeState[18].value}</span>
-              </div>
-            </div>
+            ))}
           </div>
-        </section> */}
+        </section>
 
         {/* <section className="skills section" id="skills">
           <h2 className="section-title">HABILIDADES</h2>

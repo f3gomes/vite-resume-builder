@@ -69,74 +69,16 @@ export const data = [
   [
     {
       id: 0,
-      key: "educationTitle1",
-      value: "Desenvolvimento Full Stack",
-    },
-
-    {
-      id: 1,
-      key: "educationStudies1",
-      value: "Trybe",
-    },
-
-    {
-      id: 2,
-      key: "educationYear1",
-      value: "2021 - 2022",
+      title: "Desenvolvimento Full Stack",
+      studies: "Trybe",
+      year: "2021 - 2022",
     },
 
     {
       id: 3,
-      key: "educationTitle2",
-      value: "Análise e Desenvolvimento de Sistemas",
-    },
-
-    {
-      id: 4,
-      key: "educationStudies2",
-      value: "UniFametro",
-    },
-
-    {
-      id: 5,
-      key: "educationYear2",
-      value: "2013 - 2014",
-    },
-
-    {
-      id: 6,
-      key: "educationTitle3",
-      value: null,
-    },
-
-    {
-      id: 7,
-      key: "educationStudies3",
-      value: null,
-    },
-
-    {
-      id: 8,
-      key: "educationYear3",
-      value: null,
-    },
-
-    {
-      id: 9,
-      key: "educationTitle4",
-      value: null,
-    },
-
-    {
-      id: 10,
-      key: "educationStudies4",
-      value: null,
-    },
-
-    {
-      id: 11,
-      key: "educationYear4",
-      value: null,
+      title: "Análise e Desenvolvimento de Sistemas",
+      studies: "UniFametro",
+      year: "2013 - 2014",
     },
   ],
 
