@@ -9,6 +9,7 @@ export default function InputData(props) {
         placeholder={props.placeholder}
         className="input-form"
         onChange={props.onChange}
+        defaultValue={props.value}
       />
     </div>
   );

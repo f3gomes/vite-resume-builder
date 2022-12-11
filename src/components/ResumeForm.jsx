@@ -29,28 +29,34 @@ export default function ResumeForm() {
   const updateCV = (inputArr) => {
     setIsLoading(true);
 
-    const updateState = resumeState.map((item, index) => {
-      if (item.key === Object.keys(inputArr)[index]) {
+    const stateZero = resumeState[0].map((item, index) => {
+      if (resumeState[0].some((e) => e.key === Object.keys(inputArr)[index])) {
         return { ...item, value: inputArr[item.key] };
       } else {
         return item;
       }
     });
 
-    localStorage.removeItem("resumeStorage");
+    console.log(stateZero);
 
-    setTimeout(() => {
-      localStorage.setItem("resumeStorage", JSON.stringify(updateState));
-    }, 500);
+    // const updateState = resumeState.map((item, index) => {
+    //   if (index > 0) {
+    //     return item;
+    //   } else {
+    //     return stateZero;
+    //   }
+    // });
 
-    setTimeout(() => {
-      navigate("/");
-    }, 1000);
+    // localStorage.removeItem("resumeStorage");
+
+    // setTimeout(() => {
+    //   localStorage.setItem("resumeStorage", JSON.stringify(updateState));
+    // }, 500);
+
+    // setTimeout(() => {
+    //   navigate("/");
+    // }, 1000);
   };
-
-  useEffect(() => {
-    console.log(resumeState);
-  }, []);
 
   return (
     <>
@@ -84,11 +90,12 @@ export default function ResumeForm() {
             </button>
           </div>
           <div className="form-container">
-            {resumeState.map((item, index) => {
+            {resumeState[0].map((item, index) => {
               return (
                 <InputData
                   key={index}
                   placeholder={item.key}
+                  value={item.value}
                   onChange={(event) =>
                     setInputState((state) => ({
                       ...state,

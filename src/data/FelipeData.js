@@ -1,45 +1,52 @@
 export const data = [
   // MAIN - [0]
 
-  {
-    id: 0,
-    key: "Nome",
-    value: "Felipe Gomes",
-  },
+  [
+    {
+      id: 1,
+      key: "Nome",
+      value: "Felipe Gomes",
+    },
 
-  {
-    id: 1,
-    key: "Título",
-    value: "Desenvolvedor Full Stack",
-  },
+    {
+      id: 2,
+      key: "Título",
+      value: "Desenvolvedor Full Stack",
+    },
 
-  {
-    id: 2,
-    key: "Endereço",
-    value1: "Av. Presidente Castelo Branco, 2169 - Carlito Pamplona",
-    value2: "Fortaleza, CE",
-  },
+    {
+      id: 3,
+      key: "Endereço",
+      value: "Av. Presidente Castelo Branco, 2169 - Carlito Pamplona",
+    },
 
-  {
-    id: 3,
-    key: "E-mail",
-    value: "fgomesdeluna@gmail.com",
-  },
+    {
+      id: 4,
+      key: "Cidade",
+      value: "Fortaleza, CE",
+    },
 
-  {
-    id: 4,
-    key: "Telefone",
-    value: "(85) 99792-8144",
-  },
+    {
+      id: 5,
+      key: "E-mail",
+      value: "fgomesdeluna@gmail.com",
+    },
 
-  {
-    id: 5,
-    key: "Sobre",
-    value:
-      "Desenvolvedor Full Stack em constante aprendizado. Eu gosto de resolver problemas e ajudar a melhorar a vida das pessoas de alguma forma! Atualmente meu maior passatempo é codar e aprender novas tecnologias de desenvolvimento com destaque em NodeJs. 😎",
-  },
+    {
+      id: 6,
+      key: "Telefone",
+      value: "(85) 99792-8144",
+    },
 
-  // SOCIALS & DESC - [6]
+    {
+      id: 7,
+      key: "Sobre",
+      value:
+        "Desenvolvedor Full Stack em constante aprendizado. Eu gosto de resolver problemas e ajudar a melhorar a vida das pessoas de alguma forma! Atualmente meu maior passatempo é codar e aprender novas tecnologias de desenvolvimento com destaque em NodeJs. 😎",
+    },
+  ],
+
+  // SOCIALS & DESC - [1]
 
   [
     {
@@ -64,7 +71,7 @@ export const data = [
     },
   ],
 
-  // EDUCATION - [7]
+  // EDUCATION - [2]
 
   [
     {
@@ -84,7 +91,7 @@ export const data = [
     },
   ],
 
-  // SKILLS - [8]
+  // SKILLS - [3]
 
   [
     {
@@ -124,7 +131,7 @@ export const data = [
     },
   ],
 
-  // EXPERIENCE - [9]
+  // EXPERIENCE - [4]
 
   [
     {
@@ -164,7 +171,7 @@ export const data = [
     },
   ],
 
-  // REFERENCES - [10]
+  // REFERENCES - [5]
 
   [
     {
@@ -186,7 +193,7 @@ export const data = [
     },
   ],
 
-  // LANGUAGES - [11]
+  // LANGUAGES - [6]
 
   [
     {
@@ -202,7 +209,7 @@ export const data = [
     },
   ],
 
-  // HOBBYS - [12]
+  // HOBBYS - [7]
 
   [
     {
@@ -234,21 +241,20 @@ export const data = [
     },
   ],
 
-  // CERTIFICATES - [13]
+  // CERTIFICATES - [8]
 
-  [
-    // {
-    //   id: 0,
-    //   key: "Certificado 1",
-    //   title: "Certified for compliance (2020)",
-    //   description: "My first certificate.",
-    // },
-
-    // {
-    //   id: 1,
-    //   key: "Certificado 2",
-    //   title: "Certified for compliance (2020)",
-    //   description: "My first certificate.",
-    // },
-  ],
+  // [
+  //   {
+  //     id: 0,
+  //     key: "Certificado 1",
+  //     title: "Certified for compliance (2020)",
+  //     description: "My first certificate.",
+  //   },
+  //   {
+  //     id: 1,
+  //     key: "Certificado 2",
+  //     title: "Certified for compliance (2020)",
+  //     description: "My first certificate.",
+  //   },
+  // ],
 ];

@@ -42,8 +42,8 @@ export default function ResumeLeft(props) {
                 }}
               />
               <img src={image} alt="profile" className="home__img" />
-              <h1 className="home__title">{resumeState[0].value}</h1>
-              <h3 className="home__profession">{resumeState[1].value}</h3>
+              <h1 className="home__title">{resumeState[0][0].value}</h1>
+              <h3 className="home__profession">{resumeState[0][1].value}</h3>
 
               <div>
                 {/* <a download="" href={cv} className="home__button-movil">
@@ -65,18 +65,18 @@ export default function ResumeLeft(props) {
             <div className="home__address bd-grid">
               <span className="home__information">
                 <i className="bx bx-map home__icon"></i>
-                {resumeState[2].value1} <br />
-                {resumeState[2].value2}
+                {resumeState[0][2].value} <br />
+                {resumeState[0][3].value}
               </span>
 
               <span className="home__information">
                 <i className="bx bx-envelope home__icon"></i>
-                {resumeState[3].value}
+                {resumeState[0][4].value}
               </span>
 
               <span className="home__information">
                 <i className="bx bx-phone home__icon"></i>
-                {resumeState[4].value}
+                {resumeState[0][5].value}
               </span>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function ResumeLeft(props) {
           <h2 className="section-title">CONTATO</h2>
 
           <div className="social__container bd-grid">
-            {resumeState[6].map((item) => (
+            {resumeState[1].map((item) => (
               <a
                 key={item.id}
                 href={item.value}
@@ -121,14 +121,14 @@ export default function ResumeLeft(props) {
         <section className="profile section" id="profile">
           <h2 className="section-title">Sobre</h2>
 
-          <p className="profile__description">{resumeState[5].value}</p>
+          <p className="profile__description">{resumeState[0][6].value}</p>
         </section>
 
         <section className="education section" id="education">
           <h2 className="section-title">Educação</h2>
 
           <div className="education__container bd-grid">
-            {resumeState[7].map((item) => (
+            {resumeState[2].map((item) => (
               <div className="education__content" key={item.id}>
                 <div className="education__time">
                   <span className="education__rounder"></span>
@@ -151,7 +151,7 @@ export default function ResumeLeft(props) {
 
           <div className="skills__content bd-grid">
             <ul className="skills__data">
-              {resumeState[8].map((item, index) => (
+              {resumeState[3].map((item, index) => (
                 <span key={item.id}>
                   {index < 3 && (
                     <li className="skills__name">
@@ -163,7 +163,7 @@ export default function ResumeLeft(props) {
             </ul>
 
             <ul className="skills__data">
-              {resumeState[8].map((item, index) => (
+              {resumeState[3].map((item, index) => (
                 <span key={item.id}>
                   {index > 2 && (
                     <li className="skills__name">
@@ -182,7 +182,7 @@ export default function ResumeLeft(props) {
           <h2 className="section-title">Experiência</h2>
 
           <div className="experience__container bd-grid">
-            {resumeState[9].map((item) => (
+            {resumeState[4].map((item) => (
               <div className="experience__content" key={item.id}>
                 <div className="experience__time">
                   <span className="experience__rounder"></span>
@@ -205,7 +205,7 @@ export default function ResumeLeft(props) {
           <h2 className="section-title">Certificados</h2>
 
           <div className="certificate__container bd-grid">
-            {resumeState[13].map((item) => (
+            {resumeState[8].map((item) => (
               <div className="certificate__content" key={item.id}>
                 <h3 className="certificate__title">{item.title}</h3>
                 <p className="certificate__description">{item.description}</p>
@@ -218,7 +218,7 @@ export default function ResumeLeft(props) {
           <h2 className="section-title">Referências</h2>
 
           <div className="reference__container bd-grid">
-            {resumeState[10].map((item) => (
+            {resumeState[5].map((item) => (
               <div className="references__content bd-grid" key={item.id}>
                 <span className="references__subtitle">{item.title}</span>
                 <h3 className="references__title">{item.name}</h3>
@@ -236,7 +236,7 @@ export default function ResumeLeft(props) {
 
           <div className="languages__container">
             <ul className="languages__content bd-grid">
-              {resumeState[11].map((item) => (
+              {resumeState[6].map((item) => (
                 <li className="languages__name" key={item.id}>
                   <span className="languages__circle"></span> {item.value}
                 </li>
@@ -249,7 +249,7 @@ export default function ResumeLeft(props) {
           <h2 className="section-title">Passatempos</h2>
 
           <div className="interests__container bd-grid">
-            {resumeState[12].map((item) => (
+            {resumeState[7].map((item) => (
               <div className="interests__content" key={item.id}>
                 <i className={item.icon}></i>
                 <span className="interests__name">{item.value}</span>
