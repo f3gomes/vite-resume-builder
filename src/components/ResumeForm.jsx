@@ -58,11 +58,6 @@ export default function ResumeForm() {
         <div className="loader" />
       ) : (
         <div>
-          <BtnContainer
-            update={() => updateCV(inputState, 0)}
-            reset={handleResetData}
-            cancel={() => navigate("/")}
-          />
           <div className="form-container">
             {resumeState[0].map((item, index) => {
               return (
@@ -80,8 +75,12 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer
+            update={() => updateCV(inputState, 0)}
+            reset={handleResetData}
+            cancel={() => navigate("/")}
+          />
 
-          <BtnContainer update={() => updateCV(inputState, 1)} />
           <div className="form-container">
             {resumeState[1].map((item, index) => {
               return (
@@ -99,8 +98,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 1)} />
 
-          <BtnContainer update={() => updateCV(inputState, 2, "title")} />
           <div className="form-container">
             {resumeState[2].map((item, index) => {
               return (
@@ -118,8 +117,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 2, "title")} />
 
-          <BtnContainer update={() => updateCV(inputState, 2, "studies")} />
           <div className="form-container">
             {resumeState[2].map((item, index) => {
               return (
@@ -137,8 +136,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 2, "studies")} />
 
-          <BtnContainer update={() => updateCV(inputState, 2, "year")} />
           <div className="form-container">
             {resumeState[2].map((item, index) => {
               return (
@@ -156,8 +155,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 2, "year")} />
 
-          <BtnContainer update={() => updateCV(inputState, 3)} />
           <div className="form-container">
             {resumeState[3].map((item, index) => {
               return (
@@ -175,8 +174,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 3)} />
 
-          <BtnContainer update={() => updateCV(inputState, 4, "title")} />
           <div className="form-container">
             {resumeState[4].map((item, index) => {
               return (
@@ -194,8 +193,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 4, "title")} />
 
-          <BtnContainer update={() => updateCV(inputState, 4, "yearCompany")} />
           <div className="form-container">
             {resumeState[4].map((item, index) => {
               return (
@@ -213,8 +212,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 4, "yearCompany")} />
 
-          <BtnContainer update={() => updateCV(inputState, 4, "description")} />
           <div className="form-container">
             {resumeState[4].map((item, index) => {
               return (
@@ -232,8 +231,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 4, "description")} />
 
-          <BtnContainer update={() => updateCV(inputState, 5, "title")} />
           <div className="form-container">
             {resumeState[5].map((item, index) => {
               return (
@@ -251,8 +250,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 5, "title")} />
 
-          <BtnContainer update={() => updateCV(inputState, 5, "name")} />
           <div className="form-container">
             {resumeState[5].map((item, index) => {
               return (
@@ -270,8 +269,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 5, "name")} />
 
-          <BtnContainer update={() => updateCV(inputState, 5, "phone")} />
           <div className="form-container">
             {resumeState[5].map((item, index) => {
               return (
@@ -289,8 +288,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 5, "phone")} />
 
-          <BtnContainer update={() => updateCV(inputState, 5, "mail")} />
           <div className="form-container">
             {resumeState[5].map((item, index) => {
               return (
@@ -308,8 +307,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 5, "mail")} />
 
-          <BtnContainer update={() => updateCV(inputState, 6)} />
           <div className="form-container">
             {resumeState[6].map((item, index) => {
               return (
@@ -327,8 +326,8 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 6)} />
 
-          <BtnContainer update={() => updateCV(inputState, 7)} />
           <div className="form-container">
             {resumeState[7].map((item, index) => {
               return (
@@ -346,6 +345,7 @@ export default function ResumeForm() {
               );
             })}
           </div>
+          <BtnContainer update={() => updateCV(inputState, 7)} />
         </div>
       )}
     </>
