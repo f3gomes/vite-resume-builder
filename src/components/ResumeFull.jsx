@@ -224,7 +224,7 @@ export default function ResumeLeft(props) {
                 <h3 className="references__title">{item.name}</h3>
                 <ul className="references__contact">
                   <li>Phone: {item.phone}</li>
-                  <li>Email: {item.email}</li>
+                  <li>Email: {item.mail}</li>
                 </ul>
               </div>
             ))}

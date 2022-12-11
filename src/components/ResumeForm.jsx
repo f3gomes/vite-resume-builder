@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import InputData from "../components/InputData";
 import "../styles/form.css";
+import BtnContainer from "./BtnContainer";
 
 export default function ResumeForm() {
   const [resumeState] = useState(
@@ -25,19 +26,19 @@ export default function ResumeForm() {
     }
   };
 
-  const updateCV = (inputArr, arrIndex) => {
+  const updateCV = (inputArr, arrIndex, field) => {
     setIsLoading(true);
 
     const updateArr = resumeState[arrIndex].map((item) => {
       if (Object.keys(inputArr).includes(item.key)) {
-        item.value = inputArr[item.key];
+        item[field || "value"] = inputArr[item.key];
       }
 
       return item;
     });
 
     const updateState = resumeState.map((item, index) => {
-      return index > 0 ? item : updateArr;
+      return index !== arrIndex ? item : updateArr;
     });
 
     localStorage.removeItem("resumeStorage");
@@ -57,33 +58,279 @@ export default function ResumeForm() {
         <div className="loader" />
       ) : (
         <div>
-          <div className={"btn-container"}>
-            <button
-              type="button"
-              className="input-form"
-              onClick={() => updateCV(inputState, 0)}
-            >
-              SAVE
-            </button>
-
-            <button
-              type="button"
-              className="input-form"
-              onClick={handleResetData}
-            >
-              RESET
-            </button>
-
-            <button
-              type="button"
-              className="input-form"
-              onClick={() => navigate("/")}
-            >
-              CANCEL
-            </button>
-          </div>
+          <BtnContainer
+            update={() => updateCV(inputState, 0)}
+            reset={handleResetData}
+            cancel={() => navigate("/")}
+          />
           <div className="form-container">
             {resumeState[0].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.value}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 1)} />
+          <div className="form-container">
+            {resumeState[1].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.value}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 2, "title")} />
+          <div className="form-container">
+            {resumeState[2].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.title}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 2, "studies")} />
+          <div className="form-container">
+            {resumeState[2].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.studies}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 2, "year")} />
+          <div className="form-container">
+            {resumeState[2].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.year}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 3)} />
+          <div className="form-container">
+            {resumeState[3].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.value}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 4, "title")} />
+          <div className="form-container">
+            {resumeState[4].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.title}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 4, "yearCompany")} />
+          <div className="form-container">
+            {resumeState[4].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.yearCompany}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 4, "description")} />
+          <div className="form-container">
+            {resumeState[4].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.description}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 5, "title")} />
+          <div className="form-container">
+            {resumeState[5].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.title}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 5, "name")} />
+          <div className="form-container">
+            {resumeState[5].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.name}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 5, "phone")} />
+          <div className="form-container">
+            {resumeState[5].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.phone}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 5, "mail")} />
+          <div className="form-container">
+            {resumeState[5].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.mail}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 6)} />
+          <div className="form-container">
+            {resumeState[6].map((item, index) => {
+              return (
+                <InputData
+                  key={index}
+                  placeholder={item.key}
+                  value={item.value}
+                  onChange={(event) =>
+                    setInputState((state) => ({
+                      ...state,
+                      [item.key]: event.target.value,
+                    }))
+                  }
+                />
+              );
+            })}
+          </div>
+
+          <BtnContainer update={() => updateCV(inputState, 7)} />
+          <div className="form-container">
+            {resumeState[7].map((item, index) => {
               return (
                 <InputData
                   key={index}
