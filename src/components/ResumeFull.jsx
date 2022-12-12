@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import profile from "/assets/profile.jpeg";
-import { data } from "../data/FelipeData.js";
+import { data } from "../data/sData.js";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
