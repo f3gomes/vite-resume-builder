@@ -17,13 +17,13 @@ export const data = [
     {
       id: 3,
       key: "Endereço",
-      value: "",
+      value: "Rua Combatentes de Cacia, Setor 7, Lote 19",
     },
 
     {
       id: 4,
       key: "Cidade",
-      value: "Aveiro, PT",
+      value: "Cacia - Aveiro",
     },
 
     {
@@ -35,7 +35,7 @@ export const data = [
     {
       id: 6,
       key: "Telefone",
-      value: "(85) 98135-8523",
+      value: "+351 911 884 721",
     },
 
     {
@@ -57,17 +57,17 @@ export const data = [
     },
 
     {
-      id: 1,
-      key: "Github",
-      value: null,
-      icon: null,
-    },
-
-    {
       id: 2,
       key: "Instagram",
       value: "https://www.instagram.com/eldagomesdeluna1/",
       icon: "bx bxl-instagram",
+    },
+
+    {
+      id: 1,
+      key: null,
+      value: null,
+      icon: null,
     },
   ],
 
@@ -112,37 +112,37 @@ export const data = [
   [
     {
       id: 0,
-      key: "skills1",
+      key: "Habilidade 1",
       value: "Proativa",
     },
 
     {
       id: 1,
-      key: "skills2",
+      key: "Habilidade 2",
       value: "Boa comunicação",
     },
 
     {
       id: 2,
-      key: "skills3",
-      value: "Sede por aprendizado",
+      key: "Habilidade 3",
+      value: "Busca por aprendizado",
     },
 
     {
       id: 3,
-      key: "skills4",
+      key: "Habilidade 4",
       value: null,
     },
 
     {
       id: 4,
-      key: "skills5",
+      key: "Habilidade 5",
       value: null,
     },
 
     {
       id: 5,
-      key: "skills6",
+      key: "Habilidade 6",
       value: null,
     },
   ],
@@ -181,19 +181,19 @@ export const data = [
     {
       id: 0,
       key: "Referência 1",
-      title: "Dono de Loja",
-      name: "Francimar Rodrigues",
-      phone: "(85) 98200-4254",
-      mail: "francimar.rodrigues@gmail.com",
+      title: "Assistente de Ação Direta",
+      name: "Elza Carneiro",
+      phone: "+351 935 083 285",
+      mail: "elzacarneirocosta@gmail.com",
     },
 
     {
       id: 1,
       key: "Referência 2",
-      title: "Dono de Restaurante",
-      name: "Ednaldo Sales",
-      phone: "(85) 98548-8501",
-      mail: "ednaldosales@gmail.com",
+      title: "Auxiliar de Produção",
+      name: "Valdinéia Lacerda",
+      phone: "+351 912 864 926",
+      mail: "neia@gmail.com",
     },
   ],
 
@@ -218,28 +218,28 @@ export const data = [
   [
     {
       id: 0,
-      key: "hob1",
+      key: "Hobby 1",
       value: "Música",
       icon: "bx bx-headphone interests__icon",
     },
 
     {
       id: 1,
-      key: "hob2",
-      value: "Games",
+      key: "Hobby 2",
+      value: "Cantar",
       icon: "bx bx-game interests__icon",
     },
 
     {
       id: 2,
-      key: "hob3",
+      key: "Hobby 3",
       value: "Séries",
       icon: "bx bx-desktop interests__icon",
     },
 
     {
       id: 3,
-      key: "hob4",
+      key: "Hobby 4",
       value: "Esportes",
       icon: "bx bx-dumbbell interests__icon",
     },

@@ -120,37 +120,37 @@ export const data = [
   [
     {
       id: 0,
-      key: "skills1",
+      key: "Habilidade 1",
       value: "Proativa",
     },
 
     {
       id: 1,
-      key: "skills2",
+      key: "Habilidade 2",
       value: "Boa comunicação",
     },
 
     {
       id: 2,
-      key: "skills3",
+      key: "Habilidade 3",
       value: "Sede por aprendizado",
     },
 
     {
       id: 3,
-      key: "skills4",
+      key: "Habilidade 4",
       value: null,
     },
 
     {
       id: 4,
-      key: "skills5",
+      key: "Habilidade 5",
       value: null,
     },
 
     {
       id: 5,
-      key: "skills6",
+      key: "Habilidade 6",
       value: null,
     },
   ],
@@ -228,28 +228,28 @@ export const data = [
   [
     {
       id: 0,
-      key: "hob1",
+      key: "Hobby 1",
       value: "Música",
       icon: "bx bx-headphone interests__icon",
     },
 
     {
       id: 1,
-      key: "hob2",
+      key: "Hobby 2",
       value: "Games",
       icon: "bx bx-game interests__icon",
     },
 
     {
       id: 2,
-      key: "hob3",
+      key: "Hobby 3",
       value: "Séries",
       icon: "bx bx-desktop interests__icon",
     },
 
     {
       id: 3,
-      key: "hob4",
+      key: "Hobby 4",
       value: "Esportes",
       icon: "bx bx-dumbbell interests__icon",
     },
