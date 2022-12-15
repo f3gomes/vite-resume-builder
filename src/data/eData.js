@@ -42,7 +42,7 @@ export const data = [
       id: 7,
       key: "Sobre",
       value:
-        "Sou uma pessoa proativa e dedicada que ha está procura de um emprego no qual eu possa demonstrar minhas habilidades e aprender com novas experiencias.",
+        "Sou uma pessoa proativa e dedicada que está procura de um emprego no qual eu possa demonstrar minhas habilidades e aprender com novas experiencias.",
     },
   ],
 

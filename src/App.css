@@ -457,8 +457,8 @@ body.scale-cv {
 
 .languages__content,
 .skills__content {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
+  grid-template-columns: repeat(3, 1fr);
+  /* gap: 0; */
 }
 
 .languages__name,

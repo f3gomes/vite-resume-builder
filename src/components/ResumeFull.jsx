@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import profile from "/assets/profile.jpeg";
-import { data } from "../data/eData.js";
+import { data } from "../data/FelipeData.js";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -165,7 +165,19 @@ export default function ResumeLeft(props) {
             <ul className="skills__data">
               {resumeState[3].map((item, index) => (
                 <span key={item.id}>
-                  {index > 2 && (
+                  {index > 2 && index < 6 && (
+                    <li className="skills__name">
+                      <span className="skills_circle">{item.value}</span>
+                    </li>
+                  )}
+                </span>
+              ))}
+            </ul>
+
+            <ul className="skills__data">
+              {resumeState[3].map((item, index) => (
+                <span key={item.id}>
+                  {index > 5 && index < 9 && (
                     <li className="skills__name">
                       <span className="skills_circle">{item.value}</span>
                     </li>

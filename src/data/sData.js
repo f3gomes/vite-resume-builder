@@ -42,7 +42,7 @@ export const data = [
       id: 7,
       key: "Sobre",
       value:
-        "Sou uma pessoa proativa e dedicada que ha está procura de um emprego no qual eu possa demonstrar minhas habilidades e aprender com novas experiencias.",
+        "Sou uma pessoa proativa e dedicada que está procura de um emprego no qual eu possa demonstrar minhas habilidades e aprender com novas experiencias.",
     },
   ],
 
@@ -58,16 +58,16 @@ export const data = [
 
     {
       id: 1,
-      key: "Github",
-      value: null,
-      icon: null,
+      key: "Instagram",
+      value: "https://www.instagram.com/samirarodrigues492/",
+      icon: "bx bxl-instagram",
     },
 
     {
       id: 2,
-      key: "Instagram",
-      value: "https://www.instagram.com/samirarodrigues492/",
-      icon: "bx bxl-instagram",
+      key: null,
+      value: null,
+      icon: null,
     },
   ],
 
@@ -101,14 +101,6 @@ export const data = [
     {
       id: 3,
       key: "Curso/Formação 4",
-      title: "Auxiliar contábil",
-      studies: "Microline",
-      year: "2017",
-    },
-
-    {
-      id: 3,
-      key: "Curso/Formação 4",
       title: "Auxiliar de Farmácia",
       studies: "Microline",
       year: "2018",
@@ -133,7 +125,7 @@ export const data = [
     {
       id: 2,
       key: "Habilidade 3",
-      value: "Sede por aprendizado",
+      value: "Busca por aprendizado",
     },
 
     {
@@ -162,7 +154,7 @@ export const data = [
       id: 0,
       key: "Experiência 1",
       title: "Atendente",
-      yearCompany: "2017 | Mercearia Santa Maria",
+      yearCompany: "2016 | Mercearia Santa Maria",
       description: "Antender clientes na recepção.",
     },
 

@@ -77,14 +77,30 @@ export const data = [
     {
       id: 0,
       key: "Curso/Formação 1",
+      title: "Análise e Desenvolvimento de Sistemas",
+      studies: "Descomplica",
+      year: "2023 - 2025",
+    },
+
+    {
+      id: 1,
+      key: "Curso/Formação 2",
+      title: "Desenvolvimento de Software - Ignite",
+      studies: "RocketSeat",
+      year: "2022 - 2023",
+    },
+
+    {
+      id: 2,
+      key: "Curso/Formação 3",
       title: "Desenvolvimento Full Stack",
       studies: "Trybe",
       year: "2021 - 2022",
     },
 
     {
-      id: 1,
-      key: "Curso/Formação 2",
+      id: 3,
+      key: "Curso/Formação 4",
       title: "Análise e Desenvolvimento de Sistemas",
       studies: "UniFametro",
       year: "2013 - 2014",
@@ -128,6 +144,24 @@ export const data = [
       id: 5,
       key: "Habilidade 6",
       value: "NodeJs",
+    },
+
+    {
+      id: 6,
+      key: "Habilidade 4",
+      value: "NextJs",
+    },
+
+    {
+      id: 7,
+      key: "Habilidade 5",
+      value: "Git",
+    },
+
+    {
+      id: 8,
+      key: "Habilidade 6",
+      value: "Scrum",
     },
   ],
 
