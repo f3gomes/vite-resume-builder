@@ -202,14 +202,8 @@ export const data = [
   [
     {
       id: 0,
-      key: "lang1",
+      key: "Idioma 1",
       value: "Português(Nativo)",
-    },
-
-    {
-      id: 1,
-      key: "lang2",
-      value: "Espanhol Intermediário(CCI)",
     },
   ],
 
