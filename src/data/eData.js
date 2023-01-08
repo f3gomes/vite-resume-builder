@@ -50,13 +50,6 @@ export const data = [
 
   [
     {
-      id: 0,
-      key: "Linkedin",
-      value: "https://www.linkedin.com/in/elda-gomes-de-luna-8b518619b/",
-      icon: "bx bxl-linkedin-square",
-    },
-
-    {
       id: 2,
       key: "Instagram",
       value: "https://www.instagram.com/eldagomesdeluna1/",
@@ -85,7 +78,7 @@ export const data = [
     {
       id: 1,
       key: "Curso/Formação 2",
-      title: "Técnico em Contabilidade",
+      title: "Informática - Windows, Patote Office, Internet",
       studies: "Microlins",
       year: "2017",
     },
@@ -153,24 +146,24 @@ export const data = [
     {
       id: 0,
       key: "Experiência 1",
-      title: "Técnica em Enfermagem",
-      yearCompany: "Clínica AP Digestivo",
+      title: "Técnica em Enfermagem - 9 anos",
+      yearCompany: "Clínica AP Digestivo - Brasil",
       description: "Contas médicas e apoio clínico.",
     },
 
     {
       id: 1,
       key: "Experiência 2",
-      title: "Técnica em Enfermagem",
-      yearCompany: "Hospital Geral Waldemar Alcântara",
+      title: "Técnica em Enfermagem - 5 anos",
+      yearCompany: "Hospital Geral Waldemar Alcântara - Brasil",
       description: "Alta, internação e recepção.",
     },
 
     {
       id: 2,
       key: "Experiência 1",
-      title: "Assistente de Ação Direta",
-      yearCompany: "Fundação Cesda",
+      title: "Assistente de Ação Direta - 1 ano",
+      yearCompany: "Fundação Cesda - Portugal",
       description: "",
     },
   ],
