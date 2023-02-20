@@ -78,7 +78,7 @@ export const data = [
       id: 0,
       key: "Curso/Formação 1",
       title: "Análise e Desenvolvimento de Sistemas",
-      studies: "Descomplica",
+      studies: "Uninter",
       year: "2023 - 2025",
     },
 
@@ -172,14 +172,22 @@ export const data = [
       id: 0,
       key: "Experiência 1",
       title: "Desenvolvedor Front-End",
+      yearCompany: "2023 | Loop3 Software",
+      description:
+        "Desenvolver website com NextJS, Styled Components e outras tecnologias e integrar com API feita em NodeJS.",
+    },
+    {
+      id: 1,
+      key: "Experiência 2",
+      title: "Desenvolvedor Front-End",
       yearCompany: "2022 - 2022 | Cerus Bank",
       description:
         "Garantir funcionamento do sistema interno da empresa feito em React com Javascript. Desenvolver novas features de acordo com as demandas e fazer integrações com APIs REST.",
     },
 
     {
-      id: 1,
-      key: "Experiência 2",
+      id: 2,
+      key: "Experiência 3",
       title: "Desenvolvedor Front-End",
       yearCompany: "2021 - 2022 | Dell LEAD",
       description:
@@ -187,8 +195,8 @@ export const data = [
     },
 
     {
-      id: 2,
-      key: "Experiência 3",
+      id: 3,
+      key: "Experiência 4",
       title: "Analista de Teste de Software",
       yearCompany: "2018-2019 | Grupo Jetro",
       description:
@@ -196,8 +204,8 @@ export const data = [
     },
 
     {
-      id: 3,
-      key: "Experiência 4",
+      id: 4,
+      key: "Experiência 5",
       title: "Analista de Suporte Técnico",
       yearCompany: "2015-2018 | Grupo Jetro",
       description:
