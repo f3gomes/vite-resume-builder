@@ -45,21 +45,21 @@ export const info = [
 
 export const socials = [
   {
-    id: 0,
+    id: 1,
     key: "Linkedin",
     value: "https://www.linkedin.com/in/felipe-gomes-2b22597a/",
     icon: "bx bxl-linkedin-square",
   },
 
   {
-    id: 1,
+    id: 2,
     key: "Github",
     value: "https://www.github.com/fomes",
     icon: "bx bxl-github",
   },
 
   {
-    id: 2,
+    id: 3,
     key: "Instagram",
     value: "https://www.instagram.com/fgomesdeluna/",
     icon: "bx bxl-instagram",
@@ -68,7 +68,7 @@ export const socials = [
 
 export const education = [
   {
-    id: 0,
+    id: 1,
     key: "Curso/Formação 1",
     title: "Análise e Desenvolvimento de Sistemas",
     studies: "Uninter",
@@ -76,7 +76,7 @@ export const education = [
   },
 
   {
-    id: 1,
+    id: 2,
     key: "Curso/Formação 2",
     title: "Desenvolvimento de Software - Ignite",
     studies: "RocketSeat",
@@ -84,7 +84,7 @@ export const education = [
   },
 
   {
-    id: 2,
+    id: 3,
     key: "Curso/Formação 3",
     title: "Desenvolvimento Full Stack",
     studies: "Trybe",
@@ -92,7 +92,7 @@ export const education = [
   },
 
   {
-    id: 3,
+    id: 4,
     key: "Curso/Formação 4",
     title: "Análise e Desenvolvimento de Sistemas",
     studies: "UniFametro",
@@ -102,55 +102,55 @@ export const education = [
 
 export const skills = [
   {
-    id: 0,
+    id: 1,
     key: "Habilidade 1",
     value: "HTML",
   },
 
   {
-    id: 1,
+    id: 2,
     key: "Habilidade 2",
     value: "CSS",
   },
 
   {
-    id: 2,
+    id: 3,
     key: "Habilidade 3",
     value: "JavaScript",
   },
 
   {
-    id: 3,
+    id: 4,
     key: "Habilidade 4",
     value: "Typescript",
   },
 
   {
-    id: 4,
+    id: 5,
     key: "Habilidade 5",
     value: "ReactJs",
   },
 
   {
-    id: 5,
+    id: 6,
     key: "Habilidade 6",
     value: "NodeJs",
   },
 
   {
-    id: 6,
+    id: 7,
     key: "Habilidade 4",
     value: "NextJs",
   },
 
   {
-    id: 7,
+    id: 8,
     key: "Habilidade 5",
     value: "Git",
   },
 
   {
-    id: 8,
+    id: 9,
     key: "Habilidade 6",
     value: "Scrum",
   },
@@ -158,7 +158,7 @@ export const skills = [
 
 export const experience = [
   {
-    id: 0,
+    id: 1,
     key: "Experiência 1",
     title: "Desenvolvedor Front-End",
     yearCompany: "2023 | Loop3 Software",
@@ -166,7 +166,7 @@ export const experience = [
       "Desenvolver website com NextJS, Styled Components e outras tecnologias e integrar com API feita em NodeJS.",
   },
   {
-    id: 1,
+    id: 2,
     key: "Experiência 2",
     title: "Desenvolvedor Front-End",
     yearCompany: "2022 - 2022 | Cerus Bank",
@@ -175,7 +175,7 @@ export const experience = [
   },
 
   {
-    id: 2,
+    id: 3,
     key: "Experiência 3",
     title: "Desenvolvedor Front-End",
     yearCompany: "2021 - 2022 | Dell LEAD",
@@ -184,7 +184,7 @@ export const experience = [
   },
 
   {
-    id: 3,
+    id: 4,
     key: "Experiência 4",
     title: "Analista de Teste de Software",
     yearCompany: "2018-2019 | Grupo Jetro",
@@ -193,7 +193,7 @@ export const experience = [
   },
 
   {
-    id: 4,
+    id: 5,
     key: "Experiência 5",
     title: "Analista de Suporte Técnico",
     yearCompany: "2015-2018 | Grupo Jetro",
@@ -204,7 +204,7 @@ export const experience = [
 
 export const references = [
   {
-    id: 0,
+    id: 1,
     key: "Referência 1",
     title: "Dev. Full Stack PL",
     name: "Matheus Lima",
@@ -213,7 +213,7 @@ export const references = [
   },
 
   {
-    id: 1,
+    id: 2,
     key: "Referência 2",
     title: "Quality Analyst PL",
     name: "Felipe Nunes",
@@ -224,13 +224,13 @@ export const references = [
 
 export const languages = [
   {
-    id: 0,
+    id: 1,
     key: "Idioma 1",
     value: "Português(Nativo)",
   },
 
   {
-    id: 1,
+    id: 2,
     key: "Idioma 2",
     value: "Inglês(B2)",
   },
@@ -238,28 +238,28 @@ export const languages = [
 
 export const hobbys = [
   {
-    id: 0,
+    id: 1,
     key: "Hobby 1",
     value: "Música",
     icon: "bx bx-headphone interests__icon",
   },
 
   {
-    id: 1,
+    id: 2,
     key: "Hobby 2",
     value: "Games",
     icon: "bx bx-game interests__icon",
   },
 
   {
-    id: 2,
+    id: 3,
     key: "Hobby 3",
     value: "Programação",
     icon: "bx bx-desktop interests__icon",
   },
 
   {
-    id: 3,
+    id: 4,
     key: "Hobby 4",
     value: "Academia",
     icon: "bx bx-dumbbell interests__icon",
@@ -268,13 +268,13 @@ export const hobbys = [
 
 export const certificates = [
   {
-    id: 0,
+    id: 1,
     key: "Certificado 1",
     title: "Certified for compliance (2020)",
     description: "My first certificate.",
   },
   {
-    id: 1,
+    id: 2,
     key: "Certificado 2",
     title: "Certified for compliance (2020)",
     description: "My first certificate.",

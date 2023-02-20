@@ -41,27 +41,20 @@ export const info = [
     value:
       "Sou uma pessoa proativa e dedicada que está procura de um emprego no qual eu possa demonstrar minhas habilidades e aprender com novas experiencias.",
   },
-],
+];
 
 export const socials = [
   {
-    id: 2,
+    id: 1,
     key: "Instagram",
     value: "https://www.instagram.com/eldagomesdeluna1/",
     icon: "bx bxl-instagram",
-  },
-
-  {
-    id: 1,
-    key: null,
-    value: null,
-    icon: null,
   },
 ];
 
 export const education = [
   {
-    id: 0,
+    id: 1,
     key: "Curso/Formação 1",
     title: "Técnica em Enfermagem",
     studies: "MBL Saúde",
@@ -69,7 +62,7 @@ export const education = [
   },
 
   {
-    id: 1,
+    id: 2,
     key: "Curso/Formação 2",
     title: "Informática - Windows, Patote Office, Internet",
     studies: "Microlins",
@@ -77,7 +70,7 @@ export const education = [
   },
 
   {
-    id: 2,
+    id: 3,
     key: "Curso/Formação 2",
     title: "Ensino Médio",
     studies: "Técnico em Contabilidade",
@@ -85,7 +78,7 @@ export const education = [
   },
 
   {
-    id: 2,
+    id: 4,
     key: "Curso/Formação 2",
     title: "Curso de Atendentes de Médicos",
     studies: "Universidade Federal do Ceará",
@@ -95,37 +88,37 @@ export const education = [
 
 export const skills = [
   {
-    id: 0,
+    id: 1,
     key: "Habilidade 1",
     value: "Proativa",
   },
 
   {
-    id: 1,
+    id: 2,
     key: "Habilidade 2",
     value: "Boa comunicação",
   },
 
   {
-    id: 2,
+    id: 3,
     key: "Habilidade 3",
     value: "Busca por aprendizado",
   },
 
   {
-    id: 3,
+    id: 4,
     key: "Habilidade 4",
     value: null,
   },
 
   {
-    id: 4,
+    id: 5,
     key: "Habilidade 5",
     value: null,
   },
 
   {
-    id: 5,
+    id: 6,
     key: "Habilidade 6",
     value: null,
   },
@@ -133,7 +126,7 @@ export const skills = [
 
 export const experience = [
   {
-    id: 0,
+    id: 1,
     key: "Experiência 1",
     title: "Técnica em Enfermagem - 9 anos",
     yearCompany: "Clínica AP Digestivo - Brasil",
@@ -141,7 +134,7 @@ export const experience = [
   },
 
   {
-    id: 1,
+    id: 2,
     key: "Experiência 2",
     title: "Técnica em Enfermagem - 5 anos",
     yearCompany: "Hospital Geral Waldemar Alcântara - Brasil",
@@ -149,7 +142,7 @@ export const experience = [
   },
 
   {
-    id: 2,
+    id: 3,
     key: "Experiência 1",
     title: "Assistente de Ação Direta - 1 ano",
     yearCompany: "Fundação Cesda - Portugal",
@@ -159,7 +152,7 @@ export const experience = [
 
 export const references = [
   {
-    id: 0,
+    id: 1,
     key: "Referência 1",
     title: "Assistente de Ação Direta",
     name: "Elza Carneiro",
@@ -168,7 +161,7 @@ export const references = [
   },
 
   {
-    id: 1,
+    id: 2,
     key: "Referência 2",
     title: "Auxiliar de Produção",
     name: "Valdinéia Lacerda",
@@ -179,7 +172,7 @@ export const references = [
 
 export const languages = [
   {
-    id: 0,
+    id: 1,
     key: "Idioma 1",
     value: "Português(Nativo)",
   },
@@ -187,28 +180,28 @@ export const languages = [
 
 export const hobbys = [
   {
-    id: 0,
+    id: 1,
     key: "Hobby 1",
     value: "Música",
     icon: "bx bx-headphone interests__icon",
   },
 
   {
-    id: 1,
+    id: 2,
     key: "Hobby 2",
     value: "Cantar",
     icon: "bx bx-game interests__icon",
   },
 
   {
-    id: 2,
+    id: 3,
     key: "Hobby 3",
     value: "Séries",
     icon: "bx bx-desktop interests__icon",
   },
 
   {
-    id: 3,
+    id: 4,
     key: "Hobby 4",
     value: "Esportes",
     icon: "bx bx-dumbbell interests__icon",
