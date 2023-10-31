@@ -14,7 +14,7 @@ export const info = [
   {
     id: 3,
     key: "Endereço",
-    value: "Avenida Duque de Caixias, 637 - Centro",
+    value: "Rua Vicente Siebra, 2246 - Violete",
   },
 
   {

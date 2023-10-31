@@ -8,7 +8,7 @@ export const info = [
   {
     id: 2,
     key: "Título",
-    value: "Desenvolvedor Full Stack",
+    value: "Analista de Teste/QA",
   },
 
   {
@@ -39,7 +39,7 @@ export const info = [
     id: 7,
     key: "Sobre",
     value:
-      "Desenvolvedor Full Stack em constante aprendizado. Eu gosto de resolver problemas e ajudar a melhorar a vida das pessoas de alguma forma! Atualmente meu maior passatempo é codar e aprender novas tecnologias de desenvolvimento com destaque em NodeJs. 😎",
+      "Atuei durante algum tempo como desenvolvedor e no momento estou voltando para a área de tetes de software procurando estudar as tecnologias mais adequadaes e agregando o conhecimento que obtive.",
   },
 ];
 
@@ -69,14 +69,6 @@ export const socials = [
 export const education = [
   {
     id: 1,
-    key: "Curso/Formação 1",
-    title: "Análise e Desenvolvimento de Sistemas",
-    studies: "Uninter",
-    year: "2023 - 2025",
-  },
-
-  {
-    id: 2,
     key: "Curso/Formação 2",
     title: "Desenvolvimento de Software - Ignite",
     studies: "RocketSeat",
@@ -84,7 +76,7 @@ export const education = [
   },
 
   {
-    id: 3,
+    id: 2,
     key: "Curso/Formação 3",
     title: "Desenvolvimento Full Stack",
     studies: "Trybe",
@@ -92,7 +84,7 @@ export const education = [
   },
 
   {
-    id: 4,
+    id: 3,
     key: "Curso/Formação 4",
     title: "Análise e Desenvolvimento de Sistemas",
     studies: "UniFametro",
@@ -140,7 +132,7 @@ export const skills = [
   {
     id: 7,
     key: "Habilidade 4",
-    value: "NextJs",
+    value: "Postman",
   },
 
   {
@@ -186,7 +178,7 @@ export const experience = [
   {
     id: 4,
     key: "Experiência 4",
-    title: "Analista de Teste de Software",
+    title: "Analista de Teste/QA",
     yearCompany: "2018-2019 | Grupo Jetro",
     description:
       "Analista de qualidade de software, executando testes funcionais e testes automatizados. Documentação de casos de testes, elaboração de requisitos e treinamento e capacitação de colaboradores.",

@@ -9,7 +9,7 @@ import {
   references,
   languages,
   hobbys,
-} from "../data/FelipeData.js";
+} from "../data/FelipeData";
 import { useState } from "react";
 
 export default function ResumeLeft(props) {

@@ -402,6 +402,7 @@ body.scale-cv {
 .experience__time,
 .education__time {
   padding-right: 1rem;
+  margin-top: -0.2rem;
 }
 
 .experience__rounder,
@@ -419,7 +420,7 @@ body.scale-cv {
 .education__line {
   display: block;
   width: 2px;
-  height: 110%;
+  height: 106%;
   background-color: var(--text-color-light);
   transform: translate(7px, 0);
 }
