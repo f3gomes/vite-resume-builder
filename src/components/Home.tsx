@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import ResumeFull from "./ResumeFull";
-import { handleGenerateResume } from "../utils/generateResume";
+import { handleGenerateResume } from "../utils/generateResume.js";
 import "../App.css";
 
 export default function Home() {

@@ -1,4 +1,3 @@
-import React from "react";
 import profile from "/assets/profile.jpeg";
 import {
   info,
@@ -12,8 +11,12 @@ import {
 } from "../data/FelipeData";
 import { useState } from "react";
 
-export default function ResumeLeft(props) {
+export default function ResumeLeft(props: any) {
   const [image, setImage] = useState(profile);
+
+  const handleSetImage = (event: any) => {
+    setImage(URL.createObjectURL(event.target.files[0]));
+  };
 
   return (
     <>
@@ -24,9 +27,7 @@ export default function ResumeLeft(props) {
               <input
                 className="input-file"
                 type={"file"}
-                onChange={(event) => {
-                  setImage(URL.createObjectURL(event.target.files[0]));
-                }}
+                onChange={handleSetImage}
               />
               <img src={image} alt="profile" className="home__img" />
               <h1 className="home__title">{info[0].value}</h1>
@@ -183,19 +184,6 @@ export default function ResumeLeft(props) {
             ))}
           </div>
         </section>
-
-        {/* <section className="certificate section" id="certificates">
-          <h2 className="section-title">Certificados</h2>
-
-          <div className="certificate__container bd-grid">
-            {resume[8].map((item) => (
-              <div className="certificate__content" key={item.id}>
-                <h3 className="certificate__title">{item.title}</h3>
-                <p className="certificate__description">{item.description}</p>
-              </div>
-            ))}
-          </div>n
-        </section> */}
 
         <section className="references section" id="references">
           <h2 className="section-title">Referências</h2>

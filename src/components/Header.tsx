@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function Header(props) {
+export default function Header(props: any) {
   return (
     <header className="l-header" id="header">
       <nav className="nav bd-container">
@@ -51,11 +49,7 @@ export default function Header(props) {
           </ul>
         </div>
 
-        <div
-          className="nav__toggle"
-          id="nav-toggle"
-          onClick={props.onClick}
-        >
+        <div className="nav__toggle" id="nav-toggle" onClick={props.onClick}>
           <i className="bx bx-grid-alt"></i>
         </div>
       </nav>
