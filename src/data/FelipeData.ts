@@ -39,7 +39,7 @@ export const info = [
     id: 7,
     key: "Sobre",
     value:
-      "Atuei durante algum tempo como desenvolvedor e no momento estou voltando para a área de tetes de software procurando estudar as tecnologias mais adequadaes e agregando o conhecimento que obtive.",
+      "Trabalho com tecnologia há mais de 8 anos e há 3 anos atuo como desenvolvedor. Experiência com Javascript, Typescript, NodeJs, ReactJs e NextJs baseado nas últimas 3 experiências que tive. Tenho experiência também com projetos pessoais e projetos do curso de formação Full Stack na Trybe. Tenho boa capacidade de aprendizado e bom desempenho no trabalho em equipe. Sempre disposto a aprender e aprimorar meus conhecimentos.",
   },
 ];
 
@@ -155,7 +155,7 @@ export const experience = [
     title: "Desenvolvedor Front-End",
     yearCompany: "2023 | Loop3 Software",
     description:
-      "Desenvolver website com NextJS, Styled Components e outras tecnologias e integrar com API feita em NodeJS.",
+      "Desenvolver sistemas web com Next.js, Typescript, Styled-Components e outras tecnologias e manter a integração com API Rest feita em Node.js. O projeto em que trabalhei foi um site de um cliente que consistia em uma landing page com resultados e filtros de uma API de imóveis, algo semelhante ao site do Airbnb.",
   },
   {
     id: 2,
@@ -163,7 +163,7 @@ export const experience = [
     title: "Desenvolvedor Front-End",
     yearCompany: "2022 - 2022 | Cerus Bank",
     description:
-      "Garantir funcionamento do sistema interno da empresa feito em React com Javascript. Desenvolver novas features de acordo com as demandas e fazer integrações com APIs REST.",
+      "Garantir funcionamento do sistema interno da empresa feito em React. O sistema era um dashboard pra acompanhar dados dos funcionários. Nesse projeto eu estava responsável por desenvolver novas features de acordo com as demandas e fazer integrações com APIs REST.",
   },
 
   {
@@ -172,7 +172,7 @@ export const experience = [
     title: "Desenvolvedor Front-End",
     yearCompany: "2021 - 2022 | Dell LEAD",
     description:
-      "Desenvolvimento de sistema web com React, Typescript, Styled Components e Ant Design. Integração com API própria feita com Java e Spring Framework.",
+      "Desenvolvimento de sistema web com React, Typescript, Styled Components e Ant Design. Participei da criação de um sistema de gerenciamento de pesquisas e formulários para os serviços da Dell Technologies. Fui responsável pela criação e estruturação dos principais componentes como tela de login, dashboard e outros. Integração com API própria feita com Java e Spring Framework.",
   },
 
   {

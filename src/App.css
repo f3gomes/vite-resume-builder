@@ -374,6 +374,7 @@ body.scale-cv {
 
 .social__link {
   display: inline-flex;
+  gap: 0.4rem;
   align-items: center;
   font-size: var(--small-font-size);
   color: var(--text-color);
