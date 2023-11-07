@@ -428,7 +428,7 @@ body.scale-cv {
 }
 
 .scale-cv .education__line {
-  margin-left: -0.2rem
+  margin-left: -1.9px;
 }
 
 .experience__data,
