@@ -1,6 +1,6 @@
+import { Resume } from "./Resume.js";
+import { Header } from "./Header.js";
 import { useEffect, useState } from "react";
-import Header from "./Header";
-import ResumeFull from "./ResumeFull";
 import { handleGenerateResume } from "../utils/generateResume.js";
 import "../App.css";
 
@@ -45,7 +45,7 @@ export default function Home() {
 
       <main className="l-main bd-container">
         <div className="resume" id="area-cv">
-          <ResumeFull
+          <Resume
             darkTheme={darkTheme}
             handleDarkTheme={handleDarkTheme}
             generateResume={() => handleGenerateResume(areaCv)}

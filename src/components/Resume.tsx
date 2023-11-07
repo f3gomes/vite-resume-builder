@@ -2,7 +2,6 @@ import profile from "/assets/profile.jpeg";
 import {
   info,
   socials,
-  education,
   skills,
   experience,
   references,
@@ -10,8 +9,9 @@ import {
   hobbys,
 } from "../data/FelipeData";
 import { useState } from "react";
+import { EducationSection } from "./EducationSection";
 
-export default function ResumeLeft(props: any) {
+export function Resume(props: any) {
   const [image, setImage] = useState(profile);
 
   const handleSetImage = (event: any) => {
@@ -37,8 +37,7 @@ export default function ResumeLeft(props: any) {
             <div className="home__address bd-grid">
               <span className="home__information">
                 <i className="bx bx-map home__icon"></i>
-                {info[2].value} <br />
-                {info[3].value}
+                {info[2].value}
               </span>
 
               <span className="home__information">
@@ -96,27 +95,7 @@ export default function ResumeLeft(props: any) {
           <p className="profile__description">{info[6].value}</p>
         </section>
 
-        <section className="education section" id="education">
-          <h2 className="section-title">Educação</h2>
-
-          <div className="education__container bd-grid">
-            {education.map((item) => (
-              <div className="education__content" key={item.id}>
-                <div className="education__time">
-                  <span className="education__rounder"></span>
-                  <span className="education__line"></span>
-                </div>
-
-                <div className="education__data bd-grid">
-                  <h3 className="education__title">{item.title}</h3>
-
-                  <span className="education__studies">{item.studies}</span>
-                  <span className="education__year">{item.year}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <EducationSection />
 
         <section className="skills section" id="skills">
           <h2 className="section-title">HABILIDADES</h2>

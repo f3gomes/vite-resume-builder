@@ -1,4 +1,4 @@
-export default function Header(props: any) {
+export function Header(props: any) {
   return (
     <header className="l-header" id="header">
       <nav className="nav bd-container">

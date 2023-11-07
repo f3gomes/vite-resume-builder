@@ -141,7 +141,6 @@ body.scale-cv {
 }
 
 .scale-cv .home__img {
-  /* width: 90px; */
   height: 90px;
 }
 
@@ -201,8 +200,6 @@ body.scale-cv {
 .scale-cv .interests__container {
   column-gap: 2.5rem;
 }
-
-/*========== CLASS CSS ==========*/
 
 /*========== LAYOUT ==========*/
 
@@ -317,7 +314,6 @@ body.scale-cv {
 }
 
 .home__img {
-  /* width: 120px; */
   height: 120px;
   border-radius: 50%;
   justify-self: center;
@@ -459,7 +455,6 @@ body.scale-cv {
 .languages__content,
 .skills__content {
   grid-template-columns: repeat(3, 1fr);
-  /* gap: 0; */
 }
 
 .languages__name,
@@ -508,8 +503,6 @@ body.scale-cv {
 /*========== INTERESTS ==========*/
 
 .interests__container {
-  /* grid-template-columns: repeat(3, 1rf); */
-  /* margin-top: var(--mb-2); */
   display: flex;
   gap: 3rem;
 }

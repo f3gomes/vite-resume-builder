@@ -8,13 +8,13 @@ export const info = [
   {
     id: 2,
     key: "Título",
-    value: "Analista de Teste/QA",
+    value: "Desenvolvedor Full Stack",
   },
 
   {
     id: 3,
     key: "Endereço",
-    value: "Av. Presidente Castelo Branco, 2169 - Carlito Pamplona",
+    value: "Carlito Pamplona - Fortaleza, CE",
   },
 
   {
@@ -70,7 +70,7 @@ export const education = [
   {
     id: 1,
     key: "Curso/Formação 2",
-    title: "Desenvolvimento de Software - Ignite",
+    title: "Desenvolvimento de Software",
     studies: "RocketSeat",
     year: "2022 - 2023",
   },
@@ -86,7 +86,7 @@ export const education = [
   {
     id: 3,
     key: "Curso/Formação 4",
-    title: "Análise e Desenvolvimento de Sistemas",
+    title: "Análise de Sistemas",
     studies: "UniFametro",
     year: "2013 - 2014",
   },
