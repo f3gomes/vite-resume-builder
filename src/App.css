@@ -427,6 +427,10 @@ body.scale-cv {
   transform: translate(7px, 0);
 }
 
+.scale-cv .education__line {
+  margin-left: -0.2rem
+}
+
 .experience__data,
 .education__data {
   gap: 0.5rem;
