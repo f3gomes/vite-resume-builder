@@ -3,15 +3,26 @@ import {
   info,
   socials,
   skills,
-  experience,
   references,
   languages,
   hobbys,
 } from "../data/FelipeData";
 import { useState } from "react";
 import { EducationSection } from "./EducationSection";
+import { ExperienceSection } from "./ExperienceSection";
+import { HomeSection } from "./HomeSection";
 
-export function Resume(props: any) {
+interface ResumeProps {
+  darkTheme: boolean;
+  handleDarkTheme: () => void;
+  generateResume: () => void;
+}
+
+export function Resume({
+  darkTheme,
+  handleDarkTheme,
+  generateResume,
+}: ResumeProps) {
   const [image, setImage] = useState(profile);
 
   const handleSetImage = (event: any) => {
@@ -21,55 +32,14 @@ export function Resume(props: any) {
   return (
     <>
       <div className="resume__left">
-        <section className="home" id="home">
-          <div className="home__container section bd-grid">
-            <div className="home__data bd-grid">
-              <input
-                className="input-file"
-                type={"file"}
-                onChange={handleSetImage}
-              />
-              <img src={image} alt="profile" className="home__img" />
-              <h1 className="home__title">{info[0].value}</h1>
-              <h3 className="home__profession">{info[1].value}</h3>
-            </div>
-
-            <div className="home__address bd-grid">
-              <span className="home__information">
-                <i className="bx bx-map home__icon"></i>
-                {info[2].value}
-              </span>
-
-              <span className="home__information">
-                <i className="bx bx-envelope home__icon"></i>
-                {info[4].value}
-              </span>
-
-              <span className="home__information">
-                <i className="bx bx-phone home__icon"></i>
-                {info[5].value}
-              </span>
-            </div>
-          </div>
-
-          <i
-            className={
-              props.darkTheme
-                ? "bx bx-sun change-theme"
-                : "bx bx-moon change-theme"
-            }
-            title="Theme"
-            id="theme-button"
-            onClick={props.handleDarkTheme}
-          ></i>
-
-          <i
-            className="bx bx-download generate-pdf"
-            title="Generate PDF"
-            id="resume-button"
-            onClick={props.generateResume}
-          ></i>
-        </section>
+        <HomeSection
+          info={info}
+          image={image}
+          darkTheme={darkTheme}
+          handleSetImage={handleSetImage}
+          generateResume={generateResume}
+          handleDarkTheme={handleDarkTheme}
+        />
 
         <section className="social section">
           <h2 className="section-title">CONTATO</h2>
@@ -141,28 +111,7 @@ export function Resume(props: any) {
       </div>
 
       <div className="resume__right">
-        <section className="experience section" id="experience">
-          <h2 className="section-title">Experiência</h2>
-
-          <div className="experience__container bd-grid">
-            {experience.map((item) => (
-              <div className="experience__content" key={item.id}>
-                <div className="experience__time">
-                  <span className="experience__rounder"></span>
-                  <span className="experience__line"></span>
-                </div>
-
-                <div className="experience__data bd-grid">
-                  <h3 className="experience__title">{item.title}</h3>
-                  <span className="experience__company">
-                    {item.yearCompany}
-                  </span>
-                  <p className="experience__description">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <ExperienceSection />
 
         <section className="references section" id="references">
           <h2 className="section-title">Referências</h2>
