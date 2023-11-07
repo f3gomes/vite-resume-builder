@@ -124,7 +124,7 @@ body.scale-cv {
 }
 
 .scale-cv .bd-container {
-  max-width: 595px;
+  max-width: 700px;
 }
 
 .scale-cv .section {
@@ -167,6 +167,10 @@ body.scale-cv {
 .scale-cv .experience__container,
 .scale-cv .certificate__container {
   gap: 1rem;
+}
+
+.experience__description {
+  text-align: justify;
 }
 
 .scale-cv .education__time,
@@ -302,6 +306,7 @@ body.scale-cv {
 
 .home {
   position: relative;
+  margin-bottom: -1rem;
 }
 
 .home__container {
@@ -454,6 +459,12 @@ body.scale-cv {
 
 .languages__content,
 .skills__content {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.skills__data {
+  display: grid;
+  grid-column-gap: 20px;
   grid-template-columns: repeat(3, 1fr);
 }
 

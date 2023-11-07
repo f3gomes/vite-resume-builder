@@ -20,7 +20,7 @@ export function ExperienceSection() {
             <div className="experience__data bd-grid">
               <h3 className="experience__title font-semibold">{item.title}</h3>
               <span className="experience__company">{item.yearCompany}</span>
-              <p className="experience__description text-justify">
+              <p className="experience__description">
                 {item.description}
               </p>
             </div>
