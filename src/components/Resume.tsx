@@ -11,6 +11,7 @@ import { ReferencesSection } from "./ReferencesSection";
 import { ExperienceSection } from "./ExperienceSection";
 import { resumeApi } from "../data/api";
 import { IUserData } from "../types/userData";
+import { Link } from "react-router-dom";
 
 interface ResumeProps {
   darkTheme: boolean;
@@ -53,9 +54,9 @@ export function Resume({
       </div>
 
       <div className="resume__right">
-        <a className="btn-edit">
+        <Link className="btn-edit" to={"/edit"}>
           <i className="bx bxs-edit"></i>
-        </a>
+        </Link>
         <ExperienceSection experience={userData?.experiences!} />
         <ReferencesSection references={userData?.references!} />
         <LangSection languages={userData?.languages!} />
