@@ -53,6 +53,9 @@ export function Resume({
       </div>
 
       <div className="resume__right">
+        <a className="btn-edit">
+          <i className="bx bxs-edit"></i>
+        </a>
         <ExperienceSection experience={userData?.experiences!} />
         <ReferencesSection references={userData?.references!} />
         <LangSection languages={userData?.languages!} />
