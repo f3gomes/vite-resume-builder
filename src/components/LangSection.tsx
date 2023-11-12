@@ -1,19 +1,20 @@
-import { languages } from "../data/FelipeData";
+import { ILanguage } from "../types/userData";
 
 interface LangSectionProps {
-  item: (typeof languages)[0];
+  languages: ILanguage[];
 }
 
-export function LangSection() {
+export function LangSection({ languages }: LangSectionProps) {
   return (
     <section className="languages section">
       <h2 className="section-title">Idiomas</h2>
 
       <div className="languages__container">
         <ul className="languages__content bd-grid">
-          {languages.map((item: LangSectionProps["item"]) => (
-            <li className="languages__name" key={item.id}>
-              <span className="languages__circle"></span> {item.value}
+          {languages?.map((item: ILanguage) => (
+            <li className="languages__name" key={item._id}>
+              <span className="languages__circle"></span>
+              {item.name} ({item.level})
             </li>
           ))}
         </ul>

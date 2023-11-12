@@ -1,7 +1,6 @@
 import profile from "/assets/profile.jpeg";
 
-import { useState } from "react";
-import { info } from "../data/FelipeData";
+import { useEffect, useState } from "react";
 import { LangSection } from "./LangSection";
 import { HomeSection } from "./HomeSection";
 import { SkillsSection } from "./SkillsSection";
@@ -10,6 +9,8 @@ import { EducationSection } from "./EducationSection";
 import { InterestsSection } from "./InterestsSection";
 import { ReferencesSection } from "./ReferencesSection";
 import { ExperienceSection } from "./ExperienceSection";
+import { resumeApi } from "../data/api";
+import { IUserData } from "../types/userData";
 
 interface ResumeProps {
   darkTheme: boolean;
@@ -23,33 +24,39 @@ export function Resume({
   generateResume,
 }: ResumeProps) {
   const [image, setImage] = useState(profile);
+  const [userData, setUserData] = useState<IUserData>();
 
   const handleSetImage = (event: any) => {
     setImage(URL.createObjectURL(event.target.files[0]));
   };
 
+  useEffect(() => {
+    const email = "fgomesdeluna@gmail.com";
+    resumeApi.get(`/users/${email}`).then((res) => setUserData(res.data));
+  }, []);
+
   return (
     <>
       <div className="resume__left">
         <HomeSection
-          info={info}
           image={image}
+          userData={userData!}
           darkTheme={darkTheme}
           handleSetImage={handleSetImage}
           generateResume={generateResume}
           handleDarkTheme={handleDarkTheme}
         />
 
-        <SocialsSection />
-        <EducationSection />
-        <SkillsSection />
+        <SocialsSection userData={userData!} />
+        <EducationSection education={userData?.education!} />
+        <SkillsSection skills={userData?.skills!} />
       </div>
 
       <div className="resume__right">
-        <ExperienceSection />
-        <ReferencesSection />
-        <LangSection />
-        <InterestsSection />
+        <ExperienceSection experience={userData?.experiences!} />
+        <ReferencesSection references={userData?.references!} />
+        <LangSection languages={userData?.languages!} />
+        <InterestsSection hobbys={userData?.hobbys!} />
       </div>
     </>
   );

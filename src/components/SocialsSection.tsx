@@ -1,25 +1,25 @@
-import { info, socials } from "../data/FelipeData";
+import { ISocial, IUserData } from "../types/userData";
 
 interface SocialsSectionProps {
-  item: (typeof socials)[0];
+  userData: IUserData;
 }
 
-export function SocialsSection() {
+export function SocialsSection({ userData }: SocialsSectionProps) {
   return (
     <>
       <section className="social section">
         <h2 className="section-title">CONTATO</h2>
 
         <div className="social__container bd-grid">
-          {socials.map((item: SocialsSectionProps["item"]) => (
+          {userData?.socials?.map((item: ISocial) => (
             <a
-              key={item.id}
-              href={item.value}
+              key={item._id}
+              href={item.link}
               target="_blank"
               className="social__link social__icon"
             >
               <i className={item.icon}></i>
-              {item.key}
+              {item.name}
             </a>
           ))}
         </div>
@@ -28,7 +28,7 @@ export function SocialsSection() {
       <section className="profile section" id="profile">
         <h2 className="section-title">Sobre</h2>
 
-        <p className="profile__description">{info[6].value}</p>
+        <p className="profile__description">{userData?.about}</p>
       </section>
     </>
   );

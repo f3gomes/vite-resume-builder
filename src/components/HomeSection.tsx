@@ -1,18 +1,18 @@
-import { info } from "../data/FelipeData";
+import { IUserData } from "../types/userData";
 
 interface HomeSectionProps {
   image: string;
   generateResume: () => void;
   handleSetImage: (e: any) => void;
-  info: typeof info;
   darkTheme: boolean;
   handleDarkTheme: () => void;
+  userData: IUserData;
 }
 
 export function HomeSection({
-  info,
   image,
   darkTheme,
+  userData,
   handleDarkTheme,
   generateResume,
   handleSetImage,
@@ -27,24 +27,24 @@ export function HomeSection({
             onChange={handleSetImage}
           />
           <img src={image} alt="profile" className="home__img" />
-          <h1 className="home__title">{info[0].value}</h1>
-          <h3 className="home__profession">{info[1].value}</h3>
+          <h1 className="home__title">{userData?.name}</h1>
+          <h3 className="home__profession">{userData?.title}</h3>
         </div>
 
         <div className="home__address bd-grid">
           <span className="home__information">
             <i className="bx bx-map home__icon"></i>
-            {info[2].value}
+            {userData?.address}
           </span>
 
           <span className="home__information">
             <i className="bx bx-envelope home__icon"></i>
-            {info[4].value}
+            {userData?.email}
           </span>
 
           <span className="home__information">
             <i className="bx bx-phone home__icon"></i>
-            {info[5].value}
+            {userData?.phone}
           </span>
         </div>
       </div>
