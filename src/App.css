@@ -371,7 +371,7 @@ body.scale-cv {
   cursor: pointer;
   position: absolute;
   right: 1.2rem;
-  top: 2.2rem
+  top: 2.2rem;
 }
 
 /*========== SOCIAL ==========*/
@@ -580,6 +580,12 @@ body.scale-cv {
   .nav__list {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem, 0.5rem;
+  }
+}
+
+@media screen and (max-width: 967px) {
+  .btn-edit {
+    display: none;
   }
 }
 

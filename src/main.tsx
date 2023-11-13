@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import EditForm from "./components/EditForm.tsx";
+import { EditForm } from "./components/EditForm.tsx";
 import ReactDOM from "react-dom/client";
 import * as React from "react";
 import App from "./App.tsx";
 import "./index.css";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/edit",
-    element: <EditForm />,
+    element: (
+      <ChakraProvider>
+        <EditForm />
+      </ChakraProvider>
+    ),
   },
 ]);
 
