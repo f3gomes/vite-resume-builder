@@ -1,11 +1,12 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { EditFormStepOne } from "./components/EditFormOne.tsx";
 import ReactDOM from "react-dom/client";
+import { ChakraProvider } from "@chakra-ui/react";
+import { EditFormStepTwo } from "./components/EditFormTwo.tsx";
+import { EditFormStepOne } from "./components/EditFormOne.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import * as React from "react";
 import App from "./App.tsx";
 import "./index.css";
-import { ChakraProvider } from "@chakra-ui/react";
-import { EditFormStepTwo } from "./components/EditFormTwo.tsx";
 
 const router = createBrowserRouter([
   {
@@ -14,25 +15,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/edit-step-one",
-    element: (
-      <ChakraProvider>
-        <EditFormStepOne />
-      </ChakraProvider>
-    ),
+    element: <EditFormStepOne />,
   },
 
   {
     path: "/edit-step-two",
-    element: (
-      <ChakraProvider>
-        <EditFormStepTwo />
-      </ChakraProvider>
-    ),
+    element: <EditFormStepTwo />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
   </React.StrictMode>
 );
