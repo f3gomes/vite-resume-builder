@@ -6,10 +6,10 @@ import {
   Input,
   Spinner,
 } from "@chakra-ui/react";
-import { FormEvent, useEffect, useState } from "react";
-import { resumeApi } from "../data/api";
-import "../styles/form.css";
+import { resumeApi } from "../../data/api";
 import { useNavigate } from "react-router-dom";
+import { FormEvent, useEffect, useState } from "react";
+import "../../styles/form.css";
 
 export function EditFormStepTwo() {
   const [userData, setUserData] = useState<any>();
@@ -79,7 +79,7 @@ export function EditFormStepTwo() {
       .put(`/users/${userData._id}`, payload)
       .then(() => {
         console.log("Usuário atualizado com sucesso!");
-        navigate("/");
+        navigate("/edit-step-three");
       })
       .catch((error) => {
         console.error("Erro ao atualizar usuário:", error);

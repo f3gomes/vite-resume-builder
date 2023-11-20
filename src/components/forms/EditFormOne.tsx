@@ -7,12 +7,12 @@ import {
   Spinner,
   Textarea,
 } from "@chakra-ui/react";
-import { resumeApi } from "../data/api";
+import { resumeApi } from "../../data/api";
 import { useNavigate } from "react-router-dom";
-import { formDataInputs } from "../data/formData";
+import { formDataInputs } from "../../data/formData";
 import { FormEvent, useEffect, useState } from "react";
 
-import "../styles/form.css";
+import "../../styles/form.css";
 
 export function EditFormStepOne() {
   const [userData, setUserData] = useState<any>();

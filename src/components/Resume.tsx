@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { resumeApi } from "../data/api";
 import { LangSection } from "./LangSection";
 import { HomeSection } from "./HomeSection";
+import { Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { IUserData } from "../types/userData";
 import { SkillsSection } from "./SkillsSection";
@@ -12,7 +13,6 @@ import { EducationSection } from "./EducationSection";
 import { InterestsSection } from "./InterestsSection";
 import { ReferencesSection } from "./ReferencesSection";
 import { ExperienceSection } from "./ExperienceSection";
-import { Heading, Spinner } from "@chakra-ui/react";
 
 interface ResumeProps {
   darkTheme: boolean;
