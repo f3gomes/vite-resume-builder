@@ -96,10 +96,6 @@ body.scale-cv {
   cursor: pointer;
 }
 
-.edit-cv {
-  cursor: pointer;
-}
-
 .generate-pdf:hover {
   color: var(--title-color);
 }
@@ -119,7 +115,7 @@ body.scale-cv {
 
 .scale-cv .change-theme,
 .scale-cv .generate-pdf,
-.scale-cv .edit-cv {
+.scale-cv .btn-edit {
   display: none;
 }
 

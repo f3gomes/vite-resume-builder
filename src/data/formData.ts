@@ -1,4 +1,4 @@
-export const formDataInpus = [
+export const formDataInputs = [
   {
     value: "name",
     type: "text",

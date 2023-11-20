@@ -5,20 +5,35 @@ import {
   Input,
   Textarea,
 } from "@chakra-ui/react";
-import { formDataInpus } from "../data/formData";
-import { useEffect, useState } from "react";
+import { formDataInputs } from "../data/formData";
+import { FormEvent, useEffect, useState } from "react";
 import { resumeApi } from "../data/api";
 import "../styles/form.css";
+import { useNavigate } from "react-router-dom";
 
-export function EditForm() {
+export function EditFormStepOne() {
   const [userData, setUserData] = useState<any>();
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    const email = "fgomesdeluna@gmail.com";
+    const email = "teste@gmail.com";
     resumeApi.get(`/users/${email}`).then((res) => setUserData(res.data));
   }, []);
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    resumeApi
+      .put(`/users/${userData._id}`, userData)
+      .then(() => {
+        console.log("Usuário atualizado com sucesso!");
+        navigate("/edit-step-two");
+      })
+      .catch((error) => {
+        console.error("Erro ao atualizar usuário:", error);
+      });
+  };
 
   const handleUpdateValue = (event: any) => {
     setUserData({ ...userData, [event.target.name]: event.target.value });
@@ -28,7 +43,7 @@ export function EditForm() {
     <div className="form-container">
       <form action="#" onSubmit={handleSubmit} className="edit-form">
         <div>
-          {formDataInpus.map((item, index) => {
+          {formDataInputs.map((item, index) => {
             return (
               <FormControl key={index}>
                 <FormLabel>{item.label}</FormLabel>

@@ -32,7 +32,7 @@ export function Resume({
   };
 
   useEffect(() => {
-    const email = "fgomesdeluna@gmail.com";
+    const email = "teste@gmail.com";
     resumeApi.get(`/users/${email}`).then((res) => setUserData(res.data));
   }, []);
 
@@ -54,7 +54,7 @@ export function Resume({
       </div>
 
       <div className="resume__right">
-        <Link className="btn-edit" to={"/edit"}>
+        <Link className="btn-edit" to={"/edit-step-one"}>
           <i className="bx bxs-edit"></i>
         </Link>
         <ExperienceSection experience={userData?.experiences!} />
