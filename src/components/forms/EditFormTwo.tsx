@@ -10,9 +10,10 @@ import { resumeApi, updateUser } from "../../data/api";
 import { useNavigate } from "react-router-dom";
 import { FormEvent, useEffect, useState } from "react";
 import "../../styles/form.css";
+import { IUserData } from "../../types/userData";
 
 export function EditFormStepTwo() {
-  const [userData, setUserData] = useState<any>();
+  const [userData, setUserData] = useState<IUserData>();
   const [isLoading, setIsLoading] = useState(true);
   const [socials, setSocials] = useState([
     {
@@ -44,6 +45,14 @@ export function EditFormStepTwo() {
     { name: "" },
   ]);
 
+  interface ISocials {
+    social: (typeof socials)[0];
+  }
+
+  interface ISkills {
+    skill: (typeof skills)[0];
+  }
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -74,7 +83,7 @@ export function EditFormStepTwo() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const payload = { socials, skills };
-    updateUser(userData._id, payload);
+    updateUser(userData?._id!, payload);
     navigate("/edit-step-three");
   };
 
@@ -103,7 +112,7 @@ export function EditFormStepTwo() {
                   <Heading as="h3" size="lg">
                     Redes Sociais
                   </Heading>
-                  {socials?.map((item: any, index: number) => {
+                  {socials?.map((item: ISocials["social"], index: number) => {
                     return (
                       <div key={index}>
                         <FormLabel>{item.name}</FormLabel>
@@ -124,7 +133,7 @@ export function EditFormStepTwo() {
                   <Heading as="h3" size="lg">
                     Habilidades
                   </Heading>
-                  {skills?.map((item: any, index: number) => {
+                  {skills?.map((item: ISkills["skill"], index: number) => {
                     return (
                       <div key={index}>
                         <Input

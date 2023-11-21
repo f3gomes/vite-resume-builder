@@ -6,13 +6,14 @@ import {
   Input,
   Spinner,
 } from "@chakra-ui/react";
-import { resumeApi, updateUser } from "../../data/api";
 import { useNavigate } from "react-router-dom";
+import { IUserData } from "../../types/userData";
+import { resumeApi, updateUser } from "../../data/api";
 import { FormEvent, useEffect, useState } from "react";
 import "../../styles/form.css";
 
 export function EditFormStepFive() {
-  const [userData, setUserData] = useState<any>();
+  const [userData, setUserData] = useState<IUserData>();
   const [isLoading, setIsLoading] = useState(true);
   const [hobbys, setHobbys] = useState([
     {
@@ -48,6 +49,14 @@ export function EditFormStepFive() {
     },
   ]);
 
+  interface IReference {
+    reference: (typeof references)[0];
+  }
+
+  interface IHobby {
+    hobby: (typeof hobbys)[0];
+  }
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -78,7 +87,7 @@ export function EditFormStepFive() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const payload = { hobbys, references };
-    updateUser(userData._id, payload);
+    updateUser(userData?._id!, payload);
     navigate("/");
   };
 
@@ -110,58 +119,60 @@ export function EditFormStepFive() {
                   <Heading as="h3" size="lg">
                     Referências
                   </Heading>
-                  {references?.map((item: any, index: number) => {
-                    return (
-                      <div key={index}>
-                        <FormLabel>Nome</FormLabel>
-                        <Input
-                          type="text"
-                          defaultValue={item.name}
-                          name={"name"}
-                          onChange={(e) =>
-                            handleUpdateReference(index, e.target)
-                          }
-                        />
+                  {references?.map(
+                    (item: IReference["reference"], index: number) => {
+                      return (
+                        <div key={index}>
+                          <FormLabel>Nome</FormLabel>
+                          <Input
+                            type="text"
+                            defaultValue={item.name}
+                            name={"name"}
+                            onChange={(e) =>
+                              handleUpdateReference(index, e.target)
+                            }
+                          />
 
-                        <FormLabel>Título</FormLabel>
-                        <Input
-                          type="text"
-                          defaultValue={item.title}
-                          name={"title"}
-                          onChange={(e) =>
-                            handleUpdateReference(index, e.target)
-                          }
-                        />
+                          <FormLabel>Título</FormLabel>
+                          <Input
+                            type="text"
+                            defaultValue={item.title}
+                            name={"title"}
+                            onChange={(e) =>
+                              handleUpdateReference(index, e.target)
+                            }
+                          />
 
-                        <FormLabel>Telefone</FormLabel>
-                        <Input
-                          type="text"
-                          defaultValue={item.phone}
-                          name={"phone"}
-                          onChange={(e) =>
-                            handleUpdateReference(index, e.target)
-                          }
-                        />
+                          <FormLabel>Telefone</FormLabel>
+                          <Input
+                            type="text"
+                            defaultValue={item.phone}
+                            name={"phone"}
+                            onChange={(e) =>
+                              handleUpdateReference(index, e.target)
+                            }
+                          />
 
-                        <FormLabel>Email</FormLabel>
-                        <Input
-                          type="text"
-                          defaultValue={item.email}
-                          name={"email"}
-                          onChange={(e) =>
-                            handleUpdateReference(index, e.target)
-                          }
-                        />
-                      </div>
-                    );
-                  })}
+                          <FormLabel>Email</FormLabel>
+                          <Input
+                            type="text"
+                            defaultValue={item.email}
+                            name={"email"}
+                            onChange={(e) =>
+                              handleUpdateReference(index, e.target)
+                            }
+                          />
+                        </div>
+                      );
+                    }
+                  )}
                 </div>
 
                 <div className="skills-container">
                   <Heading as="h3" size="lg">
                     Passatempos
                   </Heading>
-                  {hobbys?.map((item: any, index: number) => {
+                  {hobbys?.map((item: IHobby["hobby"], index: number) => {
                     return (
                       <div key={index}>
                         <Input

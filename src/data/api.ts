@@ -5,7 +5,7 @@ export const resumeApi = axios.create({
   baseURL: "http://localhost:3001",
 });
 
-export const updateUser = async (userId: string, payload: any) => {
+export const updateUser = async (userId: string, payload: Object) => {
   const response = await resumeApi.put(`/users/${userId}`, payload);
   return response.data;
 };

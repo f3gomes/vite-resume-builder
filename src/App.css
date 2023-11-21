@@ -301,7 +301,7 @@ body.scale-cv {
 
 /* Show menu */
 .show-menu {
-  bottom: var(--header-height);
+  bottom: 6rem;
 }
 
 /* Active menu link */
@@ -578,7 +578,7 @@ body.scale-cv {
 
 .show-scroll {
   visibility: visible;
-  bottom: 5rem;
+  bottom: 7rem;
 }
 
 /*========== MEDIA QUERIES ==========*/

@@ -6,13 +6,14 @@ import {
   Input,
   Spinner,
 } from "@chakra-ui/react";
-import { resumeApi, updateUser } from "../../data/api";
 import { useNavigate } from "react-router-dom";
+import { IUserData } from "../../types/userData";
+import { resumeApi, updateUser } from "../../data/api";
 import { FormEvent, useEffect, useState } from "react";
 import "../../styles/form.css";
 
 export function EditFormStepThree() {
-  const [userData, setUserData] = useState<any>();
+  const [userData, setUserData] = useState<IUserData>();
   const [isLoading, setIsLoading] = useState(true);
   const [education, setEducation] = useState([
     {
@@ -42,6 +43,14 @@ export function EditFormStepThree() {
       level: "",
     },
   ]);
+
+  interface IEducation {
+    education: (typeof education)[0];
+  }
+
+  interface ILang {
+    lang: (typeof languages)[0];
+  }
 
   const navigate = useNavigate();
 
@@ -73,7 +82,7 @@ export function EditFormStepThree() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const payload = { education, languages };
-    updateUser(userData._id, payload);
+    updateUser(userData?._id!, payload);
     navigate("/edit-step-four");
   };
 
@@ -108,48 +117,50 @@ export function EditFormStepThree() {
                   <Heading as="h3" size="lg">
                     Formação
                   </Heading>
-                  {education?.map((item: any, index: number) => {
-                    return (
-                      <div key={index}>
-                        <FormLabel>Título</FormLabel>
-                        <Input
-                          type="text"
-                          defaultValue={item.title}
-                          name={"title"}
-                          onChange={(e) =>
-                            handleUpdateEducation(index, e.target)
-                          }
-                        />
+                  {education?.map(
+                    (item: IEducation["education"], index: number) => {
+                      return (
+                        <div key={index}>
+                          <FormLabel>Título</FormLabel>
+                          <Input
+                            type="text"
+                            defaultValue={item.title}
+                            name={"title"}
+                            onChange={(e) =>
+                              handleUpdateEducation(index, e.target)
+                            }
+                          />
 
-                        <FormLabel>Escola</FormLabel>
-                        <Input
-                          type="text"
-                          defaultValue={item.studies}
-                          name={"studies"}
-                          onChange={(e) =>
-                            handleUpdateEducation(index, e.target)
-                          }
-                        />
+                          <FormLabel>Escola</FormLabel>
+                          <Input
+                            type="text"
+                            defaultValue={item.studies}
+                            name={"studies"}
+                            onChange={(e) =>
+                              handleUpdateEducation(index, e.target)
+                            }
+                          />
 
-                        <FormLabel>Período</FormLabel>
-                        <Input
-                          type="text"
-                          defaultValue={item.year}
-                          name={"year"}
-                          onChange={(e) =>
-                            handleUpdateEducation(index, e.target)
-                          }
-                        />
-                      </div>
-                    );
-                  })}
+                          <FormLabel>Período</FormLabel>
+                          <Input
+                            type="text"
+                            defaultValue={item.year}
+                            name={"year"}
+                            onChange={(e) =>
+                              handleUpdateEducation(index, e.target)
+                            }
+                          />
+                        </div>
+                      );
+                    }
+                  )}
                 </div>
 
                 <div className="skills-container">
                   <Heading as="h3" size="lg">
                     Idiomas
                   </Heading>
-                  {languages?.map((item: any, index: number) => {
+                  {languages?.map((item: ILang["lang"], index: number) => {
                     return (
                       <div
                         key={index}

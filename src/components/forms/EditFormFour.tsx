@@ -11,9 +11,10 @@ import { resumeApi, updateUser } from "../../data/api";
 import { useNavigate } from "react-router-dom";
 import { FormEvent, useEffect, useState } from "react";
 import "../../styles/form.css";
+import { IUserData } from "../../types/userData";
 
 export function EditFormStepFour() {
-  const [userData, setUserData] = useState<any>();
+  const [userData, setUserData] = useState<IUserData>();
   const [isLoading, setIsLoading] = useState(true);
   const [experiences, setExperiences] = useState([
     {
@@ -59,7 +60,7 @@ export function EditFormStepFour() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const payload = { experiences };
-    updateUser(userData._id, payload);
+    updateUser(userData?._id!, payload);
     navigate("/edit-step-five");
   };
 
