@@ -3,12 +3,13 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { EditFormStepTwo } from "./components/forms/EditFormTwo.tsx";
 import { EditFormStepOne } from "./components/forms/EditFormOne.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { EditFormStepFour } from "./components/forms/EditFormFour.tsx";
+import { EditFormStepFive } from "./components/forms/EditFormFive.tsx";
 import { EditFormStepThree } from "./components/forms/EditFormThree.tsx";
 
 import * as React from "react";
 import App from "./App.tsx";
 import "./index.css";
-import { EditFormStepFour } from "./components/forms/EditFormFour.tsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
   {
     path: "/edit-step-four",
     element: <EditFormStepFour />,
+  },
+
+  {
+    path: "/edit-step-five",
+    element: <EditFormStepFive />,
   },
 ]);
 

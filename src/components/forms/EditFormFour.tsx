@@ -42,7 +42,7 @@ export function EditFormStepFour() {
         resumeApi.get(`/users/${email}`).then((res) => {
           setUserData(res.data);
 
-          if (res.data?.expriences.length > 0) {
+          if (res.data?.experiences.length > 0) {
             setExperiences(res.data?.experiences);
           }
         });
@@ -64,7 +64,7 @@ export function EditFormStepFour() {
       .put(`/users/${userData._id}`, payload)
       .then(() => {
         console.log("Usuário atualizado com sucesso!");
-        navigate("/");
+        navigate("/edit-step-five");
       })
       .catch((error) => {
         console.error("Erro ao atualizar usuário:", error);

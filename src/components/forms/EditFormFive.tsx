@@ -11,35 +11,40 @@ import { useNavigate } from "react-router-dom";
 import { FormEvent, useEffect, useState } from "react";
 import "../../styles/form.css";
 
-export function EditFormStepThree() {
+export function EditFormStepFive() {
   const [userData, setUserData] = useState<any>();
   const [isLoading, setIsLoading] = useState(true);
-  const [education, setEducation] = useState([
+  const [hobbys, setHobbys] = useState([
     {
-      title: "",
-      studies: "",
-      year: "2022 - 2023",
+      name: "Música",
+      icon: "bx bx-headphone interests__icon",
     },
     {
-      title: "",
-      studies: "",
-      year: "2021 - 2022",
+      name: "Programação",
+      icon: "bx bx-desktop interests__icon",
     },
     {
-      title: "",
-      studies: "",
-      year: "2020 - 2021",
+      name: "Games",
+      icon: "bx bx-game interests__icon",
+    },
+    {
+      name: "Academia",
+      icon: "bx bx-dumbbell interests__icon",
     },
   ]);
 
-  const [languages, setLanguages] = useState([
+  const [references, setReferences] = useState([
     {
-      name: "Português",
-      level: "",
+      name: "",
+      title: "",
+      phone: "",
+      email: "",
     },
     {
       name: "",
-      level: "",
+      title: "",
+      phone: "",
+      email: "",
     },
   ]);
 
@@ -52,12 +57,12 @@ export function EditFormStepThree() {
         resumeApi.get(`/users/${email}`).then((res) => {
           setUserData(res.data);
 
-          if (res.data?.education.length > 0) {
-            setEducation(res.data?.education);
+          if (res.data?.hobbys.length > 0) {
+            setHobbys(res.data?.hobbys);
           }
 
-          if (res.data?.languages.length > 0) {
-            setLanguages(res.data?.languages);
+          if (res.data?.references.length > 0) {
+            setReferences(res.data?.references);
           }
         });
       } catch (error) {
@@ -72,35 +77,32 @@ export function EditFormStepThree() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const payload = { education, languages };
+    const payload = { hobbys, references };
 
     resumeApi
       .put(`/users/${userData._id}`, payload)
       .then(() => {
         console.log("Usuário atualizado com sucesso!");
-        navigate("/edit-step-four");
+        navigate("/");
       })
       .catch((error) => {
         console.error("Erro ao atualizar usuário:", error);
       });
   };
 
-  const handleUpdateEducation = (index: number, target: any) => {
-    const updateEducation = [...education];
-    updateEducation[index] = {
-      ...updateEducation[index],
-      [target.name]: target.value,
-    };
-    setEducation(updateEducation);
+  const handleUpdateHobby = (index: number, value: string) => {
+    const updateHobby = [...hobbys];
+    updateHobby[index] = { ...updateHobby[index], name: value };
+    setHobbys(updateHobby);
   };
 
-  const handleUpdateLanguage = (index: number, target: any) => {
-    const updateLanguages = [...languages];
-    updateLanguages[index] = {
-      ...updateLanguages[index],
+  const handleUpdateReference = (index: number, target: any) => {
+    const updateReference = [...references];
+    updateReference[index] = {
+      ...updateReference[index],
       [target.name]: target.value,
     };
-    setLanguages(updateLanguages);
+    setReferences(updateReference);
   };
 
   return (
@@ -114,38 +116,48 @@ export function EditFormStepThree() {
               <div>
                 <div className="socials-container">
                   <Heading as="h3" size="lg">
-                    Formação
+                    Referências
                   </Heading>
-                  {education?.map((item: any, index: number) => {
+                  {references?.map((item: any, index: number) => {
                     return (
                       <div key={index}>
+                        <FormLabel>Nome</FormLabel>
+                        <Input
+                          type="text"
+                          defaultValue={item.name}
+                          name={"name"}
+                          onChange={(e) =>
+                            handleUpdateReference(index, e.target)
+                          }
+                        />
+
                         <FormLabel>Título</FormLabel>
                         <Input
                           type="text"
                           defaultValue={item.title}
                           name={"title"}
                           onChange={(e) =>
-                            handleUpdateEducation(index, e.target)
+                            handleUpdateReference(index, e.target)
                           }
                         />
 
-                        <FormLabel>Escola</FormLabel>
+                        <FormLabel>Telefone</FormLabel>
                         <Input
                           type="text"
-                          defaultValue={item.studies}
-                          name={"studies"}
+                          defaultValue={item.phone}
+                          name={"phone"}
                           onChange={(e) =>
-                            handleUpdateEducation(index, e.target)
+                            handleUpdateReference(index, e.target)
                           }
                         />
 
-                        <FormLabel>Período</FormLabel>
+                        <FormLabel>Email</FormLabel>
                         <Input
                           type="text"
-                          defaultValue={item.year}
-                          name={"year"}
+                          defaultValue={item.email}
+                          name={"email"}
                           onChange={(e) =>
-                            handleUpdateEducation(index, e.target)
+                            handleUpdateReference(index, e.target)
                           }
                         />
                       </div>
@@ -155,35 +167,18 @@ export function EditFormStepThree() {
 
                 <div className="skills-container">
                   <Heading as="h3" size="lg">
-                    Idiomas
+                    Passatempos
                   </Heading>
-                  {languages?.map((item: any, index: number) => {
+                  {hobbys?.map((item: any, index: number) => {
                     return (
-                      <div
-                        key={index}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.6rem",
-                        }}
-                      >
+                      <div key={index}>
                         <Input
                           type="text"
-                          name={"name"}
-                          placeholder={"Idioma"}
+                          id={`${index}`}
                           defaultValue={item.name}
+                          name={item.name.toLowerCase()}
                           onChange={(e) =>
-                            handleUpdateLanguage(index, e.target)
-                          }
-                        />
-
-                        <Input
-                          type="text"
-                          name={"level"}
-                          placeholder="Nível"
-                          defaultValue={item.level}
-                          onChange={(e) =>
-                            handleUpdateLanguage(index, e.target)
+                            handleUpdateHobby(index, e.target.value)
                           }
                         />
                       </div>
@@ -195,11 +190,7 @@ export function EditFormStepThree() {
           </FormControl>
         </div>
 
-        <Button
-          type="submit"
-          colorScheme="blue"
-          style={{ marginBottom: "2rem" }}
-        >
+        <Button colorScheme="blue" type="submit">
           Salvar
         </Button>
       </form>
