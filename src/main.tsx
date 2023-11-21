@@ -18,34 +18,48 @@ const router = createBrowserRouter([
   },
   {
     path: "/edit-step-one",
-    element: <EditFormStepOne />,
+    element: (
+      <ChakraProvider>
+        <EditFormStepOne />,
+      </ChakraProvider>
+    ),
   },
-
   {
     path: "/edit-step-two",
-    element: <EditFormStepTwo />,
+    element: (
+      <ChakraProvider>
+        <EditFormStepTwo />,
+      </ChakraProvider>
+    ),
   },
-
   {
     path: "/edit-step-three",
-    element: <EditFormStepThree />,
+    element: (
+      <ChakraProvider>
+        <EditFormStepThree />,
+      </ChakraProvider>
+    ),
   },
-
   {
     path: "/edit-step-four",
-    element: <EditFormStepFour />,
+    element: (
+      <ChakraProvider>
+        <EditFormStepFour />,
+      </ChakraProvider>
+    ),
   },
-
   {
     path: "/edit-step-five",
-    element: <EditFormStepFive />,
+    element: (
+      <ChakraProvider>
+        <EditFormStepFive />,
+      </ChakraProvider>
+    ),
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ChakraProvider>
-      <RouterProvider router={router} />
-    </ChakraProvider>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
