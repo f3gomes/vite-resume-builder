@@ -6,7 +6,7 @@ import {
   Input,
   Spinner,
 } from "@chakra-ui/react";
-import { resumeApi } from "../../data/api";
+import { resumeApi, updateUser } from "../../data/api";
 import { useNavigate } from "react-router-dom";
 import { FormEvent, useEffect, useState } from "react";
 import "../../styles/form.css";
@@ -73,16 +73,8 @@ export function EditFormStepThree() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const payload = { education, languages };
-
-    resumeApi
-      .put(`/users/${userData._id}`, payload)
-      .then(() => {
-        console.log("Usuário atualizado com sucesso!");
-        navigate("/edit-step-four");
-      })
-      .catch((error) => {
-        console.error("Erro ao atualizar usuário:", error);
-      });
+    updateUser(userData._id, payload);
+    navigate("/edit-step-four");
   };
 
   const handleUpdateEducation = (index: number, target: any) => {

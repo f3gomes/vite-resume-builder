@@ -17,6 +17,7 @@ export function HomeSection({
   generateResume,
   handleSetImage,
 }: HomeSectionProps) {
+
   return (
     <section className="home" id="home">
       <div className="home__container section bd-grid">

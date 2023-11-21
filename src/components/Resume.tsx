@@ -1,16 +1,16 @@
 import profile from "/assets/profile.jpeg";
 
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useQuery } from "react-query";
 import { resumeApi } from "../data/api";
+import { Link } from "react-router-dom";
+import { Heading } from "@chakra-ui/react";
 import { LangSection } from "./LangSection";
 import { HomeSection } from "./HomeSection";
-import { Heading } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { IUserData } from "../types/userData";
 import { SkillsSection } from "./SkillsSection";
 import { SocialsSection } from "./SocialsSection";
-import { EducationSection } from "./EducationSection";
 import { InterestsSection } from "./InterestsSection";
+import { EducationSection } from "./EducationSection";
 import { ReferencesSection } from "./ReferencesSection";
 import { ExperienceSection } from "./ExperienceSection";
 
@@ -26,66 +26,56 @@ export function Resume({
   generateResume,
 }: ResumeProps) {
   const [image, setImage] = useState(profile);
-  const [userData, setUserData] = useState<IUserData>();
-  const [isLoading, setIsLoading] = useState(true);
 
   const handleSetImage = (event: any) => {
     setImage(URL.createObjectURL(event.target.files[0]));
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const email = "teste@gmail.com";
-        await resumeApi
-          .get(`/users/${email}`)
-          .then((res) => setUserData(res.data));
-      } catch (error) {
-        console.error("Erro ao obter dados da API:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  const { data, isLoading } = useQuery(
+    "userData",
+    async () => {
+      const email = "teste@gmail.com";
+      return await resumeApi.get(`/users/${email}`).then((res) => res?.data);
+    },
+    { staleTime: 20000 }
+  );
 
-    fetchData();
-  }, []);
+  if (isLoading) {
+    return (
+      <div className="spinner-container">
+        <Heading as="h4" size="md">
+          Carregando...
+        </Heading>
+      </div>
+    );
+  }
 
   return (
     <>
-      {isLoading ? (
-        <div className="spinner-container">
-          <Heading as="h4" size="md">
-            Carregando...
-          </Heading>
-        </div>
-      ) : (
-        <>
-          <div className="resume__left">
-            <HomeSection
-              image={image}
-              userData={userData!}
-              darkTheme={darkTheme}
-              handleSetImage={handleSetImage}
-              generateResume={generateResume}
-              handleDarkTheme={handleDarkTheme}
-            />
+      <div className="resume__left">
+        <HomeSection
+          image={image}
+          userData={data}
+          darkTheme={darkTheme}
+          handleSetImage={handleSetImage}
+          generateResume={generateResume}
+          handleDarkTheme={handleDarkTheme}
+        />
 
-            <SocialsSection userData={userData!} />
-            <EducationSection education={userData?.education!} />
-            <SkillsSection skills={userData?.skills!} />
-          </div>
+        <SocialsSection userData={data} />
+        <EducationSection education={data?.education} />
+        <SkillsSection skills={data?.skills} />
+      </div>
 
-          <div className="resume__right">
-            <Link className="btn-edit" to={"/edit-step-one"}>
-              <i className="bx bxs-edit"></i>
-            </Link>
-            <ExperienceSection experience={userData?.experiences!} />
-            <ReferencesSection references={userData?.references!} />
-            <LangSection languages={userData?.languages!} />
-            <InterestsSection hobbys={userData?.hobbys!} />
-          </div>
-        </>
-      )}
+      <div className="resume__right">
+        <Link className="btn-edit" to={"/edit-step-one"}>
+          <i className="bx bxs-edit"></i>
+        </Link>
+        <ExperienceSection experience={data?.experiences} />
+        <ReferencesSection references={data?.references} />
+        <LangSection languages={data?.languages} />
+        <InterestsSection hobbys={data?.hobbys} />
+      </div>
     </>
   );
 }

@@ -7,48 +7,27 @@ import {
   Spinner,
   Textarea,
 } from "@chakra-ui/react";
-import { resumeApi } from "../../data/api";
+import { updateUser } from "../../data/api";
 import { useNavigate } from "react-router-dom";
 import { formDataInputs } from "../../data/formData";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 
 import "../../styles/form.css";
+import { useQuery } from "react-query";
 
 export function EditFormStepOne() {
   const [userData, setUserData] = useState<any>();
-  const [isLoading, setIsLoading] = useState(true);
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const email = "teste@gmail.com";
-        await resumeApi
-          .get(`/users/${email}`)
-          .then((res) => setUserData(res.data));
-      } catch (error) {
-        console.error("Erro ao obter dados da API:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { data, isLoading } = useQuery("userData", () => {
+    setUserData(data);
+  });
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-
-    resumeApi
-      .put(`/users/${userData._id}`, userData)
-      .then(() => {
-        console.log("Usuário atualizado com sucesso!");
-        navigate("/edit-step-two");
-      })
-      .catch((error) => {
-        console.error("Erro ao atualizar usuário:", error);
-      });
+    updateUser(userData._id, userData);
+    navigate("/edit-step-two");
   };
 
   const handleUpdateValue = (event: any) => {
