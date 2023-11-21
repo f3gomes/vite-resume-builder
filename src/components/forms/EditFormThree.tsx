@@ -78,7 +78,7 @@ export function EditFormStepThree() {
       .put(`/users/${userData._id}`, payload)
       .then(() => {
         console.log("Usuário atualizado com sucesso!");
-        navigate("/");
+        navigate("/edit-step-four");
       })
       .catch((error) => {
         console.error("Erro ao atualizar usuário:", error);

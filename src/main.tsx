@@ -8,6 +8,7 @@ import { EditFormStepThree } from "./components/forms/EditFormThree.tsx";
 import * as React from "react";
 import App from "./App.tsx";
 import "./index.css";
+import { EditFormStepFour } from "./components/forms/EditFormFour.tsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
   {
     path: "/edit-step-three",
     element: <EditFormStepThree />,
+  },
+
+  {
+    path: "/edit-step-four",
+    element: <EditFormStepFour />,
   },
 ]);
 
