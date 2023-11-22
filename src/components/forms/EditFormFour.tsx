@@ -39,7 +39,7 @@ export function EditFormStepFour() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const email = "teste@gmail.com";
+        const email = localStorage.getItem("rb_email");
         resumeApi.get(`/users/${email}`).then((res) => {
           setUserData(res.data);
 

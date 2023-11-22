@@ -34,7 +34,7 @@ export function Resume({
   const { data, isLoading } = useQuery(
     "userData",
     async () => {
-      const email = "teste@gmail.com";
+      const email = localStorage.getItem("rb_email");
       return await resumeApi.get(`/users/${email}`).then((res) => res?.data);
     },
     { staleTime: 20000 }
