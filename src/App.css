@@ -73,6 +73,14 @@ body.dark-theme {
   color: var(--title-color);
 }
 
+.btn-edit:hover,
+.change-theme:hover,
+.generate-pdf:hover {
+  transform: scale(110%);
+  transition-duration: 300;
+  transition-property: all;
+}
+
 /*========== Font size variables to scale cv ==========*/
 
 body.scale-cv {
@@ -475,7 +483,6 @@ body.scale-cv {
 }
 
 .languages__container {
-  margin-bottom: -40px;
   margin-top: -10px;
 }
 
