@@ -7,32 +7,17 @@ import {
   Spinner,
   Textarea,
 } from "@chakra-ui/react";
-import { resumeApi, updateUser } from "../../data/api";
 import { useNavigate } from "react-router-dom";
-import { FormEvent, useEffect, useState } from "react";
-import "../../styles/form.css";
 import { IUserData } from "../../types/userData";
+import { resumeApi, updateUser } from "../../data/api";
+import { FormEvent, useEffect, useState } from "react";
+
+import "../../styles/form.css";
 
 export function EditFormStepFour() {
-  const [userData, setUserData] = useState<IUserData>();
   const [isLoading, setIsLoading] = useState(true);
-  const [experiences, setExperiences] = useState([
-    {
-      title: "Cargo",
-      yearCompany: "2023 - 2023 | Empresa",
-      description: "",
-    },
-    {
-      title: "Cargo",
-      yearCompany: "2022 - 2022 | Empresa",
-      description: "",
-    },
-    {
-      title: "Cargo",
-      yearCompany: "2021 - 2021 | Empresa",
-      description: "",
-    },
-  ]);
+  const [userData, setUserData] = useState<IUserData>();
+  const [experiences, setExperiences] = useState<any[]>([]);
 
   const navigate = useNavigate();
 
@@ -64,13 +49,18 @@ export function EditFormStepFour() {
     navigate("/edit-step-five");
   };
 
-  const handleUpdateExperience = (index: number, target: any) => {
-    const updateExperience = [...experiences];
-    updateExperience[index] = {
-      ...updateExperience[index],
-      [target.name]: target.value,
-    };
-    setExperiences(updateExperience);
+  const handleUpdateExperience = (id: string, e: any) => {
+    const updatedExperience = experiences.map((item: any) => {
+      if (item._id === id) {
+        return {
+          ...item,
+          [e.target.name]: e.target.value,
+        };
+      }
+      return item;
+    });
+
+    setExperiences(updatedExperience);
   };
 
   return (
@@ -86,17 +76,15 @@ export function EditFormStepFour() {
                   <Heading as="h3" size="lg">
                     Experiências
                   </Heading>
-                  {experiences?.map((item: any, index: number) => {
+                  {experiences?.map((item: any) => {
                     return (
-                      <div key={index}>
+                      <div key={item._id}>
                         <FormLabel>Título</FormLabel>
                         <Input
                           type="text"
                           defaultValue={item.title}
                           name={"title"}
-                          onChange={(e) =>
-                            handleUpdateExperience(index, e.target)
-                          }
+                          onChange={(e) => handleUpdateExperience(item._id, e)}
                         />
 
                         <FormLabel>Empresa</FormLabel>
@@ -104,18 +92,14 @@ export function EditFormStepFour() {
                           type="text"
                           defaultValue={item.yearCompany}
                           name={"yearCompany"}
-                          onChange={(e) =>
-                            handleUpdateExperience(index, e.target)
-                          }
+                          onChange={(e) => handleUpdateExperience(item._id, e)}
                         />
 
                         <FormLabel>Descrição</FormLabel>
                         <Textarea
                           defaultValue={item.description}
                           name={"description"}
-                          onChange={(e) =>
-                            handleUpdateExperience(index, e.target)
-                          }
+                          onChange={(e) => handleUpdateExperience(item._id, e)}
                         />
                       </div>
                     );

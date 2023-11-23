@@ -52,6 +52,12 @@
   margin-top: 2rem;
 }
 
+.socials-container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
 .skills-container {
   display: flex;
   flex-direction: column;

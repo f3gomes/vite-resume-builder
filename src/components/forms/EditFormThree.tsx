@@ -1,56 +1,22 @@
 import {
-  Button,
-  FormControl,
-  FormLabel,
-  Heading,
   Input,
+  Button,
   Spinner,
+  Heading,
+  FormControl,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { IUserData } from "../../types/userData";
 import { resumeApi, updateUser } from "../../data/api";
 import { FormEvent, useEffect, useState } from "react";
+
 import "../../styles/form.css";
 
 export function EditFormStepThree() {
   const [userData, setUserData] = useState<IUserData>();
   const [isLoading, setIsLoading] = useState(true);
-  const [education, setEducation] = useState([
-    {
-      title: "",
-      studies: "",
-      year: "2022 - 2023",
-    },
-    {
-      title: "",
-      studies: "",
-      year: "2021 - 2022",
-    },
-    {
-      title: "",
-      studies: "",
-      year: "2020 - 2021",
-    },
-  ]);
-
-  const [languages, setLanguages] = useState([
-    {
-      name: "Português",
-      level: "",
-    },
-    {
-      name: "",
-      level: "",
-    },
-  ]);
-
-  interface IEducation {
-    education: (typeof education)[0];
-  }
-
-  interface ILang {
-    lang: (typeof languages)[0];
-  }
+  const [education, setEducation] = useState<any[]>([]);
+  const [languages, setLanguages] = useState<any[]>([]);
 
   const navigate = useNavigate();
 
@@ -60,14 +26,8 @@ export function EditFormStepThree() {
         const email = localStorage.getItem("rb_email");
         resumeApi.get(`/users/${email}`).then((res) => {
           setUserData(res.data);
-
-          if (res.data?.education.length > 0) {
-            setEducation(res.data?.education);
-          }
-
-          if (res.data?.languages.length > 0) {
-            setLanguages(res.data?.languages);
-          }
+          setEducation(res.data?.education);
+          setLanguages(res.data?.languages);
         });
       } catch (error) {
         console.error("Erro ao obter dados da API:", error);
@@ -86,22 +46,32 @@ export function EditFormStepThree() {
     navigate("/edit-step-four");
   };
 
-  const handleUpdateEducation = (index: number, target: any) => {
-    const updateEducation = [...education];
-    updateEducation[index] = {
-      ...updateEducation[index],
-      [target.name]: target.value,
-    };
-    setEducation(updateEducation);
+  const handleUpdateEducation = (id: string, e: any) => {
+    const updatedEducation = education.map((item: any) => {
+      if (item._id === id) {
+        return {
+          ...item,
+          [e.target.name]: e.target.value,
+        };
+      }
+      return item;
+    });
+
+    setEducation(updatedEducation);
   };
 
-  const handleUpdateLanguage = (index: number, target: any) => {
-    const updateLanguages = [...languages];
-    updateLanguages[index] = {
-      ...updateLanguages[index],
-      [target.name]: target.value,
-    };
-    setLanguages(updateLanguages);
+  const handleUpdateLanguages = (id: string, e: any) => {
+    const updatedLang = languages.map((item: any) => {
+      if (item._id === id) {
+        return {
+          ...item,
+          [e.target.name]: e.target.value,
+        };
+      }
+      return item;
+    });
+
+    setLanguages(updatedLang);
   };
 
   return (
@@ -117,53 +87,45 @@ export function EditFormStepThree() {
                   <Heading as="h3" size="lg">
                     Formação
                   </Heading>
-                  {education?.map(
-                    (item: IEducation["education"], index: number) => {
-                      return (
-                        <div key={index}>
-                          <FormLabel>Título</FormLabel>
-                          <Input
-                            type="text"
-                            defaultValue={item.title}
-                            name={"title"}
-                            onChange={(e) =>
-                              handleUpdateEducation(index, e.target)
-                            }
-                          />
+                  {education?.map((item: any) => {
+                    return (
+                      <div key={item._id}>
+                        <Input
+                          type="text"
+                          name={"title"}
+                          placeholder="Título"
+                          defaultValue={item.title}
+                          onChange={(e) => handleUpdateEducation(item._id, e)}
+                        />
 
-                          <FormLabel>Escola</FormLabel>
-                          <Input
-                            type="text"
-                            defaultValue={item.studies}
-                            name={"studies"}
-                            onChange={(e) =>
-                              handleUpdateEducation(index, e.target)
-                            }
-                          />
+                        <Input
+                          type="text"
+                          name={"studies"}
+                          placeholder="Escola"
+                          defaultValue={item.studies}
+                          onChange={(e) => handleUpdateEducation(item._id, e)}
+                        />
 
-                          <FormLabel>Período</FormLabel>
-                          <Input
-                            type="text"
-                            defaultValue={item.year}
-                            name={"year"}
-                            onChange={(e) =>
-                              handleUpdateEducation(index, e.target)
-                            }
-                          />
-                        </div>
-                      );
-                    }
-                  )}
+                        <Input
+                          type="text"
+                          name={"year"}
+                          placeholder="Período"
+                          defaultValue={item.year}
+                          onChange={(e) => handleUpdateEducation(item._id, e)}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
 
                 <div className="skills-container">
                   <Heading as="h3" size="lg">
                     Idiomas
                   </Heading>
-                  {languages?.map((item: ILang["lang"], index: number) => {
+                  {languages?.map((item: any) => {
                     return (
                       <div
-                        key={index}
+                        key={item._id}
                         style={{
                           display: "flex",
                           alignItems: "center",
@@ -175,9 +137,7 @@ export function EditFormStepThree() {
                           name={"name"}
                           placeholder={"Idioma"}
                           defaultValue={item.name}
-                          onChange={(e) =>
-                            handleUpdateLanguage(index, e.target)
-                          }
+                          onChange={(e) => handleUpdateLanguages(item._id, e)}
                         />
 
                         <Input
@@ -185,9 +145,7 @@ export function EditFormStepThree() {
                           name={"level"}
                           placeholder="Nível"
                           defaultValue={item.level}
-                          onChange={(e) =>
-                            handleUpdateLanguage(index, e.target)
-                          }
+                          onChange={(e) => handleUpdateLanguages(item._id, e)}
                         />
                       </div>
                     );

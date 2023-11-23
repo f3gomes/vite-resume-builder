@@ -10,52 +10,14 @@ import { useNavigate } from "react-router-dom";
 import { IUserData } from "../../types/userData";
 import { resumeApi, updateUser } from "../../data/api";
 import { FormEvent, useEffect, useState } from "react";
+
 import "../../styles/form.css";
 
 export function EditFormStepFive() {
-  const [userData, setUserData] = useState<IUserData>();
+  const [hobbys, setHobbys] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [hobbys, setHobbys] = useState([
-    {
-      name: "Música",
-      icon: "bx bx-headphone interests__icon",
-    },
-    {
-      name: "Programação",
-      icon: "bx bx-desktop interests__icon",
-    },
-    {
-      name: "Games",
-      icon: "bx bx-game interests__icon",
-    },
-    {
-      name: "Academia",
-      icon: "bx bx-dumbbell interests__icon",
-    },
-  ]);
-
-  const [references, setReferences] = useState([
-    {
-      name: "",
-      title: "",
-      phone: "",
-      email: "",
-    },
-    {
-      name: "",
-      title: "",
-      phone: "",
-      email: "",
-    },
-  ]);
-
-  interface IReference {
-    reference: (typeof references)[0];
-  }
-
-  interface IHobby {
-    hobby: (typeof hobbys)[0];
-  }
+  const [references, setReferences] = useState<any[]>([]);
+  const [userData, setUserData] = useState<IUserData>();
 
   const navigate = useNavigate();
 
@@ -91,19 +53,32 @@ export function EditFormStepFive() {
     navigate("/");
   };
 
-  const handleUpdateHobby = (index: number, value: string) => {
-    const updateHobby = [...hobbys];
-    updateHobby[index] = { ...updateHobby[index], name: value };
-    setHobbys(updateHobby);
+  const handleUpdateReference = (id: string, e: any) => {
+    const updatedReference = references.map((item: any) => {
+      if (item._id === id) {
+        return {
+          ...item,
+          [e.target.name]: e.target.value,
+        };
+      }
+      return item;
+    });
+
+    setReferences(updatedReference);
   };
 
-  const handleUpdateReference = (index: number, target: any) => {
-    const updateReference = [...references];
-    updateReference[index] = {
-      ...updateReference[index],
-      [target.name]: target.value,
-    };
-    setReferences(updateReference);
+  const handleUpdateHobby = (id: string, e: any) => {
+    const updatedHobby = hobbys.map((item: any) => {
+      if (item._id === id) {
+        return {
+          ...item,
+          name: e.target.value,
+        };
+      }
+      return item;
+    });
+
+    setHobbys(updatedHobby);
   };
 
   return (
@@ -119,70 +94,57 @@ export function EditFormStepFive() {
                   <Heading as="h3" size="lg">
                     Referências
                   </Heading>
-                  {references?.map(
-                    (item: IReference["reference"], index: number) => {
-                      return (
-                        <div key={index}>
-                          <FormLabel>Nome</FormLabel>
-                          <Input
-                            type="text"
-                            defaultValue={item.name}
-                            name={"name"}
-                            onChange={(e) =>
-                              handleUpdateReference(index, e.target)
-                            }
-                          />
+                  {references?.map((item: any) => {
+                    return (
+                      <div key={item._id}>
+                        <FormLabel>Nome</FormLabel>
+                        <Input
+                          type="text"
+                          name={"name"}
+                          defaultValue={item.name}
+                          onChange={(e) => handleUpdateReference(item._id, e)}
+                        />
 
-                          <FormLabel>Título</FormLabel>
-                          <Input
-                            type="text"
-                            defaultValue={item.title}
-                            name={"title"}
-                            onChange={(e) =>
-                              handleUpdateReference(index, e.target)
-                            }
-                          />
+                        <FormLabel>Título</FormLabel>
+                        <Input
+                          type="text"
+                          name={"title"}
+                          defaultValue={item.title}
+                          onChange={(e) => handleUpdateReference(item._id, e)}
+                        />
 
-                          <FormLabel>Telefone</FormLabel>
-                          <Input
-                            type="text"
-                            defaultValue={item.phone}
-                            name={"phone"}
-                            onChange={(e) =>
-                              handleUpdateReference(index, e.target)
-                            }
-                          />
+                        <FormLabel>Telefone</FormLabel>
+                        <Input
+                          type="text"
+                          name={"phone"}
+                          defaultValue={item.phone}
+                          onChange={(e) => handleUpdateReference(item._id, e)}
+                        />
 
-                          <FormLabel>Email</FormLabel>
-                          <Input
-                            type="text"
-                            defaultValue={item.email}
-                            name={"email"}
-                            onChange={(e) =>
-                              handleUpdateReference(index, e.target)
-                            }
-                          />
-                        </div>
-                      );
-                    }
-                  )}
+                        <FormLabel>Email</FormLabel>
+                        <Input
+                          type="text"
+                          name={"email"}
+                          defaultValue={item.email}
+                          onChange={(e) => handleUpdateReference(item._id, e)}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
 
                 <div className="skills-container">
                   <Heading as="h3" size="lg">
                     Passatempos
                   </Heading>
-                  {hobbys?.map((item: IHobby["hobby"], index: number) => {
+                  {hobbys?.map((item: any) => {
                     return (
-                      <div key={index}>
+                      <div key={item._id}>
                         <Input
                           type="text"
-                          id={`${index}`}
+                          name={"name"}
                           defaultValue={item.name}
-                          name={item.name.toLowerCase()}
-                          onChange={(e) =>
-                            handleUpdateHobby(index, e.target.value)
-                          }
+                          onChange={(e) => handleUpdateHobby(item._id, e)}
                         />
                       </div>
                     );

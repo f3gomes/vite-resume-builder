@@ -7,13 +7,13 @@ import {
   Spinner,
   Textarea,
 } from "@chakra-ui/react";
+import { useQuery } from "react-query";
 import { updateUser } from "../../data/api";
+import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { formDataInputs } from "../../data/formData";
-import { FormEvent, useState } from "react";
 
 import "../../styles/form.css";
-import { useQuery } from "react-query";
 
 export function EditFormStepOne() {
   const [userData, setUserData] = useState<any>();
@@ -52,16 +52,16 @@ export function EditFormStepOne() {
                     {item.type === "textarea" ? (
                       <Textarea
                         name={item.value}
-                        onChange={handleUpdateValue}
                         required={item.required}
+                        onChange={handleUpdateValue}
                         defaultValue={userData && userData.about}
                       />
                     ) : (
                       <Input
                         type={item.type}
                         name={item.value}
-                        onChange={handleUpdateValue}
                         required={item.required}
+                        onChange={handleUpdateValue}
                         defaultValue={userData && userData[item.value]}
                       />
                     )}

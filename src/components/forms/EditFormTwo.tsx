@@ -6,52 +6,18 @@ import {
   Input,
   Spinner,
 } from "@chakra-ui/react";
-import { resumeApi, updateUser } from "../../data/api";
 import { useNavigate } from "react-router-dom";
-import { FormEvent, useEffect, useState } from "react";
-import "../../styles/form.css";
 import { IUserData } from "../../types/userData";
+import { resumeApi, updateUser } from "../../data/api";
+import { FormEvent, useEffect, useState } from "react";
+
+import "../../styles/form.css";
 
 export function EditFormStepTwo() {
-  const [userData, setUserData] = useState<IUserData>();
+  const [skills, setSkills] = useState<any[]>([]);
+  const [socials, setSocials] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [socials, setSocials] = useState([
-    {
-      name: "Linkedin",
-      link: "",
-      icon: "bx bxl-linkedin-square",
-    },
-    {
-      name: "Github",
-      link: "",
-      icon: "bx bxl-github",
-    },
-    {
-      name: "Instagram",
-      link: "",
-      icon: "bx bxl-instagram",
-    },
-  ]);
-
-  const [skills, setSkills] = useState([
-    { name: "" },
-    { name: "" },
-    { name: "" },
-    { name: "" },
-    { name: "" },
-    { name: "" },
-    { name: "" },
-    { name: "" },
-    { name: "" },
-  ]);
-
-  interface ISocials {
-    social: (typeof socials)[0];
-  }
-
-  interface ISkills {
-    skill: (typeof skills)[0];
-  }
+  const [userData, setUserData] = useState<IUserData>();
 
   const navigate = useNavigate();
 
@@ -61,14 +27,8 @@ export function EditFormStepTwo() {
         const email = localStorage.getItem("rb_email");
         resumeApi.get(`/users/${email}`).then((res) => {
           setUserData(res.data);
-
-          if (res.data?.socials.length > 0) {
-            setSocials(res.data?.socials);
-          }
-
-          if (res.data?.skills.length > 0) {
-            setSkills(res.data?.skills);
-          }
+          setSkills(res.data?.skills);
+          setSocials(res.data?.socials);
         });
       } catch (error) {
         console.error("Erro ao obter dados da API:", error);
@@ -87,15 +47,31 @@ export function EditFormStepTwo() {
     navigate("/edit-step-three");
   };
 
-  const handleUpdateValue = (index: number, newLink: string) => {
-    const updatedSocials = [...socials];
-    updatedSocials[index] = { ...updatedSocials[index], link: newLink };
+  const handleUpdateSocial = (id: string, e: any) => {
+    const updatedSocials = socials.map((social: any) => {
+      if (social._id === id) {
+        return {
+          ...social,
+          link: e.target.value,
+        };
+      }
+      return social;
+    });
+
     setSocials(updatedSocials);
   };
 
-  const handleUpdateSkill = (index: number, newSkill: string) => {
-    const updatedSkills = [...skills];
-    updatedSkills[index] = { ...updatedSkills[index], name: newSkill };
+  const handleUpdateSKill = (id: string, e: any) => {
+    const updatedSkills = skills.map((skill: any) => {
+      if (skill._id === id) {
+        return {
+          ...skill,
+          name: e.target.value,
+        };
+      }
+      return skill;
+    });
+
     setSkills(updatedSkills);
   };
 
@@ -112,17 +88,15 @@ export function EditFormStepTwo() {
                   <Heading as="h3" size="lg">
                     Redes Sociais
                   </Heading>
-                  {socials?.map((item: ISocials["social"], index: number) => {
+                  {socials?.map((item: any) => {
                     return (
-                      <div key={index}>
+                      <div key={item._id}>
                         <FormLabel>{item.name}</FormLabel>
                         <Input
                           type="text"
+                          name={"link"}
                           defaultValue={item.link}
-                          name={item.name.toLowerCase()}
-                          onChange={(e) =>
-                            handleUpdateValue(index, e.target.value)
-                          }
+                          onChange={(e) => handleUpdateSocial(item._id, e)}
                         />
                       </div>
                     );
@@ -133,17 +107,14 @@ export function EditFormStepTwo() {
                   <Heading as="h3" size="lg">
                     Habilidades
                   </Heading>
-                  {skills?.map((item: ISkills["skill"], index: number) => {
+                  {skills?.map((item: any) => {
                     return (
-                      <div key={index}>
+                      <div key={item._id}>
                         <Input
                           type="text"
-                          id={`${index}`}
+                          name={"name"}
                           defaultValue={item.name}
-                          name={item.name.toLowerCase()}
-                          onChange={(e) =>
-                            handleUpdateSkill(index, e.target.value)
-                          }
+                          onChange={(e) => handleUpdateSKill(item._id, e)}
                         />
                       </div>
                     );
