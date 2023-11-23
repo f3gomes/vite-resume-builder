@@ -5,12 +5,12 @@ export const resumeApi = axios.create({
   baseURL: "http://localhost:3001",
 });
 
-export const updateUser = async (userId: string, payload: Object) => {
+export const updateUser = async (userId: string, payload: object) => {
   const response = await resumeApi.put(`/users/${userId}`, payload);
   return response.data;
 };
 
-export const createUser = async (payload: Object) => {
+export const createUser = async (payload: object) => {
   const response = await resumeApi.post(`/users`, payload);
   return response.data;
 };

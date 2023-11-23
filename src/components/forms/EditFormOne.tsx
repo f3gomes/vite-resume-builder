@@ -1,11 +1,10 @@
 import {
-  Button,
-  FormControl,
-  FormLabel,
-  Heading,
   Input,
+  Button,
   Spinner,
+  Heading,
   Textarea,
+  FormControl,
 } from "@chakra-ui/react";
 import { useQuery } from "react-query";
 import { updateUser } from "../../data/api";
