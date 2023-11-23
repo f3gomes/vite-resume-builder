@@ -13,7 +13,7 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createUser } from "../data/api";
 
 export function ModalEmail() {
@@ -35,7 +35,7 @@ export function ModalEmail() {
     setPayload((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = () => {
     createUser(payload);
     localStorage.setItem("rb_email", payload.email);
   };

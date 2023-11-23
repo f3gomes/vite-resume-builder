@@ -16,7 +16,7 @@ export function SocialsSection({ userData }: SocialsSectionProps) {
               key={item._id}
               href={item.link}
               target="_blank"
-              className="social__link social__icon"
+              className="social__link social__icon" rel="noreferrer"
             >
               <i className={item.icon}></i>
               {item.name}

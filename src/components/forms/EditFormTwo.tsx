@@ -1,10 +1,9 @@
 import {
-  Button,
-  FormControl,
-  FormLabel,
-  Heading,
   Input,
+  Button,
   Spinner,
+  Heading,
+  FormControl,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { IUserData } from "../../types/userData";
