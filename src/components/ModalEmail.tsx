@@ -1,17 +1,16 @@
 import {
-  Button,
-  ChakraProvider,
-  FormControl,
-  FormLabel,
-  Input,
   Modal,
+  Input,
+  Button,
   ModalBody,
-  ModalCloseButton,
-  ModalContent,
   ModalFooter,
+  FormControl,
   ModalHeader,
+  ModalContent,
   ModalOverlay,
   useDisclosure,
+  ChakraProvider,
+  ModalCloseButton,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { createUser } from "../data/api";
@@ -35,9 +34,15 @@ export function ModalEmail() {
     setPayload((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = () => {
-    createUser(payload);
+  const handleSubmit = async () => {
+    event?.preventDefault();
+    await createUser(payload);
     localStorage.setItem("rb_email", payload.email);
+    onClose();
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   };
 
   return (
@@ -50,24 +55,22 @@ export function ModalEmail() {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Digite seu e-mail:</ModalHeader>
+          <ModalHeader>Digite seu nome e e-mail:</ModalHeader>
           <ModalCloseButton />
           <form onSubmit={handleSubmit}>
             <ModalBody pb={6}>
               <FormControl>
-                <FormLabel>Nome:</FormLabel>
                 <Input
                   required
                   name="name"
                   type="text"
                   ref={initialRef}
-                  placeholder="Seu nome"
+                  placeholder="Nome Completo"
                   onChange={handleChange}
                 />
               </FormControl>
 
               <FormControl mt={4}>
-                <FormLabel>Email:</FormLabel>
                 <Input
                   required
                   name="email"
