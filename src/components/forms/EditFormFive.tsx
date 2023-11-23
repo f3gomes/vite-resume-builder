@@ -97,34 +97,34 @@ export function EditFormStepFive() {
                   {references?.map((item: any) => {
                     return (
                       <div key={item._id}>
-                        <FormLabel>Nome</FormLabel>
                         <Input
                           type="text"
                           name={"name"}
+                          placeholder="Nome"
                           defaultValue={item.name}
                           onChange={(e) => handleUpdateReference(item._id, e)}
                         />
 
-                        <FormLabel>Título</FormLabel>
                         <Input
                           type="text"
                           name={"title"}
+                          placeholder="Título"
                           defaultValue={item.title}
                           onChange={(e) => handleUpdateReference(item._id, e)}
                         />
 
-                        <FormLabel>Telefone</FormLabel>
                         <Input
                           type="text"
                           name={"phone"}
+                          placeholder="Telefone"
                           defaultValue={item.phone}
                           onChange={(e) => handleUpdateReference(item._id, e)}
                         />
 
-                        <FormLabel>Email</FormLabel>
                         <Input
                           type="text"
                           name={"email"}
+                          placeholder="Email"
                           defaultValue={item.email}
                           onChange={(e) => handleUpdateReference(item._id, e)}
                         />
@@ -140,6 +140,7 @@ export function EditFormStepFive() {
                   {hobbys?.map((item: any) => {
                     return (
                       <div key={item._id}>
+                        <i className={item.icon}></i>
                         <Input
                           type="text"
                           name={"name"}

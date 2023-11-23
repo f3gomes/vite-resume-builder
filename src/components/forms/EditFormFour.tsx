@@ -1,11 +1,10 @@
 import {
   Button,
-  FormControl,
-  FormLabel,
-  Heading,
   Input,
   Spinner,
+  Heading,
   Textarea,
+  FormControl,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { IUserData } from "../../types/userData";
@@ -79,26 +78,26 @@ export function EditFormStepFour() {
                   {experiences?.map((item: any) => {
                     return (
                       <div key={item._id}>
-                        <FormLabel>Título</FormLabel>
                         <Input
                           type="text"
-                          defaultValue={item.title}
                           name={"title"}
+                          placeholder={"Cargo"}
+                          defaultValue={item.title}
                           onChange={(e) => handleUpdateExperience(item._id, e)}
                         />
 
-                        <FormLabel>Empresa</FormLabel>
                         <Input
                           type="text"
-                          defaultValue={item.yearCompany}
                           name={"yearCompany"}
+                          placeholder={"Empresa"}
+                          defaultValue={item.yearCompany}
                           onChange={(e) => handleUpdateExperience(item._id, e)}
                         />
 
-                        <FormLabel>Descrição</FormLabel>
                         <Textarea
-                          defaultValue={item.description}
                           name={"description"}
+                          placeholder={"Descrição"}
+                          defaultValue={item.description}
                           onChange={(e) => handleUpdateExperience(item._id, e)}
                         />
                       </div>

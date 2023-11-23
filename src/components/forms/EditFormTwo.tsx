@@ -91,10 +91,10 @@ export function EditFormStepTwo() {
                   {socials?.map((item: any) => {
                     return (
                       <div key={item._id}>
-                        <FormLabel>{item.name}</FormLabel>
                         <Input
                           type="text"
                           name={"link"}
+                          placeholder={item.name}
                           defaultValue={item.link}
                           onChange={(e) => handleUpdateSocial(item._id, e)}
                         />

@@ -48,10 +48,10 @@ export function EditFormStepOne() {
               formDataInputs.map((item, index) => {
                 return (
                   <FormControl key={index}>
-                    <FormLabel>{item.label}</FormLabel>
                     {item.type === "textarea" ? (
                       <Textarea
                         name={item.value}
+                        placeholder={item.label}
                         required={item.required}
                         onChange={handleUpdateValue}
                         defaultValue={userData && userData.about}
@@ -60,6 +60,7 @@ export function EditFormStepOne() {
                       <Input
                         type={item.type}
                         name={item.value}
+                        placeholder={item.label}
                         required={item.required}
                         onChange={handleUpdateValue}
                         defaultValue={userData && userData[item.value]}
