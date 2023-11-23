@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <>
-      <Header showMenu={showMenu} onClick={() => setShowMenu(!showMenu)} />
+      <Header showMenu={showMenu} setShowMenu={() => setShowMenu(!showMenu)} />
 
       <main className="l-main bd-container">
         <div className="resume" id="area-cv">
@@ -54,7 +54,7 @@ export default function Home() {
       </main>
 
       <a
-        href=""
+        href="#"
         className={showScrollTop ? "scrolltop show-scroll" : "scrolltop"}
         id="scroll-top"
         onClick={goToTop}

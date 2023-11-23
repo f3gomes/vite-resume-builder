@@ -1,13 +1,18 @@
-export function Header(props: any) {
+import { MouseEventHandler } from "react";
+
+interface HeaderProps {
+  showMenu: boolean;
+  setShowMenu: MouseEventHandler<HTMLDivElement>;
+}
+
+export function Header({ showMenu, setShowMenu }: HeaderProps) {
   return (
     <header className="l-header" id="header">
       <nav className="nav bd-container">
-        <a href="#" className="nav__logo">
-          Admin
-        </a>
+        <a href="#" className="nav__logo"></a>
 
         <div
-          className={props.showMenu ? "nav__menu show-menu" : "nav__menu"}
+          className={showMenu ? "nav__menu show-menu" : "nav__menu"}
           id="nav-menu"
         >
           <ul className="nav__list">
@@ -49,7 +54,7 @@ export function Header(props: any) {
           </ul>
         </div>
 
-        <div className="nav__toggle" id="nav-toggle" onClick={props.onClick}>
+        <div className="nav__toggle" id="nav-toggle" onClick={setShowMenu}>
           <i className="bx bx-grid-alt"></i>
         </div>
       </nav>

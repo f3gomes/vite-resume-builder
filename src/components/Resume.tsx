@@ -1,17 +1,18 @@
 import profile from "/assets/profile.jpeg";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useQuery } from "react-query";
+import { resumeApi } from "../data/api";
+import { Link } from "react-router-dom";
+import { Heading } from "@chakra-ui/react";
 import { LangSection } from "./LangSection";
 import { HomeSection } from "./HomeSection";
 import { SkillsSection } from "./SkillsSection";
 import { SocialsSection } from "./SocialsSection";
-import { EducationSection } from "./EducationSection";
 import { InterestsSection } from "./InterestsSection";
+import { EducationSection } from "./EducationSection";
 import { ReferencesSection } from "./ReferencesSection";
 import { ExperienceSection } from "./ExperienceSection";
-import { resumeApi } from "../data/api";
-import { IUserData } from "../types/userData";
-import { Link } from "react-router-dom";
 
 interface ResumeProps {
   darkTheme: boolean;
@@ -25,42 +26,55 @@ export function Resume({
   generateResume,
 }: ResumeProps) {
   const [image, setImage] = useState(profile);
-  const [userData, setUserData] = useState<IUserData>();
 
   const handleSetImage = (event: any) => {
     setImage(URL.createObjectURL(event.target.files[0]));
   };
 
-  useEffect(() => {
-    const email = "fgomesdeluna@gmail.com";
-    resumeApi.get(`/users/${email}`).then((res) => setUserData(res.data));
-  }, []);
+  const { data, isLoading } = useQuery(
+    "userData",
+    async () => {
+      const email = localStorage.getItem("rb_email");
+      return await resumeApi.get(`/users/${email}`).then((res) => res?.data);
+    },
+    { staleTime: 20000 }
+  );
+
+  if (isLoading) {
+    return (
+      <div className="spinner-container">
+        <Heading as="h4" size="md">
+          Carregando...
+        </Heading>
+      </div>
+    );
+  }
 
   return (
     <>
       <div className="resume__left">
         <HomeSection
           image={image}
-          userData={userData!}
+          userData={data}
           darkTheme={darkTheme}
           handleSetImage={handleSetImage}
           generateResume={generateResume}
           handleDarkTheme={handleDarkTheme}
         />
 
-        <SocialsSection userData={userData!} />
-        <EducationSection education={userData?.education!} />
-        <SkillsSection skills={userData?.skills!} />
+        <SocialsSection userData={data} />
+        <EducationSection education={data?.education} />
+        <SkillsSection skills={data?.skills} />
       </div>
 
       <div className="resume__right">
-        <Link className="btn-edit" to={"/edit"}>
+        <Link className="btn-edit" to={"/edit-step-one"}>
           <i className="bx bxs-edit"></i>
         </Link>
-        <ExperienceSection experience={userData?.experiences!} />
-        <ReferencesSection references={userData?.references!} />
-        <LangSection languages={userData?.languages!} />
-        <InterestsSection hobbys={userData?.hobbys!} />
+        <ExperienceSection experience={data?.experiences} />
+        <ReferencesSection references={data?.references} />
+        <LangSection languages={data?.languages} />
+        <InterestsSection hobbys={data?.hobbys} />
       </div>
     </>
   );
