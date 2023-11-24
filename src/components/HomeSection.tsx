@@ -23,8 +23,8 @@ export function HomeSection({
       <div className="home__container section bd-grid">
         <div className="home__data bd-grid">
           <input
-            className="input-file"
             type={"file"}
+            className="input-file"
             onChange={handleSetImage}
           />
           <img src={image} alt="profile" className="home__img" />

@@ -79,6 +79,7 @@ export function EditFormStepFour() {
                     return (
                       <div key={item._id}>
                         <Input
+                          id={item._id}
                           type="text"
                           name={"title"}
                           placeholder={"Cargo"}
@@ -89,12 +90,14 @@ export function EditFormStepFour() {
                         <Input
                           type="text"
                           name={"yearCompany"}
+                          id={item.yearCompany}
                           placeholder={"Empresa"}
                           defaultValue={item.yearCompany}
                           onChange={(e) => handleUpdateExperience(item._id, e)}
                         />
 
                         <Textarea
+                          id={item.description}
                           name={"description"}
                           placeholder={"Descrição"}
                           defaultValue={item.description}

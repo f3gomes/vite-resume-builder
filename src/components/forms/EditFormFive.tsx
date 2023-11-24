@@ -1,14 +1,8 @@
-import {
-  Input,
-  Button,
-  Heading,
-  Spinner,
-  FormControl,
-} from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { IUserData } from "../../types/userData";
 import { resumeApi, updateUser } from "../../data/api";
 import { FormEvent, useEffect, useState } from "react";
+import { Input, Button, Heading, Spinner, FormControl } from "@chakra-ui/react";
 
 import "../../styles/form.css";
 
@@ -97,6 +91,7 @@ export function EditFormStepFive() {
                     return (
                       <div key={item._id}>
                         <Input
+                          id={item._id}
                           type="text"
                           name={"name"}
                           placeholder="Nome"
@@ -105,6 +100,7 @@ export function EditFormStepFive() {
                         />
 
                         <Input
+                          id={item.title}
                           type="text"
                           name={"title"}
                           placeholder="Título"
@@ -113,6 +109,7 @@ export function EditFormStepFive() {
                         />
 
                         <Input
+                          id={item.phone}
                           type="text"
                           name={"phone"}
                           placeholder="Telefone"
@@ -121,6 +118,7 @@ export function EditFormStepFive() {
                         />
 
                         <Input
+                          id={item.email}
                           type="text"
                           name={"email"}
                           placeholder="Email"
@@ -141,6 +139,7 @@ export function EditFormStepFive() {
                       <div key={item._id}>
                         <i className={item.icon}></i>
                         <Input
+                          id={item._id}
                           type="text"
                           name={"name"}
                           defaultValue={item.name}

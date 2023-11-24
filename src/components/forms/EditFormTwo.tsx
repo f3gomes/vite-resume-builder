@@ -1,10 +1,4 @@
-import {
-  Input,
-  Button,
-  Spinner,
-  Heading,
-  FormControl,
-} from "@chakra-ui/react";
+import { Input, Button, Spinner, Heading, FormControl } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { IUserData } from "../../types/userData";
 import { resumeApi, updateUser } from "../../data/api";
@@ -93,6 +87,7 @@ export function EditFormStepTwo() {
                         <Input
                           type="text"
                           name={"link"}
+                          id={item.name}
                           placeholder={item.name}
                           defaultValue={item.link}
                           onChange={(e) => handleUpdateSocial(item._id, e)}
@@ -112,6 +107,7 @@ export function EditFormStepTwo() {
                         <Input
                           type="text"
                           name={"name"}
+                          id={item.name}
                           defaultValue={item.name}
                           onChange={(e) => handleUpdateSKill(item._id, e)}
                         />
