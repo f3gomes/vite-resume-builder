@@ -6,22 +6,35 @@ import {
   Textarea,
   FormControl,
 } from "@chakra-ui/react";
-import { useQuery } from "react-query";
-import { updateUser } from "../../data/api";
-import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { formDataInputs } from "../../data/formData";
+import { resumeApi, updateUser } from "../../data/api";
+import { FormEvent, useEffect, useState } from "react";
 
 import "../../styles/form.css";
 
 export function EditFormStepOne() {
   const [userData, setUserData] = useState<any>();
+  const [isLoading, setIsLoading] = useState(true);
 
   const navigate = useNavigate();
 
-  const { data, isLoading } = useQuery("userData", () => {
-    setUserData(data);
-  });
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const email = localStorage.getItem("rb_email");
+        resumeApi.get(`/users/${email}`).then((res) => {
+          setUserData(res.data);
+        });
+      } catch (error) {
+        console.error("Erro ao obter dados da API:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -49,6 +62,7 @@ export function EditFormStepOne() {
                   <FormControl key={index}>
                     {item.type === "textarea" ? (
                       <Textarea
+                        id={item.value}
                         name={item.value}
                         placeholder={item.label}
                         required={item.required}
@@ -57,6 +71,7 @@ export function EditFormStepOne() {
                       />
                     ) : (
                       <Input
+                        id={item.value}
                         type={item.type}
                         name={item.value}
                         placeholder={item.label}

@@ -1,10 +1,4 @@
-import {
-  Input,
-  Button,
-  Spinner,
-  Heading,
-  FormControl,
-} from "@chakra-ui/react";
+import { Input, Button, Spinner, Heading, FormControl } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { IUserData } from "../../types/userData";
 import { resumeApi, updateUser } from "../../data/api";
@@ -91,6 +85,7 @@ export function EditFormStepThree() {
                     return (
                       <div key={item._id}>
                         <Input
+                          id={item.title}
                           type="text"
                           name={"title"}
                           placeholder="Título"
@@ -99,6 +94,7 @@ export function EditFormStepThree() {
                         />
 
                         <Input
+                          id={item.studies}
                           type="text"
                           name={"studies"}
                           placeholder="Escola"
@@ -107,6 +103,7 @@ export function EditFormStepThree() {
                         />
 
                         <Input
+                          id={item.year}
                           type="text"
                           name={"year"}
                           placeholder="Período"
@@ -125,7 +122,7 @@ export function EditFormStepThree() {
                   {languages?.map((item: any) => {
                     return (
                       <div
-                        key={item._id}
+                        key={item.name}
                         style={{
                           display: "flex",
                           alignItems: "center",
