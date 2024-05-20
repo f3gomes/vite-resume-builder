@@ -17,6 +17,8 @@ import { createUser } from "../data/api";
 
 export function ModalEmail() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [isLoading, setIsLoading] = useState(false);
   const [payload, setPayload] = useState({
     name: "",
     email: "",
@@ -36,22 +38,28 @@ export function ModalEmail() {
 
   const handleSubmit = async () => {
     event?.preventDefault();
-    await createUser(payload);
-    localStorage.setItem("rb_email", payload.email);
-    onClose();
 
-    setTimeout(() => {
-      window.location.reload();
-    }, 500);
+    try {
+      setIsLoading(true);
+      await createUser(payload);
+      localStorage.setItem("rb_email", payload.email);
+      onClose();
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <ChakraProvider>
       <Modal
-        initialFocusRef={initialRef}
-        finalFocusRef={finalRef}
         isOpen={isOpen}
         onClose={onClose}
+        finalFocusRef={finalRef}
+        initialFocusRef={initialRef}
       >
         <ModalOverlay />
         <ModalContent>
@@ -65,6 +73,7 @@ export function ModalEmail() {
                   name="name"
                   type="text"
                   ref={initialRef}
+                  autoComplete="off"
                   placeholder="Nome Completo"
                   onChange={handleChange}
                 />
@@ -76,6 +85,7 @@ export function ModalEmail() {
                   name="email"
                   type="email"
                   ref={initialRef}
+                  autoComplete="off"
                   placeholder="exemplo@email.com"
                   onChange={handleChange}
                 />
@@ -83,8 +93,13 @@ export function ModalEmail() {
             </ModalBody>
 
             <ModalFooter>
-              <Button colorScheme="blue" mr={3} type="submit">
-                Salvar
+              <Button
+                mr={3}
+                type="submit"
+                colorScheme="blue"
+                disabled={isLoading}
+              >
+                {isLoading ? "Aguarde..." : "Salvar"}
               </Button>
               <Button onClick={onClose}>Cancelar</Button>
             </ModalFooter>
