@@ -1,8 +1,7 @@
 import profile from "/assets/profile.jpeg";
 
-import { useState } from "react";
-import { useQuery } from "react-query";
-import { resumeApi } from "../data/api";
+import { useEffect, useState } from "react";
+import { getUserByEmail } from "../data/api";
 import { Link } from "react-router-dom";
 import { Heading } from "@chakra-ui/react";
 import { LangSection } from "./LangSection";
@@ -25,20 +24,31 @@ export function Resume({
   handleDarkTheme,
   generateResume,
 }: ResumeProps) {
+  const [data, setData] = useState();
   const [image, setImage] = useState(profile);
+  const [isLoading, setIsloading] = useState(false);
+
+  const email = localStorage.getItem("rb_email")!;
 
   const handleSetImage = (event: any) => {
     setImage(URL.createObjectURL(event.target.files[0]));
   };
 
-  const { data, isLoading } = useQuery(
-    "userData",
-    async () => {
-      const email = localStorage.getItem("rb_email");
-      return await resumeApi.get(`/users/${email}`).then((res) => res?.data);
-    },
-    { staleTime: 20000 }
-  );
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        setIsloading(true);
+        const resp = await getUserByEmail(email);
+        setData(resp);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsloading(false);
+      }
+    };
+
+    fetchUser();
+  }, []);
 
   if (isLoading) {
     return (
@@ -63,18 +73,18 @@ export function Resume({
         />
 
         <SocialsSection userData={data} />
-        <EducationSection education={data?.education} />
-        <SkillsSection skills={data?.skills} />
+        <EducationSection data={data} />
+        <SkillsSection data={data} />
       </div>
 
       <div className="resume__right">
         <Link className="btn-edit" to={"/edit-step-one"}>
           <i className="bx bxs-edit"></i>
         </Link>
-        <ExperienceSection experience={data?.experiences} />
-        <ReferencesSection references={data?.references} />
-        <LangSection languages={data?.languages} />
-        <InterestsSection hobbys={data?.hobbys} />
+        <ExperienceSection data={data} />
+        <ReferencesSection data={data} />
+        <LangSection data={data} />
+        <InterestsSection data={data} />
       </div>
     </>
   );

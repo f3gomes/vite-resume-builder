@@ -1,16 +1,16 @@
 import { IReference } from "../types/userData";
 
 interface ReferencesSectionProps {
-  references: IReference[];
+  data: any;
 }
 
-export function ReferencesSection({ references }: ReferencesSectionProps) {
+export function ReferencesSection({ data }: ReferencesSectionProps) {
   return (
     <section className="references section" id="references">
       <h2 className="section-title">Referências</h2>
 
       <div className="reference__container bd-grid">
-        {references?.map((item: IReference) => (
+        {data?.references?.map((item: IReference) => (
           <div className="references__content bd-grid" key={item?._id}>
             <span className="references__subtitle">{item?.title}</span>
             <h3 className="references__title">{item?.name}</h3>

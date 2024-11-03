@@ -6,18 +6,17 @@ interface HomeSectionProps {
   handleSetImage: (e: any) => void;
   darkTheme: boolean;
   handleDarkTheme: () => void;
-  userData: IUserData;
+  userData: IUserData | any;
 }
 
 export function HomeSection({
   image,
-  darkTheme,
   userData,
-  handleDarkTheme,
+  darkTheme,
   generateResume,
   handleSetImage,
+  handleDarkTheme,
 }: HomeSectionProps) {
-
   return (
     <section className="home" id="home">
       <div className="home__container section bd-grid">

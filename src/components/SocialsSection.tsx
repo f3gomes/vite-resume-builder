@@ -1,7 +1,7 @@
 import { ISocial, IUserData } from "../types/userData";
 
 interface SocialsSectionProps {
-  userData: IUserData;
+  userData: IUserData | any;
 }
 
 export function SocialsSection({ userData }: SocialsSectionProps) {

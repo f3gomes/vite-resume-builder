@@ -1,16 +1,16 @@
 import { IExperience } from "../types/userData";
 
 interface ExperienceSectionProps {
-  experience: IExperience[];
+  data: any;
 }
 
-export function ExperienceSection({ experience }: ExperienceSectionProps) {
+export function ExperienceSection({ data }: ExperienceSectionProps) {
   return (
     <section className="experience section" id="experience">
       <h2 className="section-title">Experiência</h2>
 
       <div className="experience__container bd-grid">
-        {experience?.map((item: IExperience) => (
+        {data?.experience?.map((item: IExperience) => (
           <div className="experience__content" key={item?._id}>
             <div className="experience__time">
               <span className="experience__rounder"></span>

@@ -1,6 +1,5 @@
 import ReactDOM from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
-import { QueryClient, QueryClientProvider } from "react-query";
 import { EditFormStepTwo } from "./components/forms/EditFormTwo.tsx";
 import { EditFormStepOne } from "./components/forms/EditFormOne.tsx";
 import { EditFormStepFour } from "./components/forms/EditFormFour.tsx";
@@ -10,8 +9,6 @@ import { EditFormStepThree } from "./components/forms/EditFormThree.tsx";
 import App from "./App.tsx";
 
 import "./index.css";
-
-const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -61,7 +58,5 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <QueryClientProvider client={queryClient}>
-    <RouterProvider router={router} />
-  </QueryClientProvider>
+  <RouterProvider router={router} />
 );
