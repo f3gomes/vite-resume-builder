@@ -25,7 +25,7 @@ export const updateUser = async (userId: string, payload: object) => {
 
 export const createUser = async (payload: object) => {
   try {
-    const response = await resumeApi.post(`/users`, payload);
+    const response = await resumeApi.post(`/users/new`, payload);
     return response.data;
   } catch (error) {
     console.log("Erro ao criar usuário: ", error);
